@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <!-- main visual -->
+        <div class="mv_vboth_zone" style="background-image:url('./images/bg_mvsky.png')">
+            <a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a>
+            <div class="mv_vboth_wrap">
+                <div class="mv_vboth_form">
+                    <div class="mv_vboth_form_field">
+                        <p class="mv_vboth_form_copy">
+                            <span class="mv_vboth_form_text">
+                                고객님,<br>
+                                어떤 여행을 꿈꾸시나요?
+                            </span>
+                        </p>
+                        <ul class="mv_vboth_form_tb">
+                            <li>
+                                <a href="#" class="mv_vboth_wbox">
+                                    <span class="mv_vboth_wbox_text">여행지역 선택</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mv_vboth_wbox ico_calendar">
+                                    <span class="mv_vboth_wbox_text">여행시작일 선택</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mv_vboth_wbox ico_while">
+                                    <span class="mv_vboth_wbox_text">여행기간 선택</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mv_vboth_wbox ico_map">
+                                    <span class="mv_vboth_wbox_text">출발지 선택</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_mvsearch_submit_wrap"><a href="#" class="btn_mvsearch_submit">검색하기</a></div>
+                    </div>
+                </div>
+                <div class="mv_vboth_slider">
+                    <a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a>
+
+                    <div class="swiper-container mvbox_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="mvbox_link">
+                                    <img src="./images/mv_typed_01.png" class="pc_img" alt="">
+                                    <img src="./images/mv_typed_01_mb.png" class="mb_img" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="mvbox_link">
+                                    <img src="./images/mv_typed_02.png" class="pc_img" alt="">
+                                    <img src="./images/mv_typed_02_mb.png" class="mb_img" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="mvbox_link">
+                                    <img src="./images/mv_typed_03.png" class="pc_img" alt="">
+                                    <img src="./images/mv_typed_03_mb.png" class="mb_img" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="mvbox_link">
+                                    <img src="./images/mv_typed_04.png" class="pc_img" alt="">
+                                    <img src="./images/mv_typed_04_mb.png" class="mb_img" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="mvbox_link">
+                                    <img src="./images/mv_typed_05.png" class="pc_img" alt="">
+                                    <img src="./images/mv_typed_05_mb.png" class="mb_img" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mv_bottom_control_zone">
+                        <div class="mv_bottom_control_wrap">
+                            <div class="mv_bottom_in_control">
+                                <div class="mv_bottom_cols has_navi">
+                                    <div class="swiper-pagination main_visual_paging">
+                                    </div>
+                                </div>
+                                <div class="mv_bottom_cols has_auto">
+                                    <ul class="swiper_auto_control_list">
+                                        <li><a href="#" class="btn_mv_stop"><span class="hdtext">정지</span></a></li>
+                                        <li><a href="#" class="btn_mv_play"><span class="hdtext">재생</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a>
+
+                </div>
+            </div>
+            <a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a>
+        </div>
+        <!-- // main visual -->
+    </div>
+    <script>
+        window.addEventListener("load",()=>{
+            mainVisualTyped();
+        })
+    </script>
+</body>
+
+</html>

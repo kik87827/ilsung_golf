@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./css/reset.css" rel="stylesheet">
+	<link href="./css/layout.css" rel="stylesheet">
+	<link href="./css/swiper.min.css" rel="stylesheet">
+	<link href="./css/daterangepicker.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
+	<script src="./js/front.js"></script>
+	<title>일성골프</title>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap">
+		<!-- main visual -->
+		<div class="main_visual_wrap typec">
+			<a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a>
+			<div class="swiper-container main_visual_swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#" class="mv_img_group">
+							<img src="./images/mv_typec_01.png" class="pc_img" alt="">
+							<img src="./images/mv_typec_01_mb.png" class="mb_img" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#" class="mv_img_group">
+							<img src="./images/mv_typec_02.png" class="pc_img" alt="">
+							<img src="./images/mv_typec_02_mb.png" class="mb_img" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#" class="mv_img_group">
+							<img src="./images/mv_typec_03.png" class="pc_img" alt="">
+							<img src="./images/mv_typec_03_mb.png" class="mb_img" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#" class="mv_img_group">
+							<img src="./images/mv_typec_04.png" class="pc_img" alt="">
+							<img src="./images/mv_typec_04_mb.png" class="mb_img" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#" class="mv_img_group">
+							<img src="./images/mv_typec_05.png" class="pc_img" alt="">
+							<img src="./images/mv_typec_05_mb.png" class="mb_img" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a>
+
+			<div class="mv_bottom_control_zone">
+				<div class="mv_bottom_control_wrap">
+					<div class="mv_bottom_in_control">
+						<div class="mv_bottom_cols has_navi">
+							<div class="swiper-pagination main_visual_paging">
+							</div>
+						</div>
+						<div class="mv_bottom_cols has_auto">
+							<ul class="swiper_auto_control_list">
+								<li><a href="#" class="btn_mv_stop"><span class="hdtext">정지</span></a></li>
+								<li><a href="#" class="btn_mv_play"><span class="hdtext">재생</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // main visual -->
+	</div>
+	<script>
+		window.addEventListener("load", () => {
+			mainVisualTypec();
+		})
+	</script>
+</body>
+
+</html>

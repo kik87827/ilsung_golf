@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./css/reset.css" rel="stylesheet">
+	<link href="./css/layout.css" rel="stylesheet">
+	<link href="./css/swiper.min.css" rel="stylesheet">
+	<link href="./css/daterangepicker.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
+	<script src="./js/front.js"></script>
+	<title>일성골프</title>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap">
+		<!-- header -->
+		<header class="header_wrap">
+			<div style="background:#ddd;color:#000;display:flex;align-items:center;justify-content:center;" id="testheader">
+				header
+			</div>
+			<style>
+				#testheader {
+					height: 100px;
+				}
+
+				@media (max-width:1023px) {
+					#testheader {
+						height: 55px;
+					}
+				}
+			</style>
+		</header>
+		<!-- // header -->
+		<!-- middle -->
+		<section class="middle_wrap">
+			<div class="middle_inner_wrap">
+				<div class="middle_guide_vitem_wrap">
+					<div class="middle_guide_vitem">
+						<div class="middle_guide_title">Type <span class="emp">A</span></div>
+						<div class="middle_guide_content">
+							<!-- search_field_wrap -->
+							<div class="search_field_wrap">
+								<div class="search_field_cols_wrap">
+									<div class="search_field_cols">
+										<a href="javascript:;" class="search_field_target define_local" id="local_target" data-poslayer="#layer_box_01">
+											<div class="search_field_form">
+												<div class="search_form_label">지역</div>
+												<div class="search_form_text_g">
+													<div class="search_form_text_place">어디로 가세요?</div>
+													<div class="search_form_text_result"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="search_field_cols">
+										<a href="#" class="search_field_target define_start">
+											<div class="search_field_form">
+												<div class="search_form_label">출발일</div>
+												<div class="search_form_text_g">
+													<div class="search_form_text_place">날짜를 입력하세요</div>
+													<div class="search_form_text_result"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="search_field_cols">
+										<a href="#" class="search_field_target define_while">
+											<div class="search_field_form">
+												<div class="search_form_label">여행기간</div>
+												<div class="search_form_text_g">
+													<div class="search_form_text_place">몇일 생각하세요?</div>
+													<div class="search_form_text_result"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="search_field_cols">
+										<a href="#" class="search_field_target define_where">
+											<div class="search_field_form">
+												<div class="search_form_label">출발지</div>
+												<div class="search_form_text_g">
+													<div class="search_form_text_place">어디서 출발하세요?</div>
+													<div class="search_form_text_result"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="search_field_cols define_btn">
+									<a href="#" class="btn_search_form"><span class="hdtext">검색</span></a>
+								</div>
+							</div>
+							<!-- // search_field_wrap -->
+						</div>
+					</div>
+					<div class="middle_guide_vitem">
+						<div class="middle_guide_title">Type <span class="emp">B</span></div>
+						<div class="middle_guide_content">
+							내용이 들어갑니다.
+						</div>
+					</div>
+					<div class="middle_guide_vitem">
+						<div class="middle_guide_title">Type <span class="emp">C</span></div>
+						<div class="middle_guide_content">
+							내용이 들어갑니다.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- // middle -->
+		<!-- footer -->
+		<footer class="footer_wrap">
+			<div style="background:#ddd;color:#000;display:flex;align-items:center;justify-content:center;height:100px;">
+				footer
+			</div>
+		</footer>
+		<!-- // footer -->
+		<!-- layer -->
+		<div class="poslayer_z" id="layer_box_01">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">지역선택</p>
+			</div>
+			<div class="poslayer_contlow type2">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+						<div class="pcv_chk_vitem">
+							<a href="javascript:;" class="pcv_chk_vtitle">일본</a>
+							<ul class="pclayer_vlist">
+								<li><a href="javascript:;" class="pcv_chk">쿠슈/후쿠오카</a></li>
+								<li><a href="javascript:;" class="pcv_chk">오사카</a></li>
+								<li><a href="javascript:;" class="pcv_chk">삿포로</a></li>
+							</ul>
+						</div>
+						<div class="pcv_chk_vitem">
+							<a href="javascript:;" class="pcv_chk_vtitle">동남아</a>
+							<ul class="pclayer_vlist">
+								<li><a href="javascript:;" class="pcv_chk">싱가포르</a></li>
+								<li><a href="javascript:;" class="pcv_chk">대만-타이베이</a></li>
+								<li><a href="javascript:;" class="pcv_chk">베트남-다낭/나트랑</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<!-- // layer -->
+	</div>
+</body>
+
+</html>
