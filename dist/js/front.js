@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-	gnbTotalMenu();
+	headerPcMenu();
 	layoutCommon();
 })
 $(window).on("load",function(){
@@ -49,15 +49,19 @@ function commonInit() {
 }
 
 
-function gnbTotalMenu() {
+function headerPcMenu() {
 	const header_wrap = document.querySelector(".header_wrap");
 	const btn_header_total = document.querySelector("[name='pcmenu']");
 	const global_menu_layer = document.querySelector(".global_menu_layer");
 	const gmenu_toggle = document.querySelectorAll(".gmenu_toggle");
 	const tmenu_one = document.querySelectorAll(".tmenu_one");
 	const mobile_total_layer = document.querySelector(".mobile_total_layer");
+	const gnb_twodepth_layer = document.querySelector(".gnb_twodepth_layer");
 	const mobile_total_menu = document.querySelectorAll("[name='totalmenu']");
 	const btn_mb_total_close = document.querySelector(".btn_mb_total_close");
+	const hgroup_nav_menu = document.querySelectorAll(".hgroup_nav_menu");
+	const hgroup_gnb_row = document.querySelector(".hgroup_gnb_row");
+	const hgroup_main_row = document.querySelector(".hgroup_main_row");
 	const bodyDom = document.querySelector("body");
 	const htmlDom = document.querySelector("html");
 	if (btn_header_total === null || global_menu_layer === null) { return; }
@@ -72,6 +76,9 @@ function gnbTotalMenu() {
 		const thisTarget = e.currentTarget;
 		thisTarget.classList.toggle("active");
 		global_menu_layer.classList.toggle("active");
+		if(!!gnb_twodepth_layer){
+			gnb_twodepth_layer.classList.remove("active");
+		}
 	});
 
 	if (!!gmenu_toggle) {
@@ -81,6 +88,32 @@ function gnbTotalMenu() {
 				const thisTarget = e.currentTarget;
 				thisTarget.closest(".gmenu_item").classList.toggle("active");
 			});
+		});
+	}
+
+	if(!!hgroup_nav_menu){
+		hgroup_nav_menu.forEach((item)=>{
+			item.addEventListener("mouseenter",(e)=>{
+				if(!!gnb_twodepth_layer){
+					gnb_twodepth_layer.classList.add("active");
+				}
+			});
+		});
+	}
+
+	if(!!hgroup_gnb_row){
+		hgroup_gnb_row.addEventListener("mouseleave",()=>{
+			if(!!gnb_twodepth_layer){
+				gnb_twodepth_layer.classList.remove("active");
+			}
+		});
+	}
+
+	if(!!hgroup_main_row){
+		hgroup_main_row.addEventListener("mouseleave",()=>{
+			if(!!gnb_twodepth_layer){
+				gnb_twodepth_layer.classList.remove("active");
+			}
 		});
 	}
 

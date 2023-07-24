@@ -148,7 +148,10 @@ input.mv_form_input::input-placeholder{color:#fff;}
 
     .btn_mv_stop, .btn_mv_play{width:20px;height:20px;}
 }
-
+@media (min-height:1160px){
+    .main_visual_wrap{height:auto !important;text-align: center;}
+    .mv_img_group .pc_img{display:block;position:static;transform: translate(0,0);}
+}
 
 /* search */
 .search_field_wrap{background:#fff;border-radius:100px;z-index:10;width:100%;border:1px solid #727272;display:flex;box-sizing: border-box;}
