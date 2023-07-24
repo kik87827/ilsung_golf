@@ -124,22 +124,32 @@ function layoutCommon(){
 	const bodyDom = document.querySelector("body");
 	const htmlDom = document.querySelector("html");
 
-	action();
+	minHeightFunc();
+	btnTop();
 
 	let windowWidth = window.innerWidth;
 	window.addEventListener("resize",()=>{
 		if(window.innerWidth !== windowWidth){
-			action();
+			minHeightFunc();
 		}
 		windowWidth = window.innerWidth;
 	});
 
-	function action(){
+	function minHeightFunc(){
 		if(!!middle_wrap){
 			header_wrap_height = !!header_wrap ? header_wrap.getBoundingClientRect().height : 0;
 			footer_wrap_height = !!footer_wrap ? footer_wrap.getBoundingClientRect().height : 0;
 			middle_wrap.style.minHeight = 'calc(100vh - '+(footer_wrap_height+header_wrap_height) +'px)';
 		}
+	}
+
+	function btnTop(){
+		let btn_gotop = document.querySelector(".btn_pagetop");
+		if(btn_gotop ===null){return;}
+		btn_gotop.addEventListener("click",(e)=>{
+			e.preventDefault();
+			window.scrollTo(0,0);
+		});
 	}
 }
 
