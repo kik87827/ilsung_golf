@@ -153,11 +153,16 @@ input.mv_form_input::input-placeholder{color:#fff;}
 /* search */
 .search_field_wrap{background:#fff;border-radius:100px;z-index:10;width:100%;border:1px solid #727272;display:flex;box-sizing: border-box;}
 .search_field_wrap.type2{border-radius:10px;}
+.search_field_wrap.type3{border-radius:0;border:0}
+.search_field_wrap.type3 .search_field_cols_wrap{gap:50px;}
+.search_field_wrap.type3 .search_field_cols{border:0;border-bottom:1px solid #5b5b5b;min-height: 0;}
+.search_field_wrap.type3 .search_field_target{padding:15px 10px}
 .search_field_cols_wrap{flex:1;min-width:0;display:flex;}
 .search_field_cols{flex:1;border-right:1px solid #e4e4e4;display:flex;min-height:98px;align-items:center;}
 .search_field_cols:last-child{border-right:0}
 .search_field_cols:first-child .search_field_target{padding-left:40px;}
-
+.btn_search_field_submit_row{margin-top:40px;text-align: center;}
+.btn_search_field_submit{display:inline-block;font-size:18px;font-weight:500;color:#fff;background:#1c1c1c;border-radius:100px;min-width:200px;box-sizing: border-box;padding:15px;text-align: center;}
 
 .search_field_form{flex:1;}
 .search_field_cols.define_btn{flex:0 0 97px;display:flex;align-items: center;justify-content: center;padding:0;border-left:1px solid #e4e4e4;}
@@ -241,6 +246,12 @@ input.mv_form_input::input-placeholder{color:#fff;}
 @media (max-width:1279px){
     .search_field_wrap{border-radius:10px;position:relative;overflow:hidden;}
     .search_field_wrap.type2{border-radius:10px;}
+
+    .search_field_wrap.type3{}
+    .search_field_wrap.type3 .search_field_cols_wrap{gap:20px;margin-bottom:0;}
+    .search_field_wrap.type3 .search_field_cols{box-sizing: border-box;padding:0;flex:0 0 calc(50% - 10px);}
+    .search_field_wrap.type3 .search_field_target{padding:15px 10px !important;}
+
     .search_field_cols_wrap{flex-wrap:wrap;margin-bottom:-1px;}
     .search_field_cols_wrap > .search_field_cols{flex:0 0 50%;width:50%;box-sizing: border-box;border-bottom:1px solid #e4e4e4;}
     .search_field_cols_wrap > .search_field_cols:nth-of-type(2n){border-right:0;}
@@ -255,6 +266,10 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .search_field_cols_wrap > .search_field_cols{width:auto;border-right:0 !important;padding:0 !important;}
     .search_field_cols_wrap > .search_field_cols:nth-of-type(2n){border-right:0;}
     .search_field_cols_wrap > .search_field_cols:first-of-type{padding:15px 30px;}
+
+    .btn_search_field_submit_row{margin-top:30px;}
+    .btn_search_field_submit{font-size:16px;min-width:150px;padding:12px;}
+
 
     .search_form_label,
     .search_form_text_place,
