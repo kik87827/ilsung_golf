@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <!-- header -->
+        <header class="header_wrap">
+            <div style="background:#ddd;color:#000;display:flex;align-items:center;justify-content:center;" id="testheader">
+                header
+            </div>
+            <style>
+                #testheader{height:100px;}
+                @media (max-width:1023px){
+                    #testheader{height:55px;}
+                }
+            </style>
+        </header>
+        <!-- // header -->
+        <!-- middle -->
+        <section class="middle_wrap">
+            <div class="middle_inner_wrap">
+                <div class="middle_guide_vitem_wrap">
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">갤러리 1</p>
+                        <!-- 갤러리 1 --> 
+                        <div class="get_render_title_group">
+                            <h3 class="get_render_title">여행팀 갤러리</h3>
+                            <p class="get_render_title_sub">소중하고 행복했던 여행에 대한 추억 이제 그 소중한 추억들을 후기로</p>
+                            <a href="#" class="btn_morebox">더보기</a>
+                        </div>
+                        <div class="card_swiper_group">
+                            <div style="display:flex;align-items: center;height:290px;justify-content: center;background:#ddd">
+                                <div class="swiper-container" id="">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <!-- <ul class="swiper_card_list">
+                                                <li>
+                                                    <div class="thumnail_card_item">
+                                                        <div class="thumnail_img_row">
+                                                            <img src="./images/temp_284x284.png" alt="">
+                                                        </div>
+                                                        <div class="thumnail_spec_row">
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-pagination default_skin"></div>
+                        <!-- // 갤러리 1 --> 
+                    </div>
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">갤러리 2</p>
+                        <!-- 갤러리 2 --> 
+                        <div class="get_render_title_group">
+                            <h3 class="get_render_title">여행팀 후기</h3>
+                            <p class="get_render_title_sub">소중하고 행복했던 여행에 대한 추억 이제 그 소중한 추억들을 후기로</p>
+                            <a href="#" class="btn_morebox">더보기</a>
+                        </div>
+                        <div class="card_swiper_group">
+                            <div style="display:flex;align-items: center;height:180px;justify-content: center;background:#ddd">
+                                <div class="swiper-container" id="">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <!-- <ul class="swiper_card_list">
+                                                <li>
+                                                    <div class="thumnail_card_item">
+                                                        <div class="thumnail_img_row">
+                                                            <img src="./images/temp_284x284.png" alt="">
+                                                        </div>
+                                                        <div class="thumnail_spec_row">
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 갤러리 2 --> 
+                    </div>
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">리스트 1</p>
+                        <!-- 리스트 1 --> 
+                        <div class="dataitem_list_wrap">
+                            <div class="dataitem_sort_row">
+                                <div class="dataitem_sort_main_cols">
+                                    <ul class="sortopt_item_list">
+                                        <li>
+                                            <select class="select_item"><option>추천순</option></select>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="sortopt_item">
+                                                <i class="sortopt_ico"></i>
+                                                <span class="sortopt_key">필터</span>
+                                                <span class="sortopt_count">4</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dataitem_sort_sub_cols">
+                                    <p class="sort_count_guide"><span class="sort_count_emp">10</span><span class="sort_count_text">개 상품</span></p>
+                                </div>
+                            </div>
+                            <div class="dataitem_render_row">
+                                <ul class="thumnail_spec_list">
+                                    <li>
+                                        <div class="thumnail_spec_item" style="height:250px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_spec_item" style="height:250px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- paging -->
+                            <div class="paging_wrap">
+                                <a href="#" class="btn_paging_control prev_first"><span class="hdtext">처음</span></a>
+                                <a href="#" class="btn_paging_control prev_go"><span class="hdtext">이전</span></a>
+                                <ul class="paging_num_list">
+                                    <li><a href="#" class="paging_num active">1</a></li>
+                                    <li><a href="#" class="paging_num">2</a></li>
+                                    <li><a href="#" class="paging_num">3</a></li>
+                                    <li><a href="#" class="paging_num">4</a></li>
+                                    <li><a href="#" class="paging_num">5</a></li>
+                                </ul>
+                                <a href="#" class="btn_paging_control next_go"><span class="hdtext">다음</span></a>
+                                <a href="#" class="btn_paging_control next_last"><span class="hdtext">끝</span></a>
+                            </div>
+                            <!-- // paging -->
+                        </div>
+                        <!-- // 리스트 1 --> 
+                    </div>
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">리스트 2</p>
+                        <!-- 리스트 2 --> 
+                        <div class="dataitem_list_wrap">
+                            <div class="dataitem_sort_row">
+                                <div class="dataitem_sort_main_cols">
+                                    <ul class="sortopt_item_list">
+                                        <li>
+                                            <select class="select_item"><option>추천순</option></select>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="sortopt_item">
+                                                <i class="sortopt_ico"></i>
+                                                <span class="sortopt_key">필터</span>
+                                                <span class="sortopt_count">4</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dataitem_sort_sub_cols">
+                                    <p class="sort_count_guide"><span class="sort_count_emp">10</span><span class="sort_count_text">개 상품</span></p>
+                                </div>
+                            </div>
+                            <div class="dataitem_render_row">
+                                <ul class="thumnail_gallery_list">
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- paging -->
+                            <div class="paging_wrap">
+                                <a href="#" class="btn_paging_control prev_first"><span class="hdtext">처음</span></a>
+                                <a href="#" class="btn_paging_control prev_go"><span class="hdtext">이전</span></a>
+                                <ul class="paging_num_list">
+                                    <li><a href="#" class="paging_num active">1</a></li>
+                                    <li><a href="#" class="paging_num">2</a></li>
+                                    <li><a href="#" class="paging_num">3</a></li>
+                                    <li><a href="#" class="paging_num">4</a></li>
+                                    <li><a href="#" class="paging_num">5</a></li>
+                                </ul>
+                                <a href="#" class="btn_paging_control next_go"><span class="hdtext">다음</span></a>
+                                <a href="#" class="btn_paging_control next_last"><span class="hdtext">끝</span></a>
+                            </div>
+                            <!-- // paging -->
+                        </div>
+                        <!-- // 리스트 2 --> 
+                    </div>
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">리스트 3</p>
+                        <!-- 리스트 3 --> 
+                        <div class="dataitem_list_wrap">
+                            <div class="dataitem_sort_row">
+                                <div class="dataitem_sort_main_cols">
+                                    <ul class="sortopt_item_list">
+                                        <li>
+                                            <select class="select_item"><option>추천순</option></select>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="sortopt_item">
+                                                <i class="sortopt_ico"></i>
+                                                <span class="sortopt_key">필터</span>
+                                                <span class="sortopt_count">4</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dataitem_sort_sub_cols">
+                                    <p class="sort_count_guide"><span class="sort_count_emp">10</span><span class="sort_count_text">개 상품</span></p>
+                                </div>
+                            </div>
+                            <div class="dataitem_render_row">
+                                <ul class="thumnail_gallery_list cols_3">
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumnail_gallery_item" style="height:530px;background:#ddd;">
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- paging -->
+                            <div class="paging_wrap">
+                                <a href="#" class="btn_paging_control prev_first"><span class="hdtext">처음</span></a>
+                                <a href="#" class="btn_paging_control prev_go"><span class="hdtext">이전</span></a>
+                                <ul class="paging_num_list">
+                                    <li><a href="#" class="paging_num active">1</a></li>
+                                    <li><a href="#" class="paging_num">2</a></li>
+                                    <li><a href="#" class="paging_num">3</a></li>
+                                    <li><a href="#" class="paging_num">4</a></li>
+                                    <li><a href="#" class="paging_num">5</a></li>
+                                </ul>
+                                <a href="#" class="btn_paging_control next_go"><span class="hdtext">다음</span></a>
+                                <a href="#" class="btn_paging_control next_last"><span class="hdtext">끝</span></a>
+                            </div>
+                            <!-- // paging -->
+                        </div>
+                        <!-- // 리스트 3 --> 
+                    </div>
+                    <div class="middle_guide_vitem">
+                        <p class="middle_guide_kind">고객센터 안내</p>
+                        <!-- 고객센터 안내 --> 
+                        <div class="cardguide_box_group">
+                            <div class="cardguide_box_item" style="height:140px;background:#ddd;">
+
+                            </div>
+                            <div class="cardguide_box_item" style="height:140px;background:#ddd;">
+
+                            </div>
+                        </div>
+                        <!-- // 고객센터 안내 --> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // middle -->
+    </div>
+</body>
+
+</html>
