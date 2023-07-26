@@ -14,8 +14,8 @@ a {text-decoration:none; color:#333}
 a:hover, a:visited {text-decoration:none;}
 button{border:0;background:none;cursor:pointer;padding:0;font-family: 'Noto Sans KR';}
 button span{position:relative;font-family: 'Noto Sans KR';}
-select{font-family: 'Noto Sans KR';}
-select:focus{outline: 1px dotted #767676;}
+select{font-family: 'Noto Sans KR';outline:0;}
+/* select:focus{outline: 1px dotted #767676;} */
 strong{font-weight:normal;font-weight:500;}
 img {border:0 none; max-width:100%;}
 form input, form select, form label, form img {vertical-align: middle;}
@@ -32,10 +32,10 @@ input[type="password"]{border-radius:0;font-family: 'Noto Sans KR';color:#5d5d5d
 fieldset legend ,
 table caption {display:inline-block;width:0;height:0;overflow:hidden;line-height:0;color:transparent;position:absolute;top:0;left:-99999px;}
 textarea{font-family: 'Noto Sans KR';color:#000;border:1px solid #c8c8c8;-webkit-appearance: none;-moz-appearance: none;-webkit-border-radius: 0;}
-
+/* 
 input:focus + label{
     outline: 1px dotted #767676;
-}
+} */
 ::-webkit-input-placeholder{color:#a0a0a0;font-family: 'Noto Sans KR';}
 ::-moz-input-placeholder{color:#a0a0a0;font-family: 'Noto Sans KR';}
 :-ms-input-placeholder{color:#a0a0a0 !important;font-family: 'Noto Sans KR';}
