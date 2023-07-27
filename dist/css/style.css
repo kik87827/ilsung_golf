@@ -568,3 +568,25 @@ select.select_item:disabled{background-color:#f7f7f7;color:#999999;opacity:1;}
 
 }
 /* // data render */
+
+
+/* card */
+.thumnail_card_item{}
+.thumnail_card_item .thum_rows{}
+.thumnail_card_item .thum_rows > img{}
+.thumnail_card_item .thum_rows:hover{}
+.thumnail_card_item .thum_rows:hover > img{}
+.thumnail_card_item .spec_rows{}
+.box_label_group{}
+.box_label{}
+.keyword_item_wrap{}
+.keyword_item{}
+.keyword_item:last-of-type{}
+.title_item_wrap{}
+.title_main_item{}
+.title_sub_item{}
+.price_item_wrap{}
+.price_item_group{}
+.price_main_text{}
+.price_unit_text{}
+/* // card */
