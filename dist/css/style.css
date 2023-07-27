@@ -212,7 +212,8 @@ input.mv_form_input::input-placeholder{color:#fff;}
     -webkit-box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
 }
-.poslayer_z.wtype2{width:350px;}
+.poslayer_z.has_leftpos{width:600px;left:0;transform: translateX(0);}
+.poslayer_z.has_leftpos.wtype2{width:1160px;}
 .poslayer_w{}
 .poslayer_z.active{display:block;}
 .poslayer_titlow{font-family: 'Noto Sans KR';text-align:center;}
@@ -260,6 +261,9 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .search_field_cols_wrap > .search_field_cols:nth-of-type(2n){border-right:0;}
     .search_field_cols_wrap > .search_field_cols:first-of-type .search_field_target{padding:15px 15px 15px 30px;}
     .poslayer_z{left:20px !important;width:calc(100% - 40px) !important;transform: translateX(0);}
+    .poslayer_tit{font-size:16px;padding:20px 30px;}
+    .btn_psubmit_w{padding:15px;}
+    .btn_psubmit{font-size:14px;}
 }
 
 @media (max-width:1023px){

@@ -456,6 +456,7 @@ function posLayerResize(){
 
 function posLayerPos(target,btn){
 	var $target = $(target);
+	var $posTopMargin = $target.attr("data-topmargin")>0 ? Number($target.attr("data-topmargin")) : 20;
 	var $target_tvitdep = $target.find(".tvitdep_vlist_wrap");
 	var $target_tvitdep_pos = $target_tvitdep.length ? $target_tvitdep.offset().left : 0;
 	var $target_tvitdep_wid = $target_tvitdep.length ? $target_tvitdep.outerWidth() : 0;
@@ -467,6 +468,9 @@ function posLayerPos(target,btn){
 	var $btnPosLeft = $btn.length ? $btn.offset().left : 0;
 	var $btnWid = $btn.length ? $btn.outerWidth() : 0;
 	var elseMargin = 0;
+
+	console.log($posTopMargin);
+	
 	$target.css({"top":"", "left" : "" , "right" : "" , "width" : ""});
 	// if ($targetWid + $btnPosLeft > $(window).width()){
 	// 	$target.css({
@@ -481,12 +485,26 @@ function posLayerPos(target,btn){
 	// 	});
 	// }
 	$target.css({
-		"top": $btnPosTop + $btnPosHeight + 20
+		"top": $btnPosTop + $btnPosHeight + $posTopMargin
 	});
+
+	if($target.hasClass("has_leftpos")){
+		if ($targetWid + $btnPosLeft > $(window).width()){
+			$target.css({
+				"top": $btnPosTop + $btnPosHeight + $posTopMargin,
+				"left": "auto",
+				"right" : 20
+			});
+		}else{
+			$target.css({
+				"left": $btnPosLeft
+			});
+		}
+	}
 
 	if($(window).width()<1279){
 		$target.css({
-			"top": $btnPosTop + $btnPosHeight
+			"top": $btnPosTop + $btnPosHeight + $posTopMargin
 		});
 	}
 	
@@ -494,6 +512,7 @@ function posLayerPos(target,btn){
 
 function posLayerResizeAction(target){
 	var $target = $(target);
+	var $posTopMargin = $target.attr("data-topmargin")>0 ? Number($target.attr("data-topmargin")) : 20;
 	var $target_tvitdep = $target.find(".tvitdep_vlist_wrap");
 	var $target_tvitdep_pos = $target_tvitdep.length ? $target_tvitdep.offset().left : 0;
 	var $target_tvitdep_wid = $target_tvitdep.length ? $target_tvitdep.outerWidth() : 0;
@@ -518,11 +537,26 @@ function posLayerResizeAction(target){
 	// 	});
 	// }
 	$target.css({
-		"top": $btnPosTop + $btnPosHeight + 20
+		"top": $btnPosTop + $btnPosHeight + $posTopMargin
 	});
+
+	if($target.hasClass("has_leftpos")){
+		if ($targetWid + $btnPosLeft > $(window).width()){
+			$target.css({
+				"top": $btnPosTop + $btnPosHeight + $posTopMargin,
+				"left": "auto",
+				"right" : 20
+			});
+		}else{
+			$target.css({
+				"left": $btnPosLeft
+			});
+		}
+	}
+	
 	if($(window).width()<1279){
 		$target.css({
-			"top": $btnPosTop + $btnPosHeight
+			"top": $btnPosTop + $btnPosHeight + $posTopMargin
 		});
 	}
 }

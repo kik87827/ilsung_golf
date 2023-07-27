@@ -18,7 +18,7 @@
                         </p>
                         <ul class="mv_vboth_form_tb">
                             <li>
-                                <a href="#" class="mv_vboth_wbox">
+                                <a href="#" class="mv_vboth_wbox" data-poslayer="#layer_box_local">
                                     <span class="mv_vboth_wbox_text">여행지역 선택</span>
                                 </a>
                             </li>
@@ -28,12 +28,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="mv_vboth_wbox ico_while">
+                                <a href="#" class="mv_vboth_wbox ico_while" data-poslayer="#layer_box_while">
                                     <span class="mv_vboth_wbox_text">여행기간 선택</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="mv_vboth_wbox ico_map">
+                                <a href="#" class="mv_vboth_wbox ico_map" data-poslayer="#layer_box_start">
                                     <span class="mv_vboth_wbox_text">출발지 선택</span>
                                 </a>
                             </li>
@@ -102,6 +102,59 @@
             <a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a>
         </div>
         <!-- // main visual -->
+        <div style="height:1000px">
+            
+        </div>
+        <!-- layer -->
+        <div class="poslayer_z has_leftpos wtype2" id="layer_box_local" data-topmargin="10">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">지역선택</p>
+			</div>
+			<div class="poslayer_contlow type2">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+                        내용이 들어갑니다.
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+        <div class="poslayer_z has_leftpos" id="layer_box_while" data-topmargin="10">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">여행기간</p>
+			</div>
+			<div class="poslayer_contlow type2">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+                        내용이 들어갑니다.
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+        <div class="poslayer_z has_leftpos" id="layer_box_start" data-topmargin="10">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">출발지</p>
+			</div>
+			<div class="poslayer_contlow type2">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+                        내용이 들어갑니다.
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+        <!-- // layer -->
     </div>
     <script>
         window.addEventListener("load",()=>{
