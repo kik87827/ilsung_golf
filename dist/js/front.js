@@ -457,6 +457,7 @@ function posLayerResize(){
 function posLayerPos(target,btn){
 	var $target = $(target);
 	var $posTopMargin = $target.attr("data-topmargin")>0 ? Number($target.attr("data-topmargin")) : 20;
+	var $posTopMobileMargin = $target.attr("data-topMobileMargin")>0 ? Number($target.attr("data-topMobileMargin")) : 0;
 	var $target_tvitdep = $target.find(".tvitdep_vlist_wrap");
 	var $target_tvitdep_pos = $target_tvitdep.length ? $target_tvitdep.offset().left : 0;
 	var $target_tvitdep_wid = $target_tvitdep.length ? $target_tvitdep.outerWidth() : 0;
@@ -469,7 +470,6 @@ function posLayerPos(target,btn){
 	var $btnWid = $btn.length ? $btn.outerWidth() : 0;
 	var elseMargin = 0;
 
-	console.log($posTopMargin);
 	
 	$target.css({"top":"", "left" : "" , "right" : "" , "width" : ""});
 	// if ($targetWid + $btnPosLeft > $(window).width()){
@@ -484,6 +484,11 @@ function posLayerPos(target,btn){
 	// 		"left": $btnPosLeft
 	// 	});
 	// }
+
+	if($(window).width()<1024){
+		$posTopMargin = $posTopMobileMargin; 
+	}
+
 	$target.css({
 		"top": $btnPosTop + $btnPosHeight + $posTopMargin
 	});
@@ -512,6 +517,7 @@ function posLayerPos(target,btn){
 
 function posLayerResizeAction(target){
 	var $target = $(target);
+	var $posTopMobileMargin = $target.attr("data-topMobileMargin")>0 ? Number($target.attr("data-topMobileMargin")) : 0;
 	var $posTopMargin = $target.attr("data-topmargin")>0 ? Number($target.attr("data-topmargin")) : 20;
 	var $target_tvitdep = $target.find(".tvitdep_vlist_wrap");
 	var $target_tvitdep_pos = $target_tvitdep.length ? $target_tvitdep.offset().left : 0;
@@ -536,6 +542,11 @@ function posLayerResizeAction(target){
 	// 		"left": $btnPosLeft
 	// 	});
 	// }
+
+	if($(window).width()<1024){
+		$posTopMargin = $posTopMobileMargin; 
+	}
+
 	$target.css({
 		"top": $btnPosTop + $btnPosHeight + $posTopMargin
 	});

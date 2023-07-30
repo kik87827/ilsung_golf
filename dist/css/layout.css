@@ -283,7 +283,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
 
 .middle_wrap{position:relative;overflow-x:hidden;}
 /* .middle_inner_wrap{max-width:1200px;padding:0 20px;margin:0 auto;} */
-
+.middle_inner_wrap.type2{max-width:1200px;padding:0 30px;margin:0 auto;}
 
 .footer_wrap{}
 .footer_else_low{border-top:1px solid #e3e3e3;}
@@ -390,6 +390,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
     .footer_copyitem{display:inline-block;font-size:11px;line-height:1.4;color:#4e4e4e;opacity:1;}
     .footer_copyright{margin-top:21px;font-size:11px;color:#4e4e4e;opacity:1;margin:0 20px 0;}
 
+    .middle_inner_wrap.type2{padding:0 20px;}
         
     .middle_guide_vitem_wrap{padding:70px 0 120px;}
     .middle_guide_vitem{margin-bottom:130px;}

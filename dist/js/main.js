@@ -1052,6 +1052,10 @@ function mainBannerTapeFunc(){
 			slideObj = new Swiper(swiperParentText, {
 				speed : 1000, 
 				loop : true,
+				autoplay: {
+					delay: 3500,
+					disableOnInteraction: false
+				},
 				pagination: {  
 					el: ".tape-banner .swiper-pagination",
 					clickable: true
@@ -1112,6 +1116,10 @@ function mainCardCircleSwiper(){
 			freeMode: false,
 			slidesPerGroupAuto : false,
 			loop : true,
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false
+			},
 			navigation : {
 				nextEl : '#card_circle_swiper01 .next_navi', 
 				prevEl : '#card_circle_swiper01 .prev_navi', 
@@ -1126,6 +1134,10 @@ function mainCardCircleSwiper(){
 			slidesPerGroupAuto : true,
 			freeMode: true,
 			loop : false,
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false
+			},
 			pagination: {  
 				el: swiperParentText+" .swiper-pagination",
 				clickable: true

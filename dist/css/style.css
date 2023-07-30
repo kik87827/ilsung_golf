@@ -162,6 +162,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
 .search_field_wrap{background:#fff;border-radius:100px;z-index:10;width:100%;border:1px solid #727272;display:flex;box-sizing: border-box;}
 .search_field_wrap.type2{border-radius:10px;}
 .search_field_wrap.type3{border-radius:0;border:0}
+.search_field_wrap.type3 .search_field_cols:first-child .search_field_target{padding-left:10px;}
 .search_field_wrap.type3 .search_field_cols_wrap{gap:50px;}
 .search_field_wrap.type3 .search_field_cols{border:0;border-bottom:1px solid #5b5b5b;min-height: 0;}
 .search_field_wrap.type3 .search_field_target{padding:15px 10px}
