@@ -87,35 +87,10 @@
             
         </div>
         <!-- layer -->
-        <div class="poslayer_z" id="layer_box_local">
-			<div class="poslayer_titlow">
-				<p class="poslayer_tit">지역선택</p>
-			</div>
-			<div class="poslayer_contlow type2">
-				<div class="pcont_w">
-					<div class="pclayer_scr_w">
-                        내용이 들어갑니다.
-					</div>
-				</div>
-				<div class="btn_psubmit_w">
-					<a href="#" class="btn_psubmit">적용</a>
-				</div>
-			</div>
-			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
-		</div>
-        <div class="poslayer_z has_leftpos" id="layer_box_search">
-			<div class="poslayer_titlow">
-				<p class="poslayer_tit">검색어입력</p>
-			</div>
-			<div class="poslayer_contlow type2">
-				<div class="pcont_w">
-					<div class="pclayer_scr_w">
-                        내용이 들어갑니다.
-					</div>
-				</div>
-			</div>
-			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
-		</div>
+        @@include('./include/layer_local.html')
+        @@include('./include/layer_while.html')
+        @@include('./include/layer_start.html')
+        @@include('./include/layer_search.html')
         <!-- // layer -->
     </div>
     <script>
