@@ -41,7 +41,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#" class="mv_vboth_wbox ico_calendar">
+								<a href="#" class="mv_vboth_wbox ico_calendar" id="layer_calendar_startdate">
 									<span class="mv_vboth_wbox_text">여행시작일 선택</span>
 								</a>
 							</li>
@@ -377,6 +377,25 @@
 		window.addEventListener("load", () => {
 			mainVisualTyped();
 		})
+
+		$(function() {
+			$("#layer_calendar_startdate").daterangepicker({
+				//singleDatePicker: true,
+				addDesign: "pos2",
+				autoUpdateInput: false,
+				elseMent: "출발일 선택",
+				locale: {
+					format: 'YYYY-MM-DD',
+					"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+					"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+					applyLabel: "적용"
+				}
+			});
+			$("#layer_calendar_startdate").on('apply.daterangepicker', function(ev, picker) {
+				$(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+				$("#layer_calendar_startdate .mv_vboth_wbox_text").text(picker.startDate.format('YYYY-MM-DD'))
+			});
+		});
 	</script>
 </body>
 

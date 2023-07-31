@@ -87,7 +87,7 @@
 						</a>
 					</div>
 					<div class="mv_form_cols">
-						<a href="javascript:;" class="mv_form_item has_allow">
+						<a href="javascript:;" class="mv_form_item has_allow" id="layer_calendar_startdate">
 							<span class="mv_form_text">언제 떠나세요?</span>
 						</a>
 					</div>
@@ -373,6 +373,25 @@
 		window.addEventListener("load", () => {
 			mainVisual();
 		})
+
+		$(function() {
+			$("#layer_calendar_startdate").daterangepicker({
+				//singleDatePicker: true,
+				addDesign: "pos2",
+				autoUpdateInput: false,
+				elseMent: "출발일 선택",
+				locale: {
+					format: 'YYYY-MM-DD',
+					"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+					"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+					applyLabel: "적용"
+				}
+			});
+			$("#layer_calendar_startdate").on('apply.daterangepicker', function(ev, picker) {
+				$(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+				$("#layer_calendar_startdate .mv_form_text").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+			});
+		});
 	</script>
 </body>
 

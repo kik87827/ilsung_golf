@@ -62,7 +62,7 @@
 										</a>
 									</div>
 									<div class="search_field_cols">
-										<a href="#" class="search_field_target define_start">
+										<div class="search_field_target define_start">
 											<div class="search_field_form">
 												<div class="search_form_label">출발일</div>
 												<div class="search_form_text_g">
@@ -70,7 +70,8 @@
 													<div class="search_form_text_result"></div>
 												</div>
 											</div>
-										</a>
+											<input type="text" class="search_field_input_hidden" id="layer_calendar_startdate">
+										</div>
 									</div>
 									<div class="search_field_cols">
 										<a href="#" class="search_field_target define_while" data-poslayer="#layer_box_while">
@@ -360,7 +361,48 @@
 			</div>
 			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
 		</div>
+		<div class="poslayer_z has_leftpos" id="layer_box_startdate" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">출발일</p>
+			</div>
+			<div class="poslayer_contlow">
+				<div class="pcont_w">
+					<input type="text" class="formtarget_input daterange_inline_call" id="goback_inlinecall">
+					<div class="daterange_inline_wrap" id="datarange_wrap"></div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+
+
+
+
+
 		<!-- // layer -->
+
+		<script>
+			$(function() {
+				$("#layer_calendar_startdate").daterangepicker({
+					//singleDatePicker: true,
+					autoUpdateInput: false,
+					elseMent: "출발일 선택",
+					locale: {
+						format: 'YYYY-MM-DD',
+						"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+						"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+						applyLabel: "적용"
+					}
+				});
+				$("#layer_calendar_startdate").on('apply.daterangepicker', function(ev, picker) {
+					$(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+					$(".search_field_target.define_start").addClass("result_mode");
+					$(".search_field_target.define_start .search_form_text_result").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+				});
+			});
+		</script>
 	</div>
 </body>
 

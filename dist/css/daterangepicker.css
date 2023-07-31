@@ -7,14 +7,21 @@
   width: 278px;
   max-width: none;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 20px;
   top: 100px;
   left: 20px;
   z-index: 3001;
   display: none;
   font-size: 15px;
   line-height: 1em;
+
+  box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
+    min-width:240px;
 }
+.daterangepicker.pos2{margin-top:10px;}
+
 
 .daterangepicker:before, .daterangepicker:after {
   position: absolute;
@@ -116,11 +123,11 @@
 }
 
 .daterangepicker .drp-calendar.left {
-  padding: 15px 20px 15px 15px;
+  padding: 15px 20px 15px 20px;
 }
 
 .daterangepicker .drp-calendar.right {
-  padding: 15px 15px 15px 20px;
+  padding: 15px 20px 15px 20px;
 }
 
 .daterangepicker .drp-calendar.single .calendar-table {
@@ -174,9 +181,10 @@
 
 .daterangepicker .calendar-table table {
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   border-spacing: 0;
   border-collapse: inherit;
+  max-width:300px; 
 }
 .indate{border-radius:100%;}
 .daterangepicker td.available:hover, .daterangepicker th.available:hover {
@@ -278,7 +286,7 @@
   clear: both;
   text-align: center;
   padding: 18px;
-  margin:0 15px;
+  margin:0 20px;
   border-top: 1px solid #ddd;
   display: none;
   vertical-align: middle;
@@ -290,17 +298,8 @@
   padding-right: 8px;
 }
 
-.daterangepicker .drp-buttons .btn {
-  font-size: 18px;
-  font-weight: 700;
-  padding: 9px 10px;
-  font-weight:500;
-  color:#d13249;
-  min-width:120px;
-  text-align:center;
-  border:1px solid #d13249;
-  border-radius:100px;
-}
+.daterangepicker .drp-buttons .btn{display:inline-block;color:#000000;font-size:16px;font-weight:500;line-height:1;border:1px solid #7e7e7e;border-radius:100px;padding:10px 10px 11px;min-width:110px;box-sizing: border-box;}
+
 
 .daterangepicker.show-ranges.single.rtl .drp-calendar.left {
   border-right: 1px solid #ddd;
@@ -351,7 +350,8 @@
 }
 
 .daterange-ment-low{text-align:center;}
-.daterange-ment{font-size:18px;color:#1b1b1b;padding:30px 0;border-bottom:1px solid #e7e7e7;margin:0 15px;}
+.daterange-ment{font-size:18px;line-height:1.5;color:#1b1b1b;padding:26px 30px;border-bottom:1px solid #e7e7e7;margin:0 15px;font-family: 'Noto Sans KR';font-weight:500;margin:0 20px;}
+
 
 /*  Larger Screen Styling */
 @media (min-width: 564px) {
@@ -430,6 +430,7 @@
 }
 @media (max-width:1200px){
   .daterangepicker .drp-calendar{box-sizing: border-box; width:100%;}
+  .daterangepicker.pos2{width:calc(100% - 60px) !important;left:30px !important;}
 }
 
 @media (max-width:1023px){
@@ -438,9 +439,9 @@
   .daterangepicker.show-calendar .ranges{margin:0}
   .daterangepicker .drp-buttons .btn{font-size:14px;}
   .daterangepicker .calendar-table th, .daterangepicker .calendar-table td{font-size:14px;}
-  .daterangepicker{margin-top:8px;width:calc(100% - 40px) !important;left:20px !important;box-sizing:border-box;}
-  .daterange-ment{font-size:14px;padding:15px;}
-  .daterangepicker.pos2{width:calc(100% - 72px) !important;left:36px !important;}
+  .daterangepicker{margin-top:-1px;width:calc(100% - 40px) !important;left:20px !important;box-sizing:border-box;}
+  .daterange-ment{font-size:16px;padding:20px 30px;}
+  .daterangepicker.pos2{width:calc(100% - 40px) !important;left:20px !important;}
   .daterange_inline_wrap .daterangepicker{width:100% !important;left:0 !important;}
   .daterange_inline_wrap .daterangepicker .drp-calendar{padding:10px 0 0 0 !important}
 }

@@ -22,7 +22,6 @@ a:hover {text-decoration:underline;}
 .ing {color:blue;}
 .bgo{text-align:left;}
 .end {background:green;color:#fff;}
-.part_end {background:#89c864;color:#fff;}
 .end.else {background: #ff5400;color: #fff;}
 .defer{color:red;}
 .modify{color:#ff5400;}
@@ -116,10 +115,8 @@ a:hover {text-decoration:underline;}
 					<td class="no"></td>
 					<td class="link"><a href="main_visual_a.html" target="_blank">메인비쥬얼 - Type A</a></td>
 					<td class="td_url"></td>
-					<td class="work part_end"></td>
-					<td class="bgo">
-						<p>20230723 - 팝업,달력 작업중</p>
-					</td>
+					<td class="work end"></td>
+					<td class="bgo"></td>
 				</tr>
 				<tr>
 					<td class="no"></td>
@@ -139,37 +136,29 @@ a:hover {text-decoration:underline;}
 					<td class="no"></td>
 					<td class="link"><a href="main_visual_d.html" target="_blank">메인비쥬얼 - Type D</a></td>
 					<td class="td_url"></td>
-					<td class="work part_end"></td>
-					<td class="bgo">
-						<p>20230723 - 팝업,달력 작업중</p>
-					</td>
+					<td class="work end"></td>
+					<td class="bgo"></td>
 				</tr>
 				<tr>
 					<td class="no"></td>
 					<td class="link"><a href="search_a.html" target="_blank">Search - Type A</a></td>
 					<td class="td_url"></td>
-					<td class="work part_end"></td>
-					<td class="bgo">
-						<p>20230724 - 팝업,달력 작업중</p>
-					</td>
+					<td class="work end"></td>
+					<td class="bgo"></td>
 				</tr>
 				<tr>
 					<td class="no"></td>
 					<td class="link"><a href="search_b.html" target="_blank">Search - Type B</a></td>
 					<td class="td_url"></td>
-					<td class="work part_end"></td>
-					<td class="bgo">
-						<p>20230724 - 팝업,달력 작업중</p>
-					</td>
+					<td class="work end"></td>
+					<td class="bgo"></td>
 				</tr>
 				<tr>
 					<td class="no"></td>
 					<td class="link"><a href="search_c.html" target="_blank">Search - Type C</a></td>
 					<td class="td_url"></td>
-					<td class="work part_end"></td>
-					<td class="bgo">
-						<p>20230724 - 팝업,달력 작업중</p>
-					</td>
+					<td class="work end"></td>
+					<td class="bgo"></td>
 				</tr>
 				<tr>
 					<td class="no"></td>
@@ -253,7 +242,7 @@ a:hover {text-decoration:underline;}
 $(function () {
 	chkList();
 	$(document).on("click","tr a",function(e){
-		if($(this).parents("tr").find(".ing,.end,.part_end").length){
+		if($(this).parents("tr").find(".ing,.end,.end").length){
 			return;
 		}
 		e.preventDefault();
@@ -295,7 +284,7 @@ function chkList(){
 				$td.text("대기중").addClass('stand_by');
 			}
 
-			if ($td.hasClass("part_end")) {
+			if ($td.hasClass("end")) {
 				$td.text("일부완료").addClass('end2');
 			}
 		}
