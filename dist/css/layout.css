@@ -10,7 +10,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .front_body{}
 .page_wrap{min-width:280px;}
 
-.header_wrap{position:relative;z-index:40;}
+.header_wrap{position:relative;z-index:100;}
 .hgroup_inner{display:flex;max-width:1200px;margin:0 auto;position:relative;padding:0 30px;}
 .header_pc_group{border-bottom:1px solid #b7b7b7;}
 .header_pc_group .hgroup_inner{}

@@ -206,6 +206,8 @@ input.mv_form_input::input-placeholder{color:#fff;}
 
 .search_field_input_hidden{opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;cursor: pointer;}
 
+.touchmode .search_field_input_hidden{cursor:none;}
+
 .layerclose{display:block;width:45px;height:45px;position:absolute;top:0;right:0;font-size:0;line-height:0;}
 .layerclose:before,
 .layerclose:after{width:18px;height:2px;display:block;content:'';position:absolute;top:50%;left:50%;background:#646464;margin:-1px 0 0 -9px;
@@ -949,7 +951,7 @@ select.select_item:disabled{background-color:#f7f7f7;color:#999999;opacity:1;}
     .banner_textbox_bg{height:200px;}
 
     .thumnail_card_item.dtype2{}
-    .thumnail_card_item.dtype2 .thum_rows{height:160px;}
+    .thumnail_card_item.dtype2 .thum_rows{height:160px;flex-basis: 160px;}
     .thumnail_card_item.dtype2 .spec_rows{padding:10px 15px;}
     .title_name_item{font-size:14px;}
 

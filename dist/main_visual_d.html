@@ -393,7 +393,7 @@
 			});
 			$("#layer_calendar_startdate").on('apply.daterangepicker', function(ev, picker) {
 				$(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
-				$("#layer_calendar_startdate .mv_vboth_wbox_text").text(picker.startDate.format('YYYY-MM-DD'))
+				$("#layer_calendar_startdate .mv_vboth_wbox_text").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
 			});
 		});
 	</script>
