@@ -77,7 +77,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
 .mvbox_link{display:block;}
 .mvbox_link > img{width:100%;}
 
-.mv_vboth_zone .mv_bottom_control_zone{text-align: left;top:14.063vw;}
+.mv_vboth_zone .mv_bottom_control_zone{text-align: right;top:auto;bottom:20px;}
 .mv_vboth_zone .mv_bottom_control_wrap{padding:0 45px;}
 
 .mv_img_group{}
@@ -174,7 +174,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .mv_vboth_form{flex:0 0 290px;width:290px;}
     .mv_vboth_form{margin-right:30px;}
     .mv_vboth_slider{flex:1;width:auto; min-width:0;}
-    .mv_vboth_zone .mv_bottom_control_zone{top:200px;}
+    .mv_vboth_zone .mv_bottom_control_zone{}
 
     .mv_copy_main{font-size:30px;}
     .mv_copy_sub{font-size:20px;}
