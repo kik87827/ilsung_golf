@@ -237,12 +237,13 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .main_visual_wrap.typeb,
     .main_visual_wrap.typec{height:600px;}
     .main_visual_wrap.typec .mv_item_group,
+    .mv_vboth_slider .swiper-container.mvbox_swiper .mv_item_group,
     .main_visual_wrap.typeb .mv_item_group{align-items: center;}
 
     .main_visual_wrap.typeb .swiper-container.main_visual_swiper:before{top:0;height:100%;}
 
     .swiper-container.mvbox_swiper{height:500px;}
-    .swiper-container.mvbox_swiper .mv_copy_wrap{padding:30px;}
+    .swiper-container.mvbox_swiper .mv_copy_wrap{}
 
 }
 @media (min-height:1160px){
