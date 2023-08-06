@@ -76,6 +76,7 @@ function headerPcMenu() {
 		const thisTarget = e.currentTarget;
 		thisTarget.classList.toggle("active");
 		global_menu_layer.classList.toggle("active");
+		textHeightResize2(global_menu_layer.querySelectorAll(".gmenu_one"));
 		if(!!gnb_twodepth_layer){
 			gnb_twodepth_layer.classList.remove("active");
 		}
@@ -87,6 +88,7 @@ function headerPcMenu() {
 				e.preventDefault();
 				const thisTarget = e.currentTarget;
 				thisTarget.closest(".gmenu_item").classList.toggle("active");
+				textHeightResize2(thisTarget.closest(".gmenu_item").querySelectorAll(".gmenu_one"));
 			});
 		});
 	}
@@ -96,6 +98,7 @@ function headerPcMenu() {
 			item.addEventListener("mouseenter",(e)=>{
 				if(!!gnb_twodepth_layer){
 					gnb_twodepth_layer.classList.add("active");
+					textHeightResize(".gnb_twodepth_layer .gmenu_one");
 				}
 			});
 		});
@@ -407,7 +410,7 @@ function posLayerEvent(){
 		let thisParent = $(this).parents(".poslayer_z");
 		let targetCols = $(`[data-poslayer='#${thisParent.attr("id")}']`);
 		let activeDate = thisParent.attr("data-date");
-		let activeText = thisParent.find(".product_choice_depth.active,.choice_item.active").text();
+		let activeText = thisParent.find(".product_choice_depth.active,.choice_item.active,.product_choice_one.active").text();
 
 		
 
@@ -429,9 +432,9 @@ function posLayerEvent(){
 		$(this).addClass("active");
 	});
 
-	$(document).on("click",".product_choice_depth",function(e){
+	$(document).on("click",".product_choice_depth,.product_choice_one",function(e){
 		e.preventDefault();
-		$(this).parents(".product_choice_item_wrap").find(".product_choice_depth").removeClass("active");
+		$(this).parents(".pcont_w").find(".product_choice_depth,.product_choice_one").removeClass("active");
 		$(this).addClass("active");
 	});
 
@@ -520,6 +523,10 @@ function posLayerPos(target,btn){
 		});
 	}
 	
+
+	if($target.find(".product_choice_one").length){
+		textHeightResize(".product_choice_one");
+	}
 }
 
 function posLayerResizeAction(target){
@@ -577,6 +584,10 @@ function posLayerResizeAction(target){
 			"top": $btnPosTop + $btnPosHeight + $posTopMargin
 		});
 	}
+
+	if($target.find(".product_choice_one").length){
+		textHeightResize(".product_choice_one");
+	}
 }
 
 function posLayerHide(target){
@@ -584,6 +595,48 @@ function posLayerHide(target){
 	target.removeClass("active");
 }
 
+
+function textHeightResize(target){
+	const targetDom = $(target) || target;
+
+	action();
+
+	window.addEventListener("resize",()=>{
+		action();
+	})
+
+	function action(){
+		targetDom.css({"height" : ""});
+		let arrayHeight = [];
+		targetDom.each(function(){
+			arrayHeight.push($(this).height());
+		});
+		targetDom.css({"height" : Math.max.apply(null,arrayHeight)});
+	}
+}
+
+function textHeightResize2(target){
+	const targetDom = target;
+
+	action();
+
+	window.addEventListener("resize",()=>{
+		action();
+	})
+
+	function action(){
+		targetDom.forEach((item) => {
+			item.removeAttribute("style");
+		})
+		let arrayHeight = [];
+		targetDom.forEach((item) => {
+			arrayHeight.push(item.getBoundingClientRect().height);
+		})
+		targetDom.forEach((item) => {
+			item.style.height = Math.max.apply(null,arrayHeight)+"px";
+		})
+	}
+}
 
 function productTabCont(){
 	const product_tabmenu = document.querySelectorAll(".product_tabmenu");

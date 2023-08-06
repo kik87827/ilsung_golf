@@ -801,10 +801,6 @@ function mainBannerType01(){
 			freeMode: false,
 			slidesPerGroupAuto : false,
 			loop : true,
-			pagination: {  
-				el: swiperParentText+" .swiper-pagination",
-				clickable: true
-			},
 			navigation : {
 				nextEl : '.banner-type01 .next_navi', 
 				prevEl : '.banner-type01 .prev_navi', 
@@ -821,6 +817,10 @@ function mainBannerType01(){
 			navigation : {
 				nextEl : '.banner-type01 .next_navi', 
 				prevEl : '.banner-type01 .prev_navi', 
+			},
+			pagination: {  
+				el: swiperParentText+" .swiper-pagination",
+				clickable: true
 			},
 		});
 	}
@@ -885,6 +885,7 @@ function mainBannerType02(){
 			slidesPerView: 1,
 			loop : true,
 			spaceBetween : 0,
+			autoHeight : true,
 			pagination: {  
 				el: swiperParentText+" .swiper-pagination",
 				clickable: true
@@ -1029,6 +1030,7 @@ function mainBannerType04(){
 			slidesPerView: 1,
 			loop : true,
 			spaceBetween : 0,
+			autoHeight : true,
 			pagination: {  
 				el: swiperParentText+" .swiper-pagination",
 				clickable: true
