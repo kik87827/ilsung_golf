@@ -281,7 +281,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
 .btn_search_form{display:block;width:30px;height:30px;background:url("../images/ico_searchbox_btn.png") no-repeat 0 0/100% auto;}
 
 .search_field_target{display:flex;align-items: center;width:100%;height:100%;padding:0 15px 0 30px;box-sizing: border-box;position:relative;}
-.search_field_target:after{display:block;content:'';width:42px;height:42px;margin-left:35px;background:url("../images/ico_searchbox_item.png") no-repeat 0 0/100% auto;flex:0 0 42px;}
+.search_field_target:after{display:block;content:'';width:42px;height:42px;margin-left:25px;background:url("../images/ico_searchbox_item.png") no-repeat 0 0/100% auto;flex:0 0 42px;}
 
 .search_field_target.define_local:after{background-position:0 0;}
 
