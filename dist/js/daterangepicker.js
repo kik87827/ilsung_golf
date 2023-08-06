@@ -110,23 +110,23 @@
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template =
-            '<div class="daterangepicker">' +
+            '<div class="daterangepicker"><div class="daterangepicker-inner">' +
                 '<div class="ranges"></div>' +
                 '<div class="daterange-ment-low"><p class="daterange-ment">'+this.calendarMent+'</p></div>' +
-                '<div class="drp-calendar left">' +
+                '<div class="drp-calendar-wrap"><div class="drp-calendar left">' +
                     '<div class="calendar-table"></div>' +
                     '<div class="calendar-time"></div>' +
                 '</div>' +
                 '<div class="drp-calendar right">' +
                     '<div class="calendar-table"></div>' +
                     '<div class="calendar-time"></div>' +
-                '</div>' +
+                '</div></div>' +
                 '<div class="drp-buttons">' +
                    // '<span class="drp-selected"></span>' +
                    '<button class="cancelBtn layerclose" type="button"></button>' +
                     '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
                 '</div>' +
-            '</div>';
+            '</div></div>';
             
             
             this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
@@ -425,6 +425,7 @@
             this.container.find('.cancelBtn').addClass(this.cancelButtonClasses);
         this.container.find('.applyBtn').html(this.locale.applyLabel);
         this.container.find('.cancelBtn').html(this.locale.cancelLabel);
+
 
         //
         // event listeners
@@ -1161,6 +1162,7 @@
         show: function(e) {
             if (this.isShowing) return;
 
+
             // Create a click proxy that is private to this instance of datepicker, for unbinding
             this._outsideClickProxy = $.proxy(function(e) { this.outsideClick(e); }, this);
 
@@ -1186,7 +1188,13 @@
             this.move();
             this.element.trigger('show.daterangepicker', this);
             this.isShowing = true;
-
+            
+            var thisObj = this;
+            setTimeout(function(){
+                $(".dimbg").addClass("active");
+                $("html").addClass("dim_active");
+            },10);
+            
         },
 
         hide: function(e) {
@@ -1211,12 +1219,16 @@
             this.container.hide();
             this.element.trigger('hide.daterangepicker', this);
             this.isShowing = false;
+            $(".dimbg").removeClass("active");
+            $("html").removeClass("dim_active");
         },
 
         toggle: function(e) {
             if (this.isShowing) {
                 this.hide();
             } else {
+                
+                if($(e.target).hasClass("btn_search_result_reset")){return;}
                 this.show();
             }
         },
@@ -1337,6 +1349,7 @@
         clickDate: function(e) {
 
             if (!$(e.target).hasClass('available')) return;
+
 
             var title = $(e.target).attr('data-title');
             var row = title.substr(1, 1);

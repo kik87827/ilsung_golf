@@ -49,6 +49,11 @@ function commonInit() {
 	function browserAdd(opt) {
 		document.querySelector("html").classList.add(opt);
 	}
+
+	
+	if($(".dimbg").length === 0){
+		$("body").append("<div class='dimbg' />")
+	}
 }
 
 
@@ -65,9 +70,7 @@ function headerMenu() {
 	const hgroup_nav_menu = document.querySelectorAll(".hgroup_nav_menu");
 	const hgroup_gnb_row = document.querySelector(".hgroup_gnb_row");
 	const hgroup_main_row = document.querySelector(".hgroup_main_row");
-	const mb_total_quick_wrap = document.querySelector(".mb_total_quick_wrap");
-	const mb_total_quick_list = mb_total_quick_wrap.querySelector(".mb_total_quick_list");
-	const mb_total_quick_slide = mb_total_quick_list.querySelectorAll(".swiper-slide");
+	const mb_total_quick_slide = document.querySelectorAll(".mb_total_quick_list .swiper-slide");
 	const bodyDom = document.querySelector("body");
 	const htmlDom = document.querySelector("html");
 	
@@ -456,6 +459,8 @@ function posLayerEvent(){
 		var $this = $(this),
 			$t_t = $($this.attr("data-poslayer"));
 		e.preventDefault();
+		// btn_search_result_reset
+		if($(e.target).hasClass("btn_search_result_reset")){return;}
 		posLayerShow($t_t,$this);
 	});
 	poslayer_z.on("click",".layerclose",function(e){
@@ -482,6 +487,14 @@ function posLayerEvent(){
 			}
 		}
 		posLayerHide(thisParent);
+	});
+
+	$(document).on("click",".btn_search_result_reset",function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		
+		$(this).parents(".search_field_target").removeClass("result_mode");
+		$(this).parents(".search_field_target").find(".search_form_text_result").text("");
 	});
 
 	$(document).on("click",".choice_item",function(e){
@@ -511,6 +524,8 @@ function posLayerShow(target,btn){
 	poslayer_z.removeClass("active");
 	target.addClass("active");
 	posLayerPos(target,btn);
+	$("html").addClass("dim_active");
+	$(".dimbg").addClass("active");
 }
 
 function posLayerResize(){
@@ -651,6 +666,8 @@ function posLayerResizeAction(target){
 function posLayerHide(target){
 	var target = $(target) || target;
 	target.removeClass("active");
+	$("html").removeClass("dim_active");
+	$(".dimbg").removeClass("active");
 }
 
 
