@@ -1299,3 +1299,79 @@ function galleryResponSwiper(target){
 		}
 	}
 }
+
+
+
+function productTabSwiper(){
+	
+	const tabquad_item_list_wrap = document.querySelectorAll(".tab-swiper.swiper-container");
+	let windowWidth = window.innerWidth;
+
+	if(!!tabquad_item_list_wrap){
+		
+		if(window.innerWidth >= 1024){
+			pcFunc();
+		}else{
+			mbFunc();
+		}
+
+		tabquad_item_list_wrap.forEach((item)=>{
+			if(item.classList.contains("tabliner_item_list_wrap")){
+				mbFunc();
+			}	
+		})
+
+		window.addEventListener("resize",()=>{
+			if(windowWidth !== window.innerWidth){
+				if(window.innerWidth >= 1024){
+					pcFunc();
+				}else{
+					mbFunc();
+				}
+			}
+			windowWidth = window.innerWidth;
+		});
+
+		function pcFunc(){
+			tabquad_item_list_wrap.forEach((swiperGroup, index) => {
+				const thisSwiperGroup = swiperGroup;
+				const thisSwiperSlide = thisSwiperGroup.querySelectorAll(".swiper-slide");
+				thisSwiperGroup.setAttribute("id", "swipertab0" + (index + 1));
+				if(swiperGroup.classList.contains("tabliner_item_list_wrap")){
+					return;
+				}
+				if (thisSwiperSlide.length) {
+					(new Function(
+						`
+						if(${swiperGroup.getAttribute("id")} === null){
+							${swiperGroup.getAttribute("id")}.destroy();
+						}
+					`
+					)());
+				}
+			});
+		}
+
+		function mbFunc(){
+			tabquad_item_list_wrap.forEach((swiperGroup, index) => {
+				const thisSwiperGroup = swiperGroup;
+				const thisSwiperSlide = thisSwiperGroup.querySelectorAll(".swiper-slide");
+				thisSwiperGroup.setAttribute("id", "swipertab0" + (index + 1));
+				if (thisSwiperSlide.length) {
+					(new Function(
+					`
+					${swiperGroup.getAttribute("id")} = new Swiper("#${swiperGroup.getAttribute("id")}", {
+						slidesPerView: 'auto',
+						slidesPerGroupAuto : true,
+						freeMode: true,
+						spaceBetween : 5,
+						speed : 500
+					});
+					`
+					)());
+				}
+			});
+		}
+	}
+
+}
