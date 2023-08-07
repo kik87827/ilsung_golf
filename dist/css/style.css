@@ -1260,8 +1260,7 @@ select.select_item:disabled{background-color:#f7f7f7;color:#999999;opacity:1;}
     .mc_full_img_banner.type3 .mc_banner_spec_main{font-size:16px;}
     .mc_full_img_banner.type3 .mc_banner_spec_sub{font-size:13px;}
     .mc_full_img_banner.type3 .mc_full_bg_img:after{height:50%;}
-    .banner_swiper_zone .mc_full_img_banner{width:200px;}
-
+    .banner_swiper_zone.mb-nobreak .mc_full_img_banner{width:200px;}
 
     .banner_card_both{padding:15px;height:auto;}
     .banner_card_short_cols{margin-left:15px;}
