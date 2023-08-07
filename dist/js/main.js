@@ -1302,9 +1302,9 @@ function galleryResponSwiper(target){
 
 
 
-function productTabSwiper(){
+function productTabQuadSwiper(){
 	
-	const tabquad_item_list_wrap = document.querySelectorAll(".tab-swiper.swiper-container");
+	const tabquad_item_list_wrap = document.querySelectorAll(".swiper-container.tabquad_item_list_wrap");
 	let windowWidth = window.innerWidth;
 
 	if(!!tabquad_item_list_wrap){
@@ -1315,11 +1315,6 @@ function productTabSwiper(){
 			mbFunc();
 		}
 
-		tabquad_item_list_wrap.forEach((item)=>{
-			if(item.classList.contains("tabliner_item_list_wrap")){
-				mbFunc();
-			}	
-		})
 
 		window.addEventListener("resize",()=>{
 			if(windowWidth !== window.innerWidth){
@@ -1343,9 +1338,7 @@ function productTabSwiper(){
 				if (thisSwiperSlide.length) {
 					(new Function(
 						`
-						if(${swiperGroup.getAttribute("id")} === null){
-							${swiperGroup.getAttribute("id")}.destroy();
-						}
+						console.log(${swiperGroup.getAttribute("id")}.id)
 					`
 					)());
 				}
@@ -1356,16 +1349,51 @@ function productTabSwiper(){
 			tabquad_item_list_wrap.forEach((swiperGroup, index) => {
 				const thisSwiperGroup = swiperGroup;
 				const thisSwiperSlide = thisSwiperGroup.querySelectorAll(".swiper-slide");
-				thisSwiperGroup.setAttribute("id", "swipertab0" + (index + 1));
+				thisSwiperGroup.setAttribute("id", "swiperQuadTab0" + (index + 1));
 				if (thisSwiperSlide.length) {
 					(new Function(
 					`
-					${swiperGroup.getAttribute("id")} = new Swiper("#${swiperGroup.getAttribute("id")}", {
+					${swiperGroup.getAttribute("id")}.id = new Swiper("#${swiperGroup.getAttribute("id")}", {
 						slidesPerView: 'auto',
 						slidesPerGroupAuto : true,
 						freeMode: true,
 						spaceBetween : 5,
-						speed : 500
+						speed : 500,
+						touchRatio : 1,
+					});
+					`
+					)());
+				}
+			});
+		}
+	}
+
+}
+
+
+function productTabLineSwiper(){
+	
+	const tabliner_item_list_wrap = document.querySelectorAll(".swiper-container.tabliner_item_list_wrap");
+
+	if(!!tabliner_item_list_wrap){
+		
+		responFunc();
+
+		function responFunc(){
+			tabliner_item_list_wrap.forEach((swiperGroup, index) => {
+				const thisSwiperGroup = swiperGroup;
+				const thisSwiperSlide = thisSwiperGroup.querySelectorAll(".swiper-slide");
+				thisSwiperGroup.setAttribute("id", "swiperLineTab0" + (index + 1));
+				if (thisSwiperSlide.length) {
+					(new Function(
+					`
+					${swiperGroup.getAttribute("id")}.id = new Swiper("#${swiperGroup.getAttribute("id")}", {
+						slidesPerView: 'auto',
+						slidesPerGroupAuto : true,
+						freeMode: true,
+						spaceBetween : 5,
+						speed : 500,
+						touchRatio : 1,
 					});
 					`
 					)());
