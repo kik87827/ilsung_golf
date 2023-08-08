@@ -337,12 +337,49 @@ input.mv_form_input::input-placeholder{color:#fff;}
 .poslayer_titlow{}
 .poslayer_tit{font-size:18px;color:#1b1b1b;padding:26px 30px;border-bottom:1px solid #e7e7e7;margin:0 15px;font-family: 'Noto Sans KR';font-weight:500;margin:0 20px;}
 .poslayer_tit.type2{border-color:#e7e7e7;margin:0 30px;}
+.poslayer_tit.has_ico{}
+.postit_ico_text{}
+.poslayer_tit.has_ico.ico_filter{}
+.poslayer_tit.has_ico.ico_filter:before{}
+
+.pcont_toggle_item{}
+.pcont_toggle_item:last-of-type{}
+.pcont_toggle_bar{}
+.pcont_toggle_bar:after{}
+.ico_pcont_title_wrap{}
+.ico_pcont.ico_01{}
+.ico_pcont.ico_02{}
+.ico_pcont.ico_03{}
+.ico_pcont.ico_04{}
+.ico_pcont.ico_05{}
+.pcont_toggle_cont{}
+.ico_pcont_title{}
+
+.btn_getresult_w{}
+.btn_getresult_list{}
+.btn_getresult_list > li{}
+.btn_getresult{}
+.btn_getresult:before,
+.btn_getresult:after{}
+.btn_getresult:before{}
+.btn_getresult:after{}
+.btn_getresult_text{}
 
 .pcont_w{padding:0 20px 25px;}
 
+.btn_psubmit_group{}
+.btn_psubmit_else_g{}
+.btn_psubcontrol{}
+.btn_psubcontrol:after{}
+.btn_psubcontrol_text{}
+.btn_psubmit_group{}
+
 .btn_psubmit_w{border-top:1px solid #e7e7e7;padding:18px;min-width:0;text-align: center;}
 .btn_psubmit{display:inline-block;color:#000000;font-size:16px;font-weight:500;line-height:1;border:1px solid #7e7e7e;border-radius:100px;padding:10px 10px 11px;min-width:110px;box-sizing: border-box;}
-
+.btn_psubmit.allow_type{}
+.btn_psubmit.allow_type{}
+.btn_psubmit_allow_text{}
+.btn_psubmit_allow_text:after{}
 .insert_date_parent > .ui-datepicker-inline{margin:0 auto;}
 
 
@@ -1460,3 +1497,8 @@ input.input_search_field{flex:1;min-width:0;font-size:16px;padding:0 0 0 20px;li
     /* .middle_inner_guide_wrap .get_render_title_group{margin-left:5px;margin-right:5px;} */
 }
 /* // banner */
+
+
+
+/* filter */
+/* // filter */
