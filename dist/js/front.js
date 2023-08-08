@@ -793,6 +793,7 @@ function multiRange(target){
 	inputRight.addEventListener("input", setRightValue);
 }
 
+
 // function multiRange(){
 //     let multi_range_z = document.querySelectorAll(".multi_range_z");
 //     multi_range_z.forEach(function(elem,index){
@@ -832,3 +833,29 @@ function multiRange(target){
 //     });
 
 // }
+
+
+function quickMenu(){
+	const quick_data_layer_zone = document.querySelector(".quick_data_layer_zone");
+	const parent_pos_item = document.querySelector(quick_data_layer_zone.getAttribute("data-initpos"));
+	let parent_pos = !!parent_pos_item ? parent_pos_item.getBoundingClientRect().top + window.scrollY : 0;
+	const btn_quick_topgo = document.querySelector(".btn_quick_topgo");
+	window.addEventListener("scroll",()=>{
+		parent_pos = !!parent_pos_item ? parent_pos_item.getBoundingClientRect().top + window.scrollY : 0;
+
+		if(window.scrollY > parent_pos){
+			quick_data_layer_zone.classList.add("fixed");
+		}else{
+			quick_data_layer_zone.classList.remove("fixed");
+		}
+	});
+
+	if(!!btn_quick_topgo){
+		btn_quick_topgo.addEventListener("click",function(e){
+			e.preventDefault();
+			setTimeout(()=>{
+				window.scrollTo(0,0);
+			},30);
+		});
+	}
+}
