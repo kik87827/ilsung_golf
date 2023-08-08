@@ -754,3 +754,81 @@ function filterToggleCont(){
 		});
 	}
 }
+
+
+
+function multiRange(target){
+    let multi_range_z = document.querySelector(target);
+	let inputLeft = multi_range_z.querySelector(".input-left"); 
+	let inputRight = multi_range_z.querySelector(".input-right"); 
+	let thumbLeft = multi_range_z.querySelector(".slider > .thumb.left"); 
+	let thumbRight = multi_range_z.querySelector(".slider > .thumb.right"); 
+	let range = multi_range_z.querySelector(".slider > .range");
+	let setLeftValue = () => { 
+		const _this = inputLeft; 
+		const [min, max] = [parseInt(_this.min), parseInt(_this.max)]; 
+		
+		// 교차되지 않게, 1을 빼준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+		_this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1); 
+		
+		// input, thumb 같이 움직이도록 
+		const percent = ((_this.value - min) / (max - min)) * 100; 
+		thumbLeft.style.left = percent + "%"; 
+		range.style.left = percent + "%"; 
+	}; 
+	let setRightValue = () => { 
+		const _this = inputRight; 
+		const [min, max] = [parseInt(_this.min), parseInt(_this.max)]; 
+		
+		// 교차되지 않게, 1을 더해준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+		_this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1); 
+		
+		// input, thumb 같이 움직이도록 
+		const percent = ((_this.value - min) / (max - min)) * 100; 
+		thumbRight.style.right = 100 - percent + "%"; 
+		range.style.right = 100 - percent + "%"; 
+	}; 
+	
+	inputLeft.addEventListener("input", setLeftValue); 
+	inputRight.addEventListener("input", setRightValue);
+}
+
+// function multiRange(){
+//     let multi_range_z = document.querySelectorAll(".multi_range_z");
+//     multi_range_z.forEach(function(elem,index){
+//         let this_elem = elem;
+//         let inputLeft = this_elem.querySelector(".input-left"); 
+//         let inputRight = this_elem.querySelector(".input-right"); 
+//         let thumbLeft = this_elem.querySelector(".slider > .thumb.left"); 
+//         let thumbRight = this_elem.querySelector(".slider > .thumb.right"); 
+//         let range = this_elem.querySelector(".slider > .range");
+//         let setLeftValue = () => { 
+//             const _this = inputLeft; 
+//             const [min, max] = [parseInt(_this.min), parseInt(_this.max)]; 
+            
+//             // 교차되지 않게, 1을 빼준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+//             _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1); 
+            
+//             // input, thumb 같이 움직이도록 
+//             const percent = ((_this.value - min) / (max - min)) * 100; 
+//             thumbLeft.style.left = percent + "%"; 
+//             range.style.left = percent + "%"; 
+//         }; 
+//         let setRightValue = () => { 
+//             const _this = inputRight; 
+//             const [min, max] = [parseInt(_this.min), parseInt(_this.max)]; 
+            
+//             // 교차되지 않게, 1을 더해준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+//             _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1); 
+            
+//             // input, thumb 같이 움직이도록 
+//             const percent = ((_this.value - min) / (max - min)) * 100; 
+//             thumbRight.style.right = 100 - percent + "%"; 
+//             range.style.right = 100 - percent + "%"; 
+//         }; 
+        
+//         inputLeft.addEventListener("input", setLeftValue); 
+//         inputRight.addEventListener("input", setRightValue);
+//     });
+
+// }

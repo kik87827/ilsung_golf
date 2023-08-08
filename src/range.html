@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <div style="padding:50px">
+
+            <div class="multi_range_z" id="multi_range_target">
+                <div class="multi-range-slider">
+                    <!-- 진짜 슬라이더 -->
+                    <input type="range" class="input-left" min="0" max="100" value="0">
+                    <input type="range" class="input-right" min="0" max="100" value="100">
+                    <!-- 커스텀 슬라이더 -->
+                    <div class="slider">
+                        <div class="track"></div>
+                        <div class="range"></div>
+                        <div class="thumb left"></div>
+                        <div class="thumb right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>multiRange("#multi_range_target");</script>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -74,6 +74,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
 }
 .mv_vboth_slider > .btn_mv_control{display:none}
 .mv_vboth_slider img{vertical-align: top;width:100%;}
+.mv_vboth_slider .mv_bg_wrap img{object-position: 50% 100%;}
 .mvbox_link{display:block;}
 .mvbox_link > img{width:100%;}
 
@@ -223,8 +224,8 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .swiper-pagination.mobile{display:block;}
 
     
-    .mv_bg_wrap .pc_img{display:none;}
-    .mv_bg_wrap .mb_img{display:block;}
+    .mv_bg_wrap .pc_img{display:none !important;}
+    .mv_bg_wrap .mb_img{display:block !important;}
 
     .mv_item_group{align-items: flex-start;}
     .mv_copy_wrap{padding:70px 50px;}
@@ -1535,4 +1536,79 @@ input.input_search_field{flex:1;min-width:0;font-size:16px;padding:0 0 0 20px;li
 
 
 /* filter */
+.multi_range_z {
+    position: relative;
+    width: 100%
+}
+
+.multi_range_z .slider {
+    position: relative;
+    z-index: 1;
+    height: 6px;
+}
+
+.multi_range_z .slider>.track {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 100px;
+    background-color: #f1f1f1
+}
+
+.multi_range_z .slider>.range {
+    position: absolute;
+    z-index: 2;
+    left: 0%;
+    right: 0%;
+    top: 0;
+    bottom: 0;
+    border-radius: 100px;
+    background-color: #bbd8ff
+}
+
+.multi_range_z .slider>.thumb {
+    position: absolute;
+    z-index: 3;
+    width: 18px;
+    height: 18px;
+    background-color: #176bdd;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.multi_range_z .slider>.thumb.left {
+    left: 0%;
+    transform: translate(-9px, -6px)
+}
+
+.multi_range_z .slider>.thumb.right {
+    right: 0%;
+    transform: translate(9px, -6px)
+}
+
+input[type=range] {
+    position: absolute;
+    top:50%;
+    left: -9px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 36px;
+    width: calc(100% + 18px);
+    opacity: 0
+}
+
+.multi_range_z input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-appearance: none
+}
 /* // filter */
