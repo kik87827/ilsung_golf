@@ -740,3 +740,17 @@ function productTabCont(){
 		})
 	});
 }
+
+
+function filterToggleCont(){
+	const pcont_toggle_bar = document.querySelectorAll(".pcont_toggle_bar");
+	if(!!pcont_toggle_bar){
+		pcont_toggle_bar.forEach((item)=>{
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				const thisTarget = e.currentTarget;
+				thisTarget.closest(".pcont_toggle_item").classList.toggle("active");
+			});
+		});
+	}
+}
