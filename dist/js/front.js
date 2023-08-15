@@ -73,7 +73,8 @@ function headerMenu() {
 	const mb_total_quick_slide = document.querySelectorAll(".mb_total_quick_list .swiper-slide");
 	const bodyDom = document.querySelector("body");
 	const htmlDom = document.querySelector("html");
-	
+	let windowWidth = 0;
+
 	let mbquickObj = null;
 	if (btn_header_total === null || global_menu_layer === null) { return; }
 
@@ -92,6 +93,17 @@ function headerMenu() {
 			gnb_twodepth_layer.classList.remove("active");
 		}
 	});
+
+
+	window.addEventListener("resize",()=>{
+		if(windowWidth !== window.innerWidth){
+			if(window.innerWidth < 1024){
+				mobile_total_layer.classList.remove("active");
+				bodyDom.classList.remove("touchDis")
+			}
+		}
+		windowWidth = window.innerWidth;
+	})
 
 	if (!!gmenu_toggle) {
 		gmenu_toggle.forEach((item) => {
