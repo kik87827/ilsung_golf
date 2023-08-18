@@ -871,3 +871,169 @@ function quickMenu(){
 		});
 	}
 }
+
+
+
+
+
+function stickyTab() {
+    const detailAnchorContentsWrap = document.querySelector(".detail_anchor_contents_wrap");
+    const stickyTabsContainerZone = document.querySelector(".sticky_tabs_container_zone");
+    const tabContents = document.querySelectorAll(".tab_contents");
+    const stickyTabsInnerWrap = document.querySelector(".sticky_tabs_inner_wrap");
+    const stickyTabsInner = document.querySelector(".sticky_tabs_inner");
+    const stickyTab = document.querySelectorAll(".sticky_tab");
+    const stickyTabFirst = document.querySelector(".sticky_tab:first-child");
+    let detailAnchorContentsWrapPos = !!detailAnchorContentsWrap ? detailAnchorContentsWrap.getBoundingClientRect().top + window.scrollY : 0;
+    let getPosValue = getLayerPos();
+    let getPosHeight = getHeight();
+    let getPosArrayValue = getPosArray();
+    let getWindowWid = window.innerWidth;
+    let activeItem = null;
+    let btnClickIs = false;
+    window.addEventListener("resize", () => {
+        if (getWindowWid !== window.innerWidth) {
+            getPosValue = getLayerPos();
+            getPosHeight = getHeight();
+            getPosArrayValue = getPosArray();
+            detailAnchorContentsWrapPos = !!detailAnchorContentsWrap ? detailAnchorContentsWrap.getBoundingClientRect().top + window.scrollY : 0;
+        }
+        getWindowWid = window.innerWidth;
+    });
+
+
+    window.addEventListener("touchstart", () => {
+        btnClickIs = false;
+    });
+
+    window.addEventListener("mousewheel", () => {
+        btnClickIs = false;
+    });
+
+    window.addEventListener("mousedown", () => {
+        btnClickIs = false;
+    });
+
+    window.addEventListener("scroll", () => {
+        scrollAction();
+    });
+
+    window.addEventListener("touchmove", () => {
+        scrollAction();
+    });
+
+    
+    stickyTab.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            const thisTarget = e.currentTarget;
+            const thisScrollPosTop = document.querySelector(thisTarget.getAttribute("href")).getBoundingClientRect().top;
+            const thisScrollPos = (thisScrollPosTop + window.scrollY - getPosHeight);
+            activeTab(thisTarget);
+            if (!!thisScrollPos) {
+                window.scrollTo({
+                    top: thisScrollPos,
+                    left: 0,
+                    behavior: "smooth",
+                });
+            }
+            btnClickIs = true;
+        });
+    });
+
+    function getLayerPos() {
+        let localTop = stickyTabsContainerZone.getBoundingClientRect().top;
+        return localTop -(stickyTabsInnerWrap.getBoundingClientRect().height/2) + window.scrollY;
+    }
+
+    function getPosArray() {
+        let posArray = [];
+        if(!!tabContents){
+            tabContents.forEach((item)=>{
+                let eachTop = item.getBoundingClientRect().top;
+                posArray.push(eachTop + window.scrollY - getPosHeight);
+            });
+        }
+        return posArray;
+    }
+
+
+    function getHeight() {
+        return stickyTabsInner.getBoundingClientRect().height + 10;
+    }
+
+    function scrollAction() {
+        if (getPosValue < window.scrollY) {
+            stickyTabsInnerWrap.classList.add("fixed");
+            stickyTabsInnerWrap.style.top = '0px';
+        } else {
+            stickyTabsInnerWrap.classList.remove("fixed");
+            stickyTabsInnerWrap.style.top = '0px';
+            if(window.scrollY <= detailAnchorContentsWrapPos){
+                //firstActive();
+            }
+        }
+        if(!btnClickIs){
+            stickyTab.forEach((item,index) => {
+                if(getPosArrayValue[index] <= window.scrollY){
+                    activeTab(item);
+                }
+            });
+        }
+    }
+
+    function activeTab(target){
+        if (activeItem) {
+            activeItem.classList.remove("active");
+        }
+        target.classList.add("active");
+        activeItem = target;
+    }
+}
+
+
+
+
+
+function stickyPanel() {
+    const detailCalculationZone = document.querySelector(".detail_calculation_zone");
+    const detailCalculationWrap = document.querySelector(".detail_calculation_wrap");
+    const detailCalculationInnerWrap = document.querySelector(".detail_calculation_inner_wrap");
+    const stickyTabsInner = document.querySelector(".sticky_tabs_inner");
+    const footerWrap = document.querySelector(".footer_wrap");
+    const footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + window.scrollY : 0;
+    const footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
+    let detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
+    let getWindowWid = window.innerWidth;
+    window.addEventListener("resize", () => {
+        if (getWindowWid !== window.innerWidth) {
+            getPosHeight = getHeight();
+            detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
+        }
+        getWindowWid = window.innerWidth;
+    });
+
+
+    window.addEventListener("scroll", () => {
+        scrollAction();
+    });
+
+    window.addEventListener("touchmove", () => {
+        scrollAction();
+    });
+
+    function scrollAction() {
+        if (detailCalculationZonePos < window.scrollY) {
+            detailCalculationWrap.classList.add("fixed");
+			if(footerWrapPos - window.innerHeight - footerWrapHeight < window.scrollY){
+				detailCalculationWrap.classList.add("bottom");
+			}else{
+				detailCalculationWrap.classList.remove("bottom");
+			}
+        } else {
+            detailCalculationWrap.classList.remove("fixed");
+        }
+
+		
+    }
+}

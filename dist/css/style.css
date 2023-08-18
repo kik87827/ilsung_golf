@@ -1687,7 +1687,9 @@ input[type=range] {
 .mb_bottom_layer{display:none;}
 
 .sticky_tabs_container_zone{min-height:42px;position:relative;}
-.sticky_tabs_inner{background:#fff;}
+.sticky_tabs_inner_wrap.fixed{position:fixed;top:0;left:0;width:100%;height:0;z-index:20;}
+.sticky_tabs_inner_wrap.fixed .sticky_tabs_inner{background:#fff;padding:10px 0 0;max-width:1200px;margin:0 auto;}
+.sticky_tabs_inner_wrap.fixed .sticky_tabs_swiper_wrap{margin-right:310px;}
 .sticky_tabs_swiper_wrap{position:relative;}
 .sticky_tabs_swiper_wrap:before{display:block;content:'';height:1px;background:#b5b5b5;position:absolute;bottom:0;left:0;width:100%;}
 .sticky_tabs_swiper_wrap .sticky_tab{display:block;position:relative;padding:0 0 23px 0;box-sizing: border-box;height:42px;}
@@ -1702,11 +1704,18 @@ input[type=range] {
 
 .detail_contents_zone .tab_contents{}
 
-.tab_contents_wrap{margin-top:36px;}
+.tab_contents_wrap{}
 
 /* 우측 */
 .detail_calculation_zone{}
 .detail_calculation_wrap{}
+.detail_calculation_wrap.fixed{position:fixed;top:0;left:0;width:100%;height:0;z-index:20;}
+.detail_calculation_wrap.fixed.bottom{position:absolute;bottom:0;top:auto;height:auto;}
+.detail_calculation_wrap.fixed.bottom .detail_calculation_inner_wrap{height:auto;}
+.detail_calculation_wrap.fixed.bottom .detail_calculation_inner_group{height:auto;padding-bottom:0}
+.detail_calculation_wrap.fixed .detail_calculation_inner_wrap{max-width:1200px;margin:0 auto;display:flex;justify-content: flex-end;height:0;}
+.detail_calculation_wrap.fixed .detail_calculation_inner_group{max-width:286px;position:relative;overflow-y:overlay;height:100vh;box-sizing: border-box;padding:10px 0 30px;}
+.detail_calculation_wrap.fixed .detail_calculation_inner_group::-webkit-scrollbar {width: 0;}
 .dcalcul_box_group{}
 .dcalcul_box{display:block;border:1px solid #d7d7d7;border-radius:10px;margin-bottom:9px;padding:15px 25px;}
 .dcalcul_box:last-child{margin-bottom:0;}
@@ -1718,6 +1727,7 @@ input[type=range] {
 .dcalcul_row:last-of-type{border-bottom:0;padding-bottom:0;margin-bottom:0;}
 
 /* 항공여정 */
+.tab_contents:first-child{padding-top:36px;}
 .track_detail_group{border:1px solid #d7d7d7;border-radius:10px;}
 .track_detail_top_row{padding:10px 10px 10px 20px;display:flex;justify-content: space-between;align-items: center;border-bottom:1px solid #e7e7e7;}
 .track_key_cols{flex:0;white-space: nowrap;padding-right:20px;}
