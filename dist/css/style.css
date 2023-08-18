@@ -1714,6 +1714,8 @@ input[type=range] {
 .dcalcul_img{flex:0 0 24px;}
 .dcalcul_img > img{max-width: 100%;vertical-align: middle;}
 .dcalcul_text{font-size:17px;color:#333;line-height:1;display:inline-block;position:relative;top:-1px;}
+.dcalcul_row{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #e7e7e7;}
+.dcalcul_row:last-of-type{border-bottom:0;padding-bottom:0;margin-bottom:0;}
 
 /* 항공여정 */
 .track_detail_group{border:1px solid #d7d7d7;border-radius:10px;}
@@ -1727,8 +1729,100 @@ input[type=range] {
 .track_detail_subtext{font-size:16px;color:#4e4e4e;}
 .track_detail_subtext .emp_color{color:#176bdd;}
 .track_else_cols{}
-
+input.form_drd{cursor:pointer;appearance: none;-webkit-appearance: none;background:#fff;border:5px solid #fff;width:10px;height:10px;box-sizing:content-box;outline:1px solid #bdbdbd;border-radius:100%;}
+input.form_drd:checked{background:#176bdd;}
 .btn_quadcontrol{display:inline-block;border:1px solid #d7d7d7;font-size:15px;color:#4e4e4e;padding:10px 15px;border-radius:8px;line-height:1;}
+.dcalcul_data_obj{display:flex;text-align: right;}
+.dcalcul_form_cols{flex:0 0 22px;display:flex;align-items: center;}
+.dcalcul_form_cols input.form_drd{}
+.dcalcul_data_cols{flex:1;}
+.dcalcul_data_text{font-size:17px;color:#333;}
+.dcalcul_data_else_g{display:flex;align-items: center;justify-content: flex-end;gap:7px;margin-top:7px;}
+.dcc_kind_text{font-size:15px;color:#6d6c6c;display:inline-block;position:relative;top:2px;}
+.dcc_price_g{font-size:20px;line-height:1;display:inline-flex;align-items: center;}
+.dcc_price_main{display:inline-block;font-weight:700;line-height:1;}
+.dcc_price_unit{display:inline-block;font-size:16px;line-height:1;}
+
+.dcc_pro_control_wrap{display:flex;justify-content: space-between;max-width:95px;}
+.inde_current{font-size:18px;color:#2b2b2b;min-width:35px;text-align: center;}
+
+.btn_inde_control{display:inline-block;width:28px;height:28px;position:relative;border:1px solid #c6c6c6;border-radius:100%;vertical-align: middle;}
+.btn_inde_control:before,
+.btn_inde_control:after{display:block;content:'';width:2px;height:12px;background:#6d6c6c;position:absolute;top:50%;left:50%;margin:-6px 0 0 -1px;}
+.btn_inde_control:before{transform: rotate(90deg);}
+.btn_inde_control.dec_control{}
+.btn_inde_control.dec_control:after{display:none;}
+.btn_inde_control.inc_control{}
+
+.dcc_pro_render_item{display:flex;align-items: center;}
+.dcc_pro_data_cols{flex:1;min-width:0;}
+.dcc_pro_control_cols{flex:0;}
+.dcc_pd_kind_row{display:flex;flex-wrap:wrap;gap:3px;align-items: center;}
+.dcc_pd_price_row{margin-top:6px;}
+.dcc_pd_else_row{margin-top:7px;}
+.dcc_pd_kind_emp{font-size:15px;color:#333;}
+.dcc_pd_kind_sub{font-size:13px;color:#6d6c6c;}
+.dcc_pd_else{font-size:13px;color:#999;letter-spacing: -0.5px;}
+
+.dcc_pd_price_g{display:flex;align-items: center;color:#176bdd;line-height:0;}
+.dcc_price_value{font-size:19px;font-weight:700;line-height:1;}
+.dcc_price_unit{font-size:16px;line-height:1;}
+
+.btn_qus_tooltip{display:inline-flex;border:1px solid #cdcdcd;position:relative;top:1px;border-radius:100%;align-items: center;justify-content: center;width:14px;height:14px;font-size:12px;color:#6d6c6c;line-height:1;}
+
+.dcc_pro_render_list{}
+.dcc_pro_render_list > li{margin-bottom:35px;}
+.dcc_pro_render_list > li:last-of-type{margin-bottom:0;}
+
+
+.dcalcul_total_group{margin-top:23px;}
+.dcc_total_both{display:flex;justify-content: space-between;align-items: flex-end;}
+.dcc_total_label{display:inline-block;color:#6d6c6c;font-size:15px;position:relative;top:0;}
+.dcc_total_value_g{display:flex;align-items: center;color:#000;}
+.dcc_total_value_main{font-size:28px;line-height:1;font-weight:700;}
+.dcc_total_value_unit{font-size:16px;line-height:1;position:relative;top:2px;margin-left:4px;}
+.dcc_total_else_wrap{text-align:right;margin-top:22px;}
+.dcc_total_else{font-size:13px;color:#999999;margin-bottom:2px;}
+.dcc_total_else:last-of-type{margin-bottom:0;}
+.dcc_total_else.emp{color:#333333;}
+.dcalcul_btn_group{margin-top:20px;}
+.dcalcul_btn_row{margin-bottom:8px;}
+.dcalcul_btn_row:last-of-type{margin-bottom:0}
+.btn_dcalcul_main{display:block;text-align: center;padding:24px;border-radius:8px;background:#176bdd;}
+.btn_dcalcul_main_text{font-size:20px;color:#fff;font-weight:700;line-height:1;}
+.btn_dcalcul_subbox{display:flex;gap:10px;justify-content:center;text-align: center;padding:20px 10px;border-radius:8px;background:#333;}
+.btn_dcalcul_subbox_key{font-size:18px;line-height:1;color:#fff;}
+.btn_dcalcul_subbox_value{font-size:18px;line-height:1;font-weight:700;color:#fff;}
+
+
+.dcalcul_other_group{margin-top:30px;}
+.dcalcul_other_label{font-size:14px;color:#4e4e4e;line-height:1;margin-bottom:15px;text-align: right;}
+.dcc_other_fxbox{display:flex;border:1px solid #dcdcdc;}
+.dcc_other_fxcols{border-right:1px solid #dcdcdc;flex:0 0 57px;width:57px;}
+.dcc_other_fxcols:last-of-type{border-right:0;}
+.dcc_other_fxcols.dcc_long{flex:1;min-width:0;}
+
+.btn_dcc_obox{height:38px;display:flex;align-items: center;justify-content: center;}
+.dcc_obox_text{font-size:14px;color:#5f5f5f;line-height:1;}
+.btn_dcc_obox:hover .dcc_obox_text{color:#333;}
+.btn_dcc_ico{height:38px;width:57px;display:flex;align-items: center; justify-content: center;}
+.btn_dcc_ico:after{opacity:.5;display:block;content:'';background-repeat:no-repeat;background-size:100% auto;background-position:0 0;}
+.btn_dcc_ico.ico_print:after{background-image:url("../images/ico_print.png");width:21px;height:21px;}
+.btn_dcc_ico.ico_like:after{background-image:url("../images/ico_like_46x42.png");width:23px;height:21px;}
+.btn_dcc_ico.ico_share:after{background-image:url("../images/ico_share_43x42.png");width:21.5px;height:21px;}
+
+.btn_dcc_ico.ico_like.active:after{background-position:0 100%;opacity:1;}
+.btn_dcc_ico:hover:after{opacity:.7}
+
+.dcalcul_other_elseitem_g{margin-top:15px;}
+.dcc_other_elseitem_list{text-align: right;}
+.dcc_other_elseitem_list > li{display:flex;justify-content: flex-end;}
+.dcc_other_elseitem_list > li:last-of-type{}
+.dcc_other_elseitem{display:flex;gap:8px;align-items: center;}
+.dcc_other_elseitem:before{display:block;content:'';width:22px;height:18px;background:url("../images/ico_card_22_2.png") no-repeat 0 0/100% auto;}
+.dcc_other_elseitem_text{font-size:14px;color:#4e4e4e;line-height:1;display:inline-block;position:relative;top:-1px;}
+
+
 
 .track_detail_middle_row{padding:27px 0;}
 .track_visual_flex_wrap{display:flex;text-align: center;}
