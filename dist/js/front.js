@@ -1037,3 +1037,276 @@ function stickyPanel() {
 		
     }
 }
+
+
+/* 상세 비쥬얼 */
+function detailVisualA(){
+	let detail_mv_obj = null;
+	const detail_mv_wrap = document.querySelector(".detail_visual_wrap");
+	const detail_mv_slide = detail_mv_wrap.querySelectorAll(".swiper-slide");
+	let btn_d_mv_stop = null;
+	let btn_d_mv_play = null;
+
+	if(detail_mv_slide.length>1){
+		detail_mv_obj = new Swiper(".detail_mv_swiper", {
+			speed : 1000,
+			loop : true,
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
+			pagination: {
+				clickable: true,
+				el: ".detail_visual_wrap .swiper-pagination.d_mv_paging",
+			},
+            navigation: {
+                nextEl: '.detail_visual_wrap .btn_d_mv_control.next',
+                prevEl: '.detail_visual_wrap .btn_d_mv_control.prev',
+            }
+		});
+		btn_d_mv_stop = document.querySelector(".btn_d_mv_stop");
+		btn_d_mv_play = document.querySelector(".btn_d_mv_play");
+
+		btn_d_mv_play.addEventListener("click", (e) => {
+			e.preventDefault();
+			detail_mv_obj.autoplay.start();
+		},false);
+
+		btn_d_mv_stop.addEventListener("click", (e) => {
+			e.preventDefault();
+			detail_mv_obj.autoplay.stop();
+		},false);
+	}else{
+		detail_mv_wrap.classList.add("nodata_type");
+	}
+	
+}
+
+
+
+
+function detailVisualB(){
+
+	let detail_mv_obj = null;
+	const detail_multi_visual_wrap = document.querySelector(".detail_multi_visual_wrap");
+	const detail_mv_slide = detail_multi_visual_wrap.querySelectorAll(".swiper-slide");
+	let btn_d_mv_stop = null;
+	let btn_d_mv_play = null;
+
+	if(detail_mv_slide.length>1){
+		detail_mv_obj = new Swiper(".detail_multi_visual_swiper", {
+			speed : 1000,
+			loop : true,
+			centeredSlides: true,
+			spaceBetween :15,
+			slidesPerGroup : 3,
+			slidesPerView: 3,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
+			pagination: {
+				clickable: true,
+				el: ".detail_multi_visual_wrap .swiper-pagination.d_mv_paging",
+			},
+            navigation: {
+                nextEl: '.detail_multi_visual_wrap .btn_d_mv_control.next',
+                prevEl: '.detail_multi_visual_wrap .btn_d_mv_control.prev',
+            }
+		});
+		btn_d_mv_stop = detail_multi_visual_wrap.querySelector(".btn_d_mv_stop");
+		btn_d_mv_play = detail_multi_visual_wrap.querySelector(".btn_d_mv_play");
+
+		btn_d_mv_play.addEventListener("click", (e) => {
+			e.preventDefault();
+			detail_mv_obj.autoplay.start();
+		},false);
+
+		btn_d_mv_stop.addEventListener("click", (e) => {
+			e.preventDefault();
+			detail_mv_obj.autoplay.stop();
+		},false);
+	}else{
+		detail_multi_visual_wrap.classList.add("nodata_type");
+	}
+	
+}
+
+
+function detailVisualC(){
+	let detail_mv_obj = null;
+	const detail_multi_visual_wrap = document.querySelector(".detail_grid_visual_wrap");
+	const detail_mv_slide = detail_multi_visual_wrap.querySelectorAll(".swiper-slide");
+	const dgrid_thum_item = detail_multi_visual_wrap.querySelectorAll(".dgrid_thum_item");
+
+	if(detail_mv_slide.length>1){
+		detail_mv_obj = new Swiper(".detail_grid_main_swiper", {
+			speed : 1000,
+			loop : true,
+			effect: "fade",
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			}
+		});
+		dgrid_thum_item.forEach((item,index)=>{
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				if(index<3){
+					detail_mv_obj.slideToLoop(index);
+				}
+			});
+		});
+	}else{
+		detail_multi_visual_wrap.classList.add("nodata_type");
+	}
+}
+
+
+
+
+/* popup */
+
+/**
+ * 디자인 팝업
+ * @param {*} option 
+ */
+ function DesignPopup(option) {
+	this.option = option;
+	this.selector = this.option.selector;
+  
+	if (this.selector !== undefined) {
+	  this.selector = document.querySelector(this.option.selector);
+	}
+	this.design_popup_wrap = document.querySelectorAll(".popup_wrap");
+	this.domHtml = document.querySelector("html");
+	this.domBody = document.querySelector("body");
+	this.pagewrap = document.querySelector(".page_wrap");
+	this.layer_wrap_parent = null;
+	this.btn_closeTrigger = null;
+	this.btn_close = null;
+	this.bg_design_popup = null;
+	this.scrollValue = 0;
+  
+	this.btn_closeTrigger = null;
+	this.btn_close = null;
+  
+	const popupGroupCreate = document.createElement("div");
+	popupGroupCreate.classList.add("layer_wrap_parent");
+  
+	if(!this.layer_wrap_parent && !document.querySelector(".layer_wrap_parent")){
+	  this.pagewrap.append(popupGroupCreate);
+	}
+  
+	this.layer_wrap_parent = document.querySelector(".layer_wrap_parent");
+  
+	
+  
+	// console.log(this.selector.querySelectorAll(".close_trigger"));
+  
+  
+  
+	this.bindEvent();
+  }
+  
+  
+  
+  DesignPopup.prototype.dimCheck = function(){
+	const popupActive = document.querySelectorAll(".popup_wrap.active");
+	if(!!popupActive[0]){
+	  popupActive[0].classList.add("active_first");
+	}
+	if(popupActive.length>1){
+	  this.layer_wrap_parent.classList.add("has_active_multi");
+	}else{
+	  this.layer_wrap_parent.classList.remove("has_active_multi");
+	}
+  }
+  DesignPopup.prototype.popupShow = function () {
+	this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
+  
+	if (this.selector == null) {
+	  return;
+	}
+	// this.domHtml.classList.add("touchDis");
+	
+	this.selector.classList.add("active");
+	setTimeout(()=>{
+	  this.selector.classList.add("motion_end");
+	},30);
+	if ("beforeCallback" in this.option) {
+	  this.option.beforeCallback();
+	}
+  
+	if ("callback" in this.option) {
+	  this.option.callback();
+	}
+	if(!!this.design_popup_wrap_active){
+	  this.design_popup_wrap_active.forEach((element,index)=>{
+		if(this.design_popup_wrap_active !== this.selector){
+		  element.classList.remove("active");
+		}
+	  })
+	}
+	//animateIng = true;
+  
+	this.layer_wrap_parent.append(this.selector);
+	
+  
+	this.dimCheck();
+  
+	// this.layer_wrap_parent
+  
+	// ****** 주소 해시 설정 ****** //
+	// location.hash = this.selector.id
+	// modalCount++
+	// modalHash[modalCount] = '#' + this.selector.id
+  }
+  DesignPopup.prototype.popupHide = function () {
+	var target = this.option.selector;
+	if (target !== undefined) {
+  
+	  this.selector.classList.remove("motion");
+	  if ("beforeClose" in this.option) {
+		this.option.beforeClose();
+	  }
+	   //remove
+	   this.selector.classList.remove("motion_end");
+	   setTimeout(()=>{
+  
+		 this.selector.classList.remove("active");
+	   },400)
+	   this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
+	   this.dimCheck();
+	   if ("closeCallback" in this.option) {
+		 this.option.closeCallback();
+	   }
+	  //  if (this.design_popup_wrap_active.length == 0) {
+	  //    this.domHtml.classList.remove("touchDis");
+	  //  }
+	}
+  }
+  
+  DesignPopup.prototype.bindEvent = function () {
+	this.btn_close = this.selector.querySelectorAll(".btn_popup_close");
+	this.bg_design_popup = this.selector.querySelector(".bg_dim");
+	var closeItemArray = [...this.btn_close];
+  
+	if(!!this.btn_closeTrigger){
+	  this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
+	  closeItemArray.push(...this.btn_closeTrigger)
+	}
+	if (!!this.bg_design_popup) {
+	  closeItemArray.push(this.bg_design_popup);
+	}
+	if (closeItemArray.length) {
+	  closeItemArray.forEach((element) => {
+		element.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  this.popupHide(this.selector);
+		}, false);
+	  });
+	}
+  };

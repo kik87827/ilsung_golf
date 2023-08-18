@@ -41,10 +41,10 @@
 		</div>
 		<!-- // 공유하기 layer -->
 		<!-- 출국 layer -->
-		<div class="popup_wrap" id="share_popup">
+		<div class="popup_wrap" id="leave_popup">
 			<div class="bg_dim"></div>
-			<div class="popup_item small">
-				<div class="popup_content_low">
+			<div class="popup_item">
+				<div class="popup_content_low type2">
 					<div class="popup_vcont">
 						<div class="popup_vcont_title_row">
 							<p class="pv_title">[출국] 인천 - 시드니</p>
@@ -146,10 +146,42 @@
 						</div>
 					</div>
 				</div>
-				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				<a href="javascript:;" class="btn_popup_close type2"><span class="hdtext">팝업 닫기</span></a>
 			</div>
 		</div>
 		<!-- // 출국 layer -->
+
+		<script>
+			// 선언
+			var share_popup = new DesignPopup({
+				selector: "#share_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			var leave_popup = new DesignPopup({
+				selector: "#leave_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			// show 호출
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if (url_2 === "popup01") {
+				share_popup.popupShow();
+			} else if (url_2 === "popup02") {
+				leave_popup.popupShow();
+			}
+		</script>
 	</div>
 </body>
 
