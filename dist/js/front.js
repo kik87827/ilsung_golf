@@ -1421,3 +1421,76 @@ function photoSwiperFunc(){
 
 	}
 }
+
+
+function mobileBottomLayer(){
+	const mb_bottom_layer = document.querySelector(".mb_bottom_layer");
+	const middle_wrap = document.querySelector(".middle_wrap");
+	const btn_mbb_toggle = mb_bottom_layer.querySelector(".btn_mbb_toggle");
+	const mb_bottom_content = mb_bottom_layer.querySelector(".mb_bottom_content");
+	let windowWid = window.innerWidth;
+
+	if(!mb_bottom_layer){return;}
+	action();
+	window.addEventListener("resize",()=>{
+		if(windowWid !== window.innerWidth){
+			action();
+		}
+		windowWid = window.innerWidth;
+	});
+	btn_mbb_toggle.addEventListener("click",(e)=>{
+		e.preventDefault();
+		btn_mbb_toggle.classList.toggle("active");
+		mb_bottom_content.classList.toggle("active");
+	});
+	
+	function action(){
+		middle_wrap.style.paddingBottom = mb_bottom_layer.getBoundingClientRect().height + "px";
+	}
+}
+
+
+function toggleCompItem(option){
+	const targetDom = document.querySelectorAll(option.target);
+	//const targetParent = targetDom.closest(option.parent);
+
+	if(!!targetDom){
+		targetDom.forEach((item) => {
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				const thisTarget = e.currentTarget;
+				const siblingsTarget = siblings(thisTarget);
+				const siblingsTarget2 = thisTarget.closest(option.parent).querySelectorAll(option.target);
+
+				if(!!siblingsTarget){
+					siblingsTarget.forEach((item)=>{
+						item.classList.remove("active");
+					});
+				}
+
+				if(!!siblingsTarget2){
+					siblingsTarget2.forEach((item)=>{
+						if(item !== thisTarget){
+							item.classList.remove("active");
+						}
+					});
+				}
+				thisTarget.classList.toggle("active");
+			});
+		});
+	}
+}
+
+
+function siblings(t) {
+	var children = t.parentElement.children;
+	var tempArr = [];
+  
+	for (var i = 0; i < children.length; i++) {
+	  tempArr.push(children[i]);
+	}
+  
+	return tempArr.filter(function(e) {
+	  return e != t;
+	});
+  }

@@ -2080,60 +2080,17 @@
                 </div>
                 <!-- // detail_calculation_wrap -->
             </div>
-
-            <script>
-                detailVisualC();
-                accordionFunc();
-
-                // 일정 간략히 보기 
-                const accitem = document.querySelectorAll(".tab_contents .accordion_vitem");
-                const sch_viewer = document.querySelector("#sch_viewer");
-                let sch_viewer_boolean = false;
-                if(!!sch_viewer){
-                    sch_viewer.addEventListener("click",(e)=>{
-                        e.preventDefault();
-
-                        if(!sch_viewer_boolean){
-                            sch_viewer.textContent = '일정 자세히 보기';
-                            accitem.forEach((item) => {
-                                item.classList.remove("active");
-                            });
-                        }else{
-                            sch_viewer.textContent = '일정 간략히 보기';
-                            accitem.forEach((item) => {
-                                item.classList.add("active");
-                            });
-                        }
-
-                        sch_viewer_boolean = !sch_viewer_boolean;
-                    });
-                }
-
-                // 좋아요
-                const likeBtn = document.querySelector(".btn_dcc_ico.ico_like");
-                likeBtn.addEventListener("click",(e)=>{
-                    e.preventDefault();
-                    e.currentTarget.classList.toggle("active");
-                });
-
-                window.addEventListener("load", () => {
-                    stickyTab();
-                    stickyPanel();
-                    timeLineSwiper();
-                });
-                
-            </script>
         
             
         </section>
         <!-- // middle -->
-        <!-- mobile bottom layer -->
-        <div class="mb_bottom_layer">
+         <!-- mobile bottom layer -->
+         <div class="mb_bottom_layer">
             <div class="mb_bottom_content_wrap">
                 <div class="btn_mbb_toggle_row"><a href="javascript:;" class="btn_mbb_toggle"></a></div>
                 <div class="mb_bottom_content">
                     <div class="prodata_mb_card_item_wrap">
-                        <div class="prodata_mb_card_item">
+                        <a href="#" class="prodata_mb_card_item">
                             <div class="prodata_mb_text">5성급 하얏트리젠시</div>
                             <div class="prodata_mb_else_g">
                                 <span class="prodata_kind_text">성인</span>
@@ -2142,8 +2099,8 @@
                                     <div class="prodata_price_unit">원</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="prodata_mb_card_item active">
+                        </a>
+                        <a href="#" class="prodata_mb_card_item">
                             <div class="prodata_mb_text">5성급 하얏트리젠시</div>
                             <div class="prodata_mb_else_g">
                                 <span class="prodata_kind_text">성인</span>
@@ -2152,7 +2109,7 @@
                                     <div class="prodata_price_unit">원</div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!--  -->
@@ -2254,6 +2211,59 @@
             </div>
         </div>
         <!-- // mobile layer -->
+
+        
+
+        <script>
+            detailVisualC();
+            accordionFunc();
+
+            // 일정 간략히 보기 
+            const accitem = document.querySelectorAll(".tab_contents .accordion_vitem");
+            const sch_viewer = document.querySelector("#sch_viewer");
+            let sch_viewer_boolean = false;
+            if(!!sch_viewer){
+                sch_viewer.addEventListener("click",(e)=>{
+                    e.preventDefault();
+
+                    if(!sch_viewer_boolean){
+                        sch_viewer.textContent = '일정 자세히 보기';
+                        accitem.forEach((item) => {
+                            item.classList.remove("active");
+                        });
+                    }else{
+                        sch_viewer.textContent = '일정 간략히 보기';
+                        accitem.forEach((item) => {
+                            item.classList.add("active");
+                        });
+                    }
+
+                    sch_viewer_boolean = !sch_viewer_boolean;
+                });
+            }
+
+            // 좋아요
+            const likeBtn = document.querySelector(".btn_dcc_ico.ico_like");
+            likeBtn.addEventListener("click",(e)=>{
+                e.preventDefault();
+                e.currentTarget.classList.toggle("active");
+            });
+
+            toggleCompItem({
+                target : '.prodata_mb_card_item',
+                parent : '.prodata_mb_card_item_wrap'
+            })
+
+            window.addEventListener("load", () => {
+                stickyTab();
+                stickyPanel();
+                timeLineSwiper();
+
+                mobileBottomLayer();
+            });
+            
+        </script>
+
         @@include('./include/footer.html')
     </div>
 </body>
