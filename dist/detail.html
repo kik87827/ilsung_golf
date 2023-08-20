@@ -2924,11 +2924,13 @@
 			}
 
 			// 좋아요
-			const likeBtn = document.querySelector(".btn_dcc_ico.ico_like");
-			likeBtn.addEventListener("click", (e) => {
-				e.preventDefault();
-				e.currentTarget.classList.toggle("active");
-			});
+			const likeBtn = document.querySelectorAll(".ico_like");
+			likeBtn.forEach((item) => {
+				item.addEventListener("click", (e) => {
+					e.preventDefault();
+					e.currentTarget.classList.toggle("active");
+				});
+			})
 
 			toggleCompItem({
 				target: '.prodata_mb_card_item',

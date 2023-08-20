@@ -262,17 +262,17 @@
                                             <li>
                                                 <div class="detail_vbox">
                                                     <div class="while_loof_item">
-                                                    <div class="while_line">
+                                                        <div class="while_line">
                                                             <span class="while_loof_count">5박8일</span>
-                                                    </div>
-                                                    <div class="while_loof_cols">
+                                                        </div>
+                                                        <div class="while_loof_cols">
                                                             <div class="whilte_loof_main">09.28(화)<br>11:50</div>
                                                             <div class="whilte_loof_sub">아시아나 항공<br>OZ0561</div>
-                                                    </div>
-                                                    <div class="while_loof_cols">
+                                                        </div>
+                                                        <div class="while_loof_cols">
                                                             <div class="whilte_loof_main">09.28(화)<br>11:50</div>
                                                             <div class="whilte_loof_sub">아시아나 항공<br>OZ0561</div>
-                                                    </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -2265,11 +2265,13 @@
             }
 
             // 좋아요
-            const likeBtn = document.querySelector(".btn_dcc_ico.ico_like");
-            likeBtn.addEventListener("click",(e)=>{
-                e.preventDefault();
-                e.currentTarget.classList.toggle("active");
-            });
+            const likeBtn = document.querySelectorAll(".ico_like");
+            likeBtn.forEach((item)=>{
+                item.addEventListener("click",(e)=>{
+                    e.preventDefault();
+                    e.currentTarget.classList.toggle("active");
+                });
+            })
 
             toggleCompItem({
                 target : '.prodata_mb_card_item',

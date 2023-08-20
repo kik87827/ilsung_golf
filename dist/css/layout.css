@@ -438,6 +438,8 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
     .middle_guide_title{font-size:20px;}
     .middle_guide_content{margin-top:30px;}
 
+    .middle_wrap.detail_wrap{padding:55px 0 60px;}
+
 
     .footer_sns_list{justify-content: flex-start;flex-wrap:wrap;gap:8px;margin-top:10px;}
     .footer_sns_list > li{margin:0;}

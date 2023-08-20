@@ -877,6 +877,7 @@ function quickMenu(){
 
 
 function stickyTab() {
+	const header_wrap = document.querySelector(".header_wrap");
     const detailAnchorContentsWrap = document.querySelector(".detail_anchor_contents_wrap");
     const stickyTabsContainerZone = document.querySelector(".sticky_tabs_container_zone");
     const tabContents = document.querySelectorAll(".tab_contents");
@@ -891,6 +892,41 @@ function stickyTab() {
     let getWindowWid = window.innerWidth;
     let activeItem = null;
     let btnClickIs = false;
+
+	let detail_anctab_obj = null;
+	const detail_anctab_swiper = document.querySelector(".sticky_tabs_swiper_container");
+	const detail_anctab_slide = detail_anctab_swiper.querySelectorAll(".swiper-slide");
+
+	if(!!detail_anctab_slide){
+		if(detail_anctab_obj !== null){
+			detail_anctab_obj.update();
+		}else{
+			if(window.innerWidth < 1024){
+				mbFunc();
+			}
+	
+			window.addEventListener("resize",()=>{
+				if(getWindowWid !== window.innerWidth){
+					if(detail_anctab_obj !== null){
+						detail_anctab_obj.destroy();
+					}
+					if(window.innerWidth < 1024){
+						mbFunc();
+					}
+				}
+				getWindowWid = window.innerWidth;
+			});
+		}
+	
+		function mbFunc(){
+			detail_mv_obj = new Swiper(".sticky_tabs_swiper_container", {
+				slidesPerView: 'auto',
+				slidesPerGroupAuto : true,
+				freeMode: true,
+			});
+		}
+	}
+
     window.addEventListener("resize", () => {
         if (getWindowWid !== window.innerWidth) {
             getPosValue = getLayerPos();
@@ -928,11 +964,24 @@ function stickyTab() {
             e.preventDefault();
             const thisTarget = e.currentTarget;
             const thisScrollPosTop = document.querySelector(thisTarget.getAttribute("href")).getBoundingClientRect().top;
-            const thisScrollPos = (thisScrollPosTop + window.scrollY - getPosHeight);
+			let thisScrollGo = 0;
+			let headerWrapHeight = !!header_wrap ? header_wrap.getBoundingClientRect().height : 0;
+			let stickyHeight = !!stickyTabsInner ? stickyTabsInner.getBoundingClientRect().height : 0;
+            let thisScrollPos = (thisScrollPosTop + window.scrollY - getPosHeight);
+            let thisScrollMbPos = (thisScrollPosTop + window.scrollY - (stickyHeight + headerWrapHeight));
+			
+			if(window.innerWidth > 1023){
+				thisScrollGo = thisScrollPos;
+			}else{
+				thisScrollGo = thisScrollMbPos;
+				console.log(stickyHeight,headerWrapHeight);
+			}
+
+			
             activeTab(thisTarget);
             if (!!thisScrollPos) {
                 window.scrollTo({
-                    top: thisScrollPos,
+                    top: thisScrollGo,
                     left: 0,
                     behavior: "smooth",
                 });
@@ -951,15 +1000,21 @@ function stickyTab() {
 
     function getLayerPos() {
         let localTop = stickyTabsContainerZone.getBoundingClientRect().top;
-        return localTop -(stickyTabsInnerWrap.getBoundingClientRect().height/2) + window.scrollY;
+		return localTop -(stickyTabsInnerWrap.getBoundingClientRect().height/2) + window.scrollY;
     }
 
     function getPosArray() {
         let posArray = [];
+		let headerWrapHeight = !!header_wrap ? header_wrap.getBoundingClientRect().height : 0;
+		let stickyFixedHeight = !!stickyTabsInnerWrap ? stickyTabsInnerWrap.getBoundingClientRect().height : 0;
         if(!!tabContents){
             tabContents.forEach((item)=>{
                 let eachTop = item.getBoundingClientRect().top;
-                posArray.push(eachTop + window.scrollY - getPosHeight);
+				if(window.innerWidth > 1023){
+					posArray.push(eachTop + window.scrollY - getPosHeight);
+				}else{
+					posArray.push(eachTop + window.scrollY - (stickyFixedHeight + headerWrapHeight));
+				}
             });
         }
         return posArray;
@@ -973,10 +1028,8 @@ function stickyTab() {
     function scrollAction() {
         if (getPosValue < window.scrollY) {
             stickyTabsInnerWrap.classList.add("fixed");
-            stickyTabsInnerWrap.style.top = '0px';
         } else {
             stickyTabsInnerWrap.classList.remove("fixed");
-            stickyTabsInnerWrap.style.top = '0px';
             if(window.scrollY <= detailAnchorContentsWrapPos){
                 //firstActive();
             }
@@ -1399,17 +1452,6 @@ function detailVisualC(){
   
   
   
-  DesignPopup.prototype.dimCheck = function(){
-	const popupActive = document.querySelectorAll(".popup_wrap.active");
-	if(!!popupActive[0]){
-	  popupActive[0].classList.add("active_first");
-	}
-	if(popupActive.length>1){
-	  this.layer_wrap_parent.classList.add("has_active_multi");
-	}else{
-	  this.layer_wrap_parent.classList.remove("has_active_multi");
-	}
-  }
   DesignPopup.prototype.popupShow = function () {
 	this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
   
