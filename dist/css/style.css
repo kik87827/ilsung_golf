@@ -38,6 +38,15 @@
 .pvcont_vitem{padding:40px 20px;border-bottom:1px solid #e7e7e7;}
 .pvcont_vitem:last-of-type{border-bottom:0;}
   
+@media (max-width:1023px){
+    .popup_title_low{padding:15px 20px;}
+    .btn_popup_close{top:13px;}
+    .popup_vcont_title_row{padding:12px 40px 12px 15px;}
+    .btn_popup_close{right:15px;}
+    .btn_popup_close.type2{top:14px;}
+    .popup_vcont_content_row{margin:0 15px;}
+    .pvcont_vitem{padding:20px 0;}
+}
 /* // popup */
 
 
@@ -1701,15 +1710,6 @@ input[type=range] {
 
 /* detail */
 
-/* detail- visual */
-.detail_grid_visual_wrap{display:flex;gap:10px;max-width:1200px;margin:0 auto}
-.detail_grid_main_cols{flex:1;min-width:0;}
-.detail_grid_sub_cols{flex:0 0 390px;}
-.dgrid_thum_list{display:flex;flex-wrap:wrap;gap:10px 0;height:100%;margin:0 -5px;}
-.dgrid_thum_list > li{flex:0 0 50%;box-sizing: border-box;width:50%;padding:0 5px;}
-.dgrid_thum_item{display:flex;width:100%;height:0;padding-bottom:100%;position:relative;overflow:hidden;}
-.dgrid_thum_item img{display:block;vertical-align: top;position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover;object-position: 50% 50%;}
-.dgrid_more_item{z-index:2;position:absolute;top:0;left:0;display:flex;align-items: center;justify-content: center;width:100%;height:100%;color:#fff;font-size:18px;font-weight:500;background:rgba(0,0,0,0.4);}
 
 /* detail- content */
 .detail_global_title_wrap{margin-top:40px;padding-bottom:24px;border-bottom:2px solid #313131;}
@@ -2147,6 +2147,20 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 /* // 이용후기 */
 
 /* 상세 메인비쥬얼 */
+/* detail- visual */
+.detail_grid_visual_wrap{display:flex;gap:10px;max-width:1200px;margin:0 auto;position:relative;}
+.detail_grid_main_cols{flex:1;min-width:0;}
+.detail_grid_sub_cols{flex:0 0 390px;}
+.dgrid_thum_list{display:flex;flex-wrap:wrap;gap:10px 0;height:100%;margin:0 -5px;}
+.dgrid_thum_list > li{flex:0 0 50%;box-sizing: border-box;width:50%;padding:0 5px;}
+.dgrid_thum_item{display:flex;width:100%;height:0;padding-bottom:100%;position:relative;overflow:hidden;}
+.dgrid_thum_item img{display:block;vertical-align: top;position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover;object-position: 50% 50%;}
+.dgrid_more_item{z-index:2;position:absolute;top:0;left:0;display:flex;align-items: center;justify-content: center;width:100%;height:100%;color:#fff;font-size:18px;font-weight:500;background:rgba(0,0,0,0.4);}
+.detail_grid_imgitem{height:390px;}
+.detail_grid_imgitem img{display:block;vertical-align: top;position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover;object-position: 50% 50%;}
+
+
+
 .guide_dmv_item_wrap{}
 .guide_dmv_item{margin-bottom:200px;}
 .swiper-container.detail_mv_swiper{width:1200px;margin:0 auto;overflow:visible;}
@@ -2156,6 +2170,7 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 .detail_mv_swiper .swiper-slide img{vertical-align: top;}
 .detail_mv_swiper .swiper-slide:after{display:block;content:'';width:100%;height:100%;background:#fff;position:absolute;top:0;left:0;opacity:.5;transition:.5s;}
 .d_mv{display:block;}
+.d_mv > img{width:100%;}
 .d_mv_bottom_control_zone{position:absolute;bottom:12px;left:0;width:100%;z-index:10;text-align: center;}
 .d_mv_bottom_control_wrap{max-width:1200px;padding:0 20px;margin:0 auto;}
 .d_mv_bottom_in_control{display:inline-flex;justify-content: center;align-items:center;background:rgba(0,0,0,.3);border-radius:100px;padding:8px 25px;}
@@ -2198,6 +2213,19 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 .tc_guide_img > img{position:relative;z-index:1;vertical-align: top;}
 .tc_guide_img:before{display:block;content:'';width:68px;z-index:0;height:68px;border:1px solid #e8e8e8;border-radius:100%;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);background:#fff url("../images/noimg_140x140.png") no-repeat 50% 50%/100% auto;}
 .tc_guide_img_wrap{}
+
+@media (max-width:1023px){
+    .swiper-container.detail_mv_swiper{width:auto;}
+    .d_mv_bottom_in_control{padding:5px 15px;}
+
+    .btn_d_mv_stop, .btn_d_mv_play{width:20px;height:20px;}
+
+    .detail_grid_visual_wrap{display:block;}
+    .detail_grid_sub_cols{display:none;}
+
+    .detail_grid_imgitem{height:auto;}
+    .detail_grid_imgitem img{width:100%;height:auto;object-fit: contain;position:static}
+}
 
 
 /* 공유하기 */
@@ -2244,13 +2272,35 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 .gallery_main_swiper_wrap img{vertical-align: top;}
 .gallery_imgcaption_row{padding:0 40px;}
 
-.btn_gallery_ms_control{display:block;width:18px;height:30px;position:absolute;top:50%;transform: translateY(-50%);}
+.btn_gallery_ms_control{display:block;z-index:2;width:18px;height:30px;position:absolute;top:50%;transform: translateY(-50%);}
 .btn_gallery_ms_control:after{display:block;content:'';width:18px;height:18px;border-right:2px solid #5f5f5f;border-bottom:2px solid #5f5f5f;transform: rotate(-225deg);position:absolute;top:5px;left:5px;}
 .btn_gallery_ms_control.prev{left:0;}
 .btn_gallery_ms_control.next{right:0;}
 .btn_gallery_ms_control.next:after{transform: rotate(-45deg);left:-7px;}
 
 .gallery_imgcaption{font-size:15px;color:#4e4e4e;line-height:1.5;}
+
+@media (max-width:1023px){
+    .air_map_dia_line{left:23px;width:calc(100% - 46px)}
+    .air_map_tvalue{font-size:14px;}
+    .air_map_tlabel{margin-bottom:45px;}
+
+    .photo_thumquad_list{gap:5px 0;margin:0 -2.5px;}
+    .photo_thumquad_list > li{padding:0 2.5px;}
+
+    .gallery_imgcaption_row,
+    .gallery_topdata_row{padding:0;}
+    .gallery_main_swiper_wrap{padding:0;}
+
+    .btn_gallery_ms_control{}
+    .btn_gallery_ms_control:after{border-color:#fff;width:10px;height:10px;top:10px;left:7px;
+        box-shadow: 5px 4px 7px -2px rgba(0,0,0,0.57);
+        -webkit-box-shadow: 5px 4px 7px -2px rgba(0,0,0,0.57);
+        -moz-box-shadow: 5px 4px 7px -2px rgba(0,0,0,0.57);
+    }
+    .btn_gallery_ms_control.next:after{left:0px;}
+    .gallery_imgcaption{font-size:13px;}
+}
 
 
 /* 모바일 하단 */
@@ -2333,4 +2383,7 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 .btn_mbquad_box.primary .btn_mbquad_box_text{font-weight:700;color:#fff;}
 @media (max-width:1023px){
     .mb_bottom_layer{display:block;}
+    
+    .sns_share_ico_list{padding:0;}
+    .btn_sns_share{width:50px;height:50px;}
 }
