@@ -315,7 +315,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
 
 .footer_wrap{}
 .footer_else_low{border-top:1px solid #e3e3e3;}
-.footer_else_pixin{max-width:1200px;margin:0 auto;display:flex;justify-content: space-between;align-items: center;padding:20px;}
+.footer_else_pixin{max-width:1200px;margin:0 auto;display:flex;justify-content: space-between;align-items: center;padding:20px;background:#fff;}
 .footer_else_label{font-size:17px;color:#2b2b2b;}
 /* .footer_sns_list{display:flex;margin-right:20px;}
 .footer_sns_list > li{margin-right:15px;}
@@ -458,7 +458,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
     .footer_copyitem_list_wrap{margin-right:80px;} */
     
     .footer_main_logo_text{color:#fff;opacity:0.6;font-size:17px;}
-
+    .footer_wrap{background:#282828;}
 }
 
 @media (max-width:400px){

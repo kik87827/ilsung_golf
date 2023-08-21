@@ -1653,6 +1653,7 @@ function photoSwiperFunc(){
 
 
 function mobileBottomLayer(){
+	const footer_wrap = document.querySelector(".footer_wrap");
 	const mb_bottom_layer = document.querySelector(".mb_bottom_layer");
 	const middle_wrap = document.querySelector(".middle_wrap");
 	const btn_mbb_toggle = mb_bottom_layer.querySelector(".btn_mbb_toggle");
@@ -1674,7 +1675,9 @@ function mobileBottomLayer(){
 	});
 	
 	function action(){
-		middle_wrap.style.paddingBottom = mb_bottom_layer.getBoundingClientRect().height + "px";
+		if(window.innerWidth < 1024){
+			footer_wrap.style.paddingBottom = mb_bottom_layer.getBoundingClientRect().height+40 + "px";
+		}
 	}
 }
 

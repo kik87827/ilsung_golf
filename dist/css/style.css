@@ -2381,6 +2381,17 @@ input.props_form_dom:checked{background:#176bdd;}
     .revbox_data_text{font-size:13px;}
 
     .btn_submitbox_text{font-size:16px;min-width:260px;padding:15px;}
+/* 
+    .revbox_data_thum_cols{flex-basis: 50px;}
+    .revbox_data_thum{width:50px;height:50px;} */
+
+    .review_box_item{padding:20px;}
+    .revbox_data_box{flex-direction: column;}
+    .revbox_data_cap_cols{width:auto;flex:1;}
+    .revbox_data_tail_cols{margin-top:20px;}
+
+    .revbox_data_tbox:before{display:none;}
+    .revbox_data_cap_cols{padding:0}
 }
 
 
