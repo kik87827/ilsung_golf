@@ -1574,12 +1574,19 @@ function timeLineSwiper() {
 			  ${swiperGroup.getAttribute("id")} = new Swiper("#${swiperGroup.getAttribute("id")} .time-swiper", {
 				loop: true,
 				speed : 800,
-				spaceBetween :12,
+				spaceBetween :6,
 				slidesPerView: 3,
 				slidesPerGroup : 3,
 				navigation: {
 					nextEl: '#${swiperGroup.getAttribute("id")} .btn_time_gallery_control.next',
 					prevEl: '#${swiperGroup.getAttribute("id")} .btn_time_gallery_control.prev',
+				},
+				breakpoints: {
+					1024: {
+						spaceBetween :0,
+						slidesPerView: 1,
+						slidesPerGroup : 1,
+					},
 				},
 			  });
 			`
