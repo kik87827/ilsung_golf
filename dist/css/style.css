@@ -341,22 +341,27 @@ input.mv_form_input::input-placeholder{color:#fff;}
 .btn_search_form{display:block;width:30px;height:30px;background:url("../images/ico_searchbox_btn.png") no-repeat 0 0/100% auto;}
 .btn_search_form_text{font-size:0;line-height:0;opacity:0;position:relative;z-index:-1;}
 
-.search_field_target{display:flex;align-items: center;width:100%;height:100%;padding:0 15px 0 30px;box-sizing: border-box;position:relative;}
-.search_field_target:after{display:block;content:'';width:42px;height:42px;margin-left:25px;background:url("../images/ico_searchbox_item.png") no-repeat 0 0/100% auto;flex:0 0 42px;}
+/* 20230824 수정 */
+.search_field_target{display:flex;align-items: center;width:100%;height:100%;padding:0 15px 0 20px;box-sizing: border-box;position:relative;}
+.search_field_target:after{display:block;content:'';width:42px;height:42px;margin-left:10px;background:url("../images/ico_searchbox_item.png") no-repeat 0 0/100% auto;flex:0 0 42px;}
 
 .search_field_target.define_local:after{background-position:0 0;}
 
-.search_field_target.define_start:after{background-position:0 33.333333%;}
+.search_field_target.define_start:after{background-position:0 25%;}
 
-.search_field_target.define_while:after{background-position:0 66.666666666%;}
+.search_field_target.define_while:after{background-position:0 50%;}
 
-.search_field_target.define_where:after{background-position:0 100%;}
+.search_field_target.define_where:after{background-position:0 75%;}
+
+.search_field_target.define_searchword:after{background-position:0 100%;}
+
 .search_field_target.define_search{}
 .search_field_target.define_search:after{display:none;}
 
 .search_field_target.result_mode{}
 .search_field_target.result_mode .search_form_text_place{display:none;}
 .search_field_target.result_mode .search_form_text_result_row{display:block;}
+/* // 20230824 수정 */
 
 .search_field_input_hidden{opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;cursor: pointer;}
 

@@ -56,16 +56,18 @@
                         <div class="hgroup_side hg_side_left">
                             <a href="#" class="hgroup_side_totalmenu" name="pcmenu"><i class="totalmenu_line"></i></a>
                         </div>
-                        <nav class="hgroup_nav_wrap hg_side_main">                                                                
+                        <nav class="hgroup_nav_wrap hg_side_main">
+                            <!-- 20230824 변경 -->                                                                
                             <ul class="hgroup_nav_list">
-                                <li><a href="#" class="hgroup_nav_menu">동남아</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">일본</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">중국</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">남태평양</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">유렵</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">미주</a></li>
-                                <li><a href="#" class="hgroup_nav_menu">아프리카</a></li>
+                                <li><a href="#gnb_two01" class="hgroup_nav_menu">동남아</a></li>
+                                <li><a href="#gnb_two02" class="hgroup_nav_menu">일본</a></li>
+                                <li><a href="#gnb_two03" class="hgroup_nav_menu">중국</a></li>
+                                <li><a href="#gnb_two04" class="hgroup_nav_menu">남태평양</a></li>
+                                <li><a href="#gnb_two05" class="hgroup_nav_menu">유렵</a></li>
+                                <li><a href="#gnb_two06" class="hgroup_nav_menu">미주</a></li>
+                                <li><a href="#gnb_two07" class="hgroup_nav_menu">아프리카</a></li>
                             </ul>
+                            <!-- // 20230824 변경 -->                                                                
                         </nav>
                     </div>
                     <!-- global_menu_layer -->
@@ -77,18 +79,24 @@
                 </div>
             </div>
             <!-- // pc -->
-            <!-- mobile -->
+            <!-- mobile 20230824 -->
             <div class="header_mobile_group type2">
                 <div class="header_mobile_row">
                     <a href="#" class="mobile_util_menu ico_total pos_left" name="totalmenu"><span class="hdtext">전체메뉴</span><i class="ico_mb_total_line"></i></a>
                     <h1 class="mobile_toplogo"><a href="#" class="mobile_toplogo_link"><img src="./images/toplogo_mb.png" alt="일성골프 골프투어 No.1"></a></h1>
-                    <a href="#" class="mobile_util_menu ico_men pos_right"><span class="hdtext">마이페이지</span></a>
+                    <!-- <a href="#" class="mobile_util_menu ico_men pos_right"><span class="hdtext">마이페이지</span></a> -->
+                    <div class="mobile_topelse_wrap pos_right">
+                        <ul class="mobile_util_list">
+                            <li><a href="#" class="mobile_util_menu ico_search"><span class="hdtext">검색</span></a></li>
+                            <li><a href="#" class="mobile_util_menu ico_men"><span class="hdtext">마이페이지</span></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- mobile_total_layer -->
             @@include('./include/mobile_menu.html')
             <!-- // mobile_total_layer -->
-            <!-- // mobile -->
+            <!-- // mobile 20230824 -->
         </header>
         <!-- // header -->
         <!-- middle -->

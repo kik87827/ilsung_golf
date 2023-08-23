@@ -1,5 +1,6 @@
 <div class="mobile_total_layer">
     <div class="mobile_total_inner">
+        <!-- 20230824 수정 -->
         <div class="mb_total_top_row">
             <!-- <div class="mb_total_top_cols">
                 <a href="#" class="mb_total_util_who">
@@ -19,19 +20,55 @@
                 <button type="button" class="btn_mb_total_close"><span class="hdtext">닫기</span></button>
             </div>
         </div>
-        <div class="mb_current_render_row">
+        <!-- ===== 20230824 수정 ===== -->
+        <!-- 로그인전 -->
+        <div class="mb_current_render_box">
             <div class="mb_current_render_cols">
                 <a href="#" class="mb_total_util_who">
                     <span class="total_who_wrap">
-                        <span class="total_who_text">성민영</span>
-                        <span class="total_who_unit">님</span>
+                        <!-- <span class="total_who_text">성민영</span>
+                        <span class="total_who_unit">님</span> -->
+                        <span class="total_who_text">로그인을 해주세요</span>
                     </span>
                 </a>
             </div>
-            <div class="mb_current_render_cols">
+            <!-- <div class="mb_current_render_cols">
                 <a href="#" class="mb_total_current_count">예약<span class="mb_total_emp">2</span>건</a>
+            </div> -->
+        </div>
+        <!-- // 로그인전 -->
+        <!-- 로그인후 -->
+        <div class="mb_current_render_box">
+            <div class="mb_current_render_row">
+                <div class="mb_current_render_cols">
+                    <a href="#" class="mb_total_util_who">
+                        <span class="total_who_wrap">
+                            <span class="total_who_text">성민영</span>
+                            <span class="total_who_unit">님</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="mb_current_render_cols">
+                    <a href="#" class="btn_mb_total_util">로그아웃</a>
+                </div>
+            </div>
+            <div class="mb_current_count_row">
+                <a href="#" class="mb_current_count_item">
+                    <span class="mb_current_count_key">예약</span>
+                    <span class="mb_current_count_value">2건</span>
+                </a>
+                <a href="#" class="mb_current_count_item">
+                    <span class="mb_current_count_key">포인트</span>
+                    <span class="mb_current_count_value">0원</span>
+                </a>
+                <a href="#" class="mb_current_count_item">
+                    <span class="mb_current_count_key">쿠폰</span>
+                    <span class="mb_current_count_value">1건</span>
+                </a>
             </div>
         </div>
+        <!-- // 로그인후 -->
+        <!-- // ===== 20230824 수정 ===== -->
         <div class="mb_total_quick_menu_row">
             <div class="swiper-container mb_total_quick_wrap">
                 <ul class="mb_total_quick_list swiper-wrapper">
@@ -113,6 +150,7 @@
         </div>
         <div class="mb_total_midscroll_row">
             <div class="tm_menu_list_wrap">
+                <!-- 20230824 수정 - tmenu_one -->
                 <ul class="tm_menu_list">
                     <li>
                         <div class="tm_menu_item active">
@@ -126,7 +164,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">동남아</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">동남아</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -139,7 +180,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">일본</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">일본</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -152,7 +196,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">중국</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">중국</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -164,7 +211,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">남태평양</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">남태평양</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -178,7 +228,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">유럽</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">유럽</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -193,7 +246,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">미주</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">미주</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -206,7 +262,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">아프리카</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">아프리카</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -231,7 +290,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">자유여행 01</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">자유여행 01</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -245,7 +307,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">자유여행 02</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">자유여행 02</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -272,7 +337,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">제주</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">제주</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -286,7 +354,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">버스여행</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">버스여행</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -300,7 +371,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">기차여행</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">기차여행</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -314,7 +388,10 @@
                                     <li>
                                         <div class="tmenu_toggle_item">
                                             <div class="tmenu_one_row">
-                                                <a href="#" class="tmenu_one"><span class="tmenu_one_text">성여행</span></a>
+                                                <div class="tmenu_one">
+                                                    <a href="#" class="tmenu_one_text">성여행</a>
+                                                    <a href="https://naver.com" class="btn_tmenu_one"></a>
+                                                </div>
                                             </div>
                                             <div class="tmenu_two_row">
                                                 <ul class="tmenu_two_list">
@@ -329,6 +406,7 @@
                         </div>
                     </li>
                 </ul>
+                <!-- // 20230824 수정 -->
             </div>
         </div>
     </div>

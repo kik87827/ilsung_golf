@@ -83,6 +83,22 @@
                                             </div>
                                         </a>
                                     </div>
+                                    <!-- 20230824 추가 -->
+                                    <div class="search_field_cols">
+                                        <a href="#" class="search_field_target define_searchword" data-poslayer="#layer_box_search">
+                                            <div class="search_field_form">
+                                                <div class="search_form_label">검색어</div>
+                                                <div class="search_form_text_g">
+                                                    <div class="search_form_text_place">검색어를 입력하세요</div>
+                                                    <!-- <div class="search_form_text_result_row">
+                                                        <div class="search_form_text_result"></div>
+                                                        <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                     <!-- // 20230824 추가 -->
                                 </div>
                                 <div class="search_field_cols define_btn">
                                     <a href="#" class="btn_search_form"><span class="btn_search_form_text">검색하기</span></a>
@@ -102,12 +118,13 @@
             </div>
         </footer>
         <!-- // footer -->
-        <!-- layer -->
+        <!-- layer 20230824 수정 -->
         @@include('./include/layer_local.html')
         @@include('./include/layer_while.html')
         @@include('./include/layer_start.html')
         @@include('./include/layer_startdate.html')
-        <!-- // layer -->
+        @@include('./include/layer_search.html')
+        <!-- // layer 20230824 수정 -->
 
         @@include('./include/start_date_script.html')
     </div>

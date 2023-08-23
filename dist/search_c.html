@@ -106,6 +106,22 @@
 											</div>
 										</a>
 									</div>
+									<!-- 20230824 추가 -->
+									<div class="search_field_cols">
+										<a href="#" class="search_field_target define_searchword" data-poslayer="#layer_box_search">
+											<div class="search_field_form">
+												<div class="search_form_label">검색어</div>
+												<div class="search_form_text_g">
+													<div class="search_form_text_place">검색어를 입력하세요</div>
+													<!-- <div class="search_form_text_result_row">
+                                                        <div class="search_form_text_result"></div>
+                                                        <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                                    </div> -->
+												</div>
+											</div>
+										</a>
+									</div>
+									<!-- // 20230824 추가 -->
 								</div>
 							</div>
 							<div class="btn_search_field_submit_row">
@@ -125,7 +141,7 @@
 			</div>
 		</footer>
 		<!-- // footer -->
-		<!-- layer -->
+		<!-- layer 20230824 수정 -->
 		<div class="poslayer_z" id="layer_box_local" data-topmargin="20" data-topMobileMargin="0">
 			<div class="poslayer_titlow">
 				<p class="poslayer_tit">지역선택</p>
@@ -390,7 +406,23 @@
 
 
 
-		<!-- // layer -->
+		<div class="poslayer_z has_leftpos" id="layer_box_search" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">검색어입력</p>
+			</div>
+			<div class="poslayer_contlow">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+						<div class="search_field_box">
+							<input type="text" class="input_search_field" placeholder="검색어를 입력하세요">
+							<a href="#" class="btn_input_submit"><span class="hdtext">검색</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<!-- // layer 20230824 수정 -->
 
 		<script>
 			$(function() {
