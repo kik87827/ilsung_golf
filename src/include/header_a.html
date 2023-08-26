@@ -1,0 +1,81 @@
+<!-- header -->
+<header class="header_wrap">
+    <!-- pc -->
+    <div class="header_pc_group">
+        <div class="hgroup_util_row">
+            <div class="hgroup_inner">
+                <div class="hgroup_util_cols">
+                    <ul class="hgroup_util_list">
+                        <li><a href="#" class="hgroup_util">공지사항</a></li>
+                        <li><a href="#" class="hgroup_util">이벤트</a></li>
+                        <li><a href="#" class="hgroup_util">기획전</a></li>
+                    </ul>
+                </div>
+                <div class="hgroup_util_cols">
+                    <ul class="hgroup_util_list">
+                        <li><a href="#" class="hgroup_util">로그인</a></li>
+                        <li><a href="#" class="hgroup_util">회원가입</a></li>
+                        <li><a href="#" class="hgroup_util">예약확인/결제</a></li>
+                        <li><a href="#" class="hgroup_util">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hgroup_main_row">
+            <div class="hgroup_inner">
+                <h1 class="hgroup_toplogo"><a href="#" class="toplogo_link"><span class="hdtext">일성골프 골프투어 No.1</span></a></h1>
+                <div class="hgroup_search_cols">
+                    <fieldset class="hgroup_search_field">
+                        <legend>검색</legend>
+                        <div class="search_field_long_cols"><input type="text" placeholder="검색어를 입력하세요" class="search_field_input"></div>
+                        <div class="search_field_short_cols"><a href="#" class="btn_search_field_item"><span class="hdtext">검색</span></a></div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="hgroup_gnb_row">
+            <div class="hgroup_inner">
+                <div class="hgroup_side hg_side_left">
+                    <a href="#" class="hgroup_side_totalmenu" name="pcmenu"><i class="totalmenu_line"></i><span class="side_totalmenu_text">전체메뉴</span></a>
+                </div>
+                <nav class="hgroup_nav_wrap hg_side_main">
+                    <!-- 20230824 변경 -->                                                                
+                    <ul class="hgroup_nav_list">
+                        <li><a href="#gnb_two01" class="hgroup_nav_menu">동남아</a></li>
+                        <li><a href="#gnb_two02" class="hgroup_nav_menu">일본</a></li>
+                        <li><a href="#gnb_two03" class="hgroup_nav_menu">중국</a></li>
+                        <li><a href="#gnb_two04" class="hgroup_nav_menu">남태평양</a></li>
+                        <li><a href="#gnb_two05" class="hgroup_nav_menu">유렵</a></li>
+                        <li><a href="#gnb_two06" class="hgroup_nav_menu">미주</a></li>
+                        <li><a href="#gnb_two07" class="hgroup_nav_menu">아프리카</a></li>
+                    </ul>
+                    <!-- // 20230824 변경 -->                                                                
+                </nav>
+            </div>
+            <!-- global_menu_layer -->
+            @@include('global_menu.html')
+            <!-- // global_menu_layer -->
+            <!-- gnb_twodepth_layer -->
+            @@include('gnb_two.html')
+            <!-- // gnb_twodepth_layer -->
+        </div>
+    </div>
+    <!-- // pc -->
+    <!-- mobile -->
+    <div class="header_mobile_group">
+        <div class="header_mobile_row">
+            <h1 class="mobile_toplogo"><a href="#" class="mobile_toplogo_link"><img src="./images/toplogo_mb.png" alt="일성골프 골프투어 No.1"></a></h1>
+            <div class="mobile_topelse_wrap">
+                <ul class="mobile_util_list">
+                    <li><a href="#" class="mobile_util_menu ico_search"><span class="hdtext">검색</span></a></li>
+                    <li><a href="#" class="mobile_util_menu ico_total" name="totalmenu"><span class="hdtext">전체메뉴</span><i class="ico_mb_total_line"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- mobile_total_layer -->
+    @@include('mobile_menu.html')
+    <!-- // mobile_total_layer -->
+    <!-- // mobile -->
+</header>
+<!-- // header -->

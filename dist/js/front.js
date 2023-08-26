@@ -904,8 +904,7 @@ function stickyTab() {
 
 	let detail_anctab_obj = null;
 	const detail_anctab_swiper = document.querySelector(".sticky_tabs_swiper_container");
-	const detail_anctab_slide = detail_anctab_swiper.querySelectorAll(".swiper-slide");
-
+	const detail_anctab_slide = !!detail_anctab_swiper ? detail_anctab_swiper.querySelectorAll(".swiper-slide") : null;
 	if(!!detail_anctab_slide){
 		if(detail_anctab_obj !== null){
 			detail_anctab_obj.update();
@@ -1008,8 +1007,10 @@ function stickyTab() {
 	/* // 작업용 */
 
     function getLayerPos() {
-        let localTop = stickyTabsContainerZone.getBoundingClientRect().top;
-		return localTop -(stickyTabsInnerWrap.getBoundingClientRect().height/2) + window.scrollY;
+		if(!!stickyTabsContainerZone){
+			let localTop = stickyTabsContainerZone.getBoundingClientRect().top;
+			return localTop -(stickyTabsInnerWrap.getBoundingClientRect().height/2) + window.scrollY;
+		}
     }
 
     function getPosArray() {
@@ -1031,10 +1032,13 @@ function stickyTab() {
 
 
     function getHeight() {
-        return stickyTabsInner.getBoundingClientRect().height + 10;
+		if(!!stickyTabsInner){
+			return stickyTabsInner.getBoundingClientRect().height + 10;
+		}
     }
 
     function scrollAction() {
+		if(!stickyTabsInnerWrap){return;}
         if (getPosValue < window.scrollY) {
             stickyTabsInnerWrap.classList.add("fixed");
         } else {
@@ -1070,9 +1074,12 @@ function stickyPanel() {
     const detailCalculationWrap = document.querySelector(".detail_calculation_wrap");
     const detailCalculationInnerWrap = document.querySelector(".detail_calculation_inner_wrap");
     const stickyTabsInner = document.querySelector(".sticky_tabs_inner");
+    const detailContentsZone = document.querySelector(".detail_contents_zone");
     const footerWrap = document.querySelector(".footer_wrap");
     const footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + window.scrollY : 0;
     const footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
+    let detailContentsZoneHeight = !!detailContentsZone ? detailContentsZone.getBoundingClientRect().height : 0;
+    let detailCalculationWrapHeight = !!detailCalculationWrap ? detailCalculationWrap.getBoundingClientRect().height : 0;
     let detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
     let getWindowWid = window.innerWidth;
     window.addEventListener("resize", () => {
@@ -1092,6 +1099,9 @@ function stickyPanel() {
     });
 
     function scrollAction() {
+		detailContentsZoneHeight = !!detailContentsZone ? detailContentsZone.getBoundingClientRect().height : 0;
+		detailCalculationWrapHeight = !!detailCalculationWrap ? detailCalculationWrap.getBoundingClientRect().height : 0;
+		if(detailCalculationWrapHeight>=detailContentsZoneHeight){return;}
         if (detailCalculationZonePos < window.scrollY) {
             detailCalculationWrap.classList.add("fixed");
 			if(footerWrapPos - window.innerHeight - footerWrapHeight < window.scrollY){
@@ -1548,7 +1558,17 @@ function detailVisualC(){
 	}
   };
 
-
+  DesignPopup.prototype.dimCheck = function(){
+	const popupActive = document.querySelectorAll(".popup_wrap.active");
+	if(!!popupActive[0]){
+	  popupActive[0].classList.add("active_first");
+	}
+	if(popupActive.length>1){
+	  this.layer_wrap_parent.classList.add("has_active_multi");
+	}else{
+	  this.layer_wrap_parent.classList.remove("has_active_multi");
+	}
+  }
 
 
 
@@ -1665,8 +1685,12 @@ function mobileBottomLayer(){
 	const footer_wrap = document.querySelector(".footer_wrap");
 	const mb_bottom_layer = document.querySelector(".mb_bottom_layer");
 	const middle_wrap = document.querySelector(".middle_wrap");
-	const btn_mbb_toggle = mb_bottom_layer.querySelector(".btn_mbb_toggle");
-	const mb_bottom_content = mb_bottom_layer.querySelector(".mb_bottom_content");
+	let btn_mbb_toggle = null;
+	let mb_bottom_content = null;
+	if(!!mb_bottom_layer){
+		btn_mbb_toggle = mb_bottom_layer.querySelector(".btn_mbb_toggle");
+		mb_bottom_content = mb_bottom_layer.querySelector(".mb_bottom_content");
+	}
 	let windowWid = window.innerWidth;
 
 	if(!mb_bottom_layer){return;}

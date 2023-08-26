@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+
+<body class="front_body">
+    <div class="page_wrap">
+        @@include('./include/header_a.html')
+        <!-- middle -->
+        <section class="middle_wrap center_type">
+            내용이 들어갑니다.
+        </section>
+        <!-- // middle -->
+        @@include('./include/footer.html')
+
+        <!-- 포인트 사용 layer -->
+        <div class="popup_wrap" id="point_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">포인트 사용</h2>
+				</div>
+				<div class="popup_content_low">
+                    내용이 들어갑니다.
+                </div>
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+        <!-- // 포인트 사용 layer -->
+
+        <!-- 쿠폰선택 layer -->
+        <div class="popup_wrap" id="coupon_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">쿠폰선택</h2>
+				</div>
+				<div class="popup_content_low">
+                    내용이 들어갑니다.
+                </div>
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+        <!-- // 쿠폰선택 layer -->
+
+        <script>
+            // 선언
+			var point_popup = new DesignPopup({
+				selector: "#point_popup",
+				beforeCallback(){
+					console.log('beforeCallback');
+				},
+				callback(){
+					console.log('callback');
+				}
+			});
+			var coupon_popup = new DesignPopup({
+				selector: "#coupon_popup",
+				beforeCallback(){
+					console.log('beforeCallback');
+				},
+				callback(){
+					console.log('callback');
+				}
+			});
+
+            // 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if(url_2 === "popup"){
+				point_popup.popupShow();
+			}else if(url_2 === "popup2"){
+				coupon_popup.popupShow();
+            }
+        </script>
+    </div>
+</body>

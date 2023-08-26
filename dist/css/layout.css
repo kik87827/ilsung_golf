@@ -336,6 +336,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
 .tmenu_toggle_item.active .tmenu_two_row{display:block;}
 
 .middle_wrap{position:relative;overflow-x:hidden;}
+.middle_wrap.center_type{max-width:1200px;margin:0 auto;padding:60px 30px 120px;}
 .middle_wrap.detail_wrap{max-width:1200px;margin:0 auto;padding:60px 30px 120px;}
 /* .middle_inner_wrap{max-width:1200px;padding:0 20px;margin:0 auto;} */
 .middle_inner_wrap.type2{max-width:1200px;padding:0 30px;margin:0 auto;}
@@ -465,6 +466,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
     .middle_guide_title{font-size:20px;}
     .middle_guide_content{margin-top:30px;}
 
+    .middle_wrap.center_type{padding:20px 20px 60px;}
     .middle_wrap.detail_wrap{padding:55px 0 60px;}
 
 
