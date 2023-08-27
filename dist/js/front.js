@@ -1549,7 +1549,6 @@ function detailVisualC(){
 	}
 	if (closeItemArray.length) {
 	  closeItemArray.forEach((element) => {
-		console.log(element);
 		element.addEventListener("click", (e) => {
 		  e.preventDefault();
 		  this.popupHide(this.selector);
