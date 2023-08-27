@@ -51,6 +51,7 @@
     .btn_popup_close.type2{top:14px;}
     .popup_vcont_content_row{margin:0 15px;}
     .pvcont_vitem{padding:20px 0;}
+    .popup_btn_low{padding:15px;}
 }
 /* // popup */
 
@@ -2944,5 +2945,33 @@ input.props_dom{}
     .agree_list > li .text_only_link{position:relative;top:-2px;}
 
     .agree_total_row{margin-bottom:15px;}
+
+
+    /* 완료 */
+    .end_guide_page{padding:30px 0 0 0;}
+    .end_guide_item{padding-bottom:20px;margin-bottom:20px;}
+    .end_guide_thum_img{width:100px;height:90px;}
+    .end_guide_spec{font-size:15px;margin-top:15px;}
+    .end_guide_copy_wrap:before{width:30px;height:30px;}
+    .end_guide_copy{margin-top:10px;font-size:15px;}
+    .end_guide_tail_wrap{margin-top:20px;}
+    .end_guide_tail_box{border-radius:5px;padding:10px 20px;font-size:15px;}
+    .end_guide_tail_sub{font-size:14px;}
+    .end_finish_wrap{margin-top:25px;}
+    .btn_end_fbox{max-width:200px;padding:10px;border-radius:5px;}
+    .end_fbox{font-size:14px;}
+    .end_price_wrap .price_value{font-size:18px;}
+    .end_price_wrap .price_unit{font-size:14px;margin:1px 0 0 2px;}
+
+    .btn_boxobj{font-size:14px;border-radius:5px;padding:12px;min-width:100px;}
+    .package_cbox_list{padding:0;}
+    .package_cbox{padding:15px 45px;display:block;}
+    .package_cbox .props_dom{position:absolute;top:50%;left:15px;transform: translateY(-50%);}
+    .package_props_cols{padding:0;width:0;flex:0;}
+    .package_tail_cols{padding:0}
+    .package_price_cols{background:none;padding:10px 0 0 0;}
+
+    .package_price{font-size:16px;}
+    .package_price_wrap{gap:7px;}
 }
 /* // 20230827 추가 */
