@@ -1801,3 +1801,39 @@ function siblings(t) {
 		});
 	}
   }
+
+
+  function responMaxWidth(parent,target){
+	const parentsDom =  document.querySelectorAll(parent);
+	// const targetsDom =  document.querySelectorAll(target);
+	if(!parentsDom){return;}
+	action();
+	window.addEventListener("resize",()=>{
+		action();
+	});
+
+	function action(){
+		parentsDom.forEach((item)=>{
+			const thisItem = item;
+			const thisItemTarget = thisItem.querySelectorAll(target);
+			let maxWidth = [];
+
+			if(!!thisItemTarget){
+				thisItemTarget.forEach((item)=>{
+					const thisLoopItem = item;
+					thisLoopItem.style.removeProperty("width");
+					maxWidth.push(thisLoopItem.getBoundingClientRect().width);
+				});
+				
+				thisItemTarget.forEach((item)=>{
+					const thisLoopItem = item;
+					if(window.innerWidth>1023){
+						thisLoopItem.style.removeProperty("width");
+						return;
+					}
+					thisLoopItem.style.width = Math.max.apply(null,maxWidth) + "px";
+				});
+			}
+		});
+	}
+  }
