@@ -11,6 +11,7 @@
 .popup_title_low{flex: 0;border-bottom:1px solid #c1c1c1;padding:22px 40px;margin:0 23px;text-align: center;}
 .popup_content_low{flex:1;min-height:0;position:relative;overflow:hidden;overflow-y:overlay;padding:30px 23px 45px;}
 .popup_content_low.type2{padding:0;overflow:overlay;}
+.popup_btn_low{}
 .popup_item {
     box-sizing: border-box;z-index: 20;max-width:655px;margin: 40px auto;max-height: calc(100% - 80px);background:#fff;position: relative;display: flex;flex-direction: column;border-radius: 10px;
     box-shadow: 6px 6px 10px 0 rgba(17, 16, 66, 0.2); border:1px solid #727272; width:100%; overflow:hidden;
@@ -2586,3 +2587,246 @@ input.props_form_dom:checked{background:#176bdd;}
     .sns_share_ico_list{padding:0;}
     .btn_sns_share{width:50px;height:50px;}
 }
+
+/* 20230827 추가 */
+/* 예약 */
+.data_render_list_wrap{}
+.data_render_list{}
+.data_render_list > li{}
+.data_render_list > li:last-of-type{}
+.data_render_item{}
+.data_render_thum{}
+.data_render_thum > img{}
+.data_render_spec{}
+.drs_title{}
+.drs_else_list{}
+.drs_else_list > li{}
+.drs_else_list > li:last-of-type{}
+.drs_else{}
+.drs_sub{}
+.drs_current_row{}
+.drs_current{}
+.drs_current_text{}
+.dc_vitem_wrap{}
+.dc_vitem{}
+.dc_vitem:last-of-type{}
+.dc_vtitle_row{}
+.dc_vtitle{}
+.dc_vcontent_row{}
+.dc_vform_list{}
+.dc_vform_list > li{}
+.dc_vform_list > li:last-of-type{}
+.dc_vform{}
+.dc_vform_cell{}
+.dc_vform_label_cols{}
+.dc_vform_label{}
+.dc_vform_field_cols{}
+input.form_input{}
+
+.dc_vform_row{}
+.dc_vform_kind_cols{}
+.dc_vform_tail_cols{}
+.dc_vform_kind{}
+.dc_vform_tail_tb_wrap{}
+.dc_vform_tail_tb{}
+.dc_vform_tail_tb th{}
+.dc_vform_tail_tb td{}
+.dc_vform_tail_tb th,
+.dc_vform_tail_tb td{}
+.dc_vform_tail_tb td input.form_input{}
+.dc_vform_tail_label{}
+
+.box_props_wrap{}
+.box_props_item{}
+.box_props_item.type_men input.box_props:checked + .box_props_label{}
+.box_props_item.type_women input.box_props:checked + .box_props_label{}
+.box_props_item.type_women{}
+.box_props_item{}
+input.box_props{}
+input.box_props:checked{}
+input.box_props:checked + .box_props_label{}
+.box_props_label{}
+
+.incols_item{}
+.incols_item input.form_input{}
+.incols_item .short_cols{}
+.incols_item .long_cols{}
+
+.agree_list_zone{}
+.agree_total_row{}
+.agree_total_row .props_label_item{}
+.agree_list_row{}
+.agree_list{}
+.agree_list .props_label_item{}
+.agree_list .text_only_link{}
+.agree_list > li{}
+.agree_list > li:last-of-type{}
+.text_only_link{}
+
+/* 동의내용 */
+.agree_cont_item{}
+.agree_cont_item:last-of-type{}
+.agree_cont_title{}
+.agree_cont_copy{}
+.indent_text_list{}
+.indent_text_list > li{}
+.indent_text_list > li:last-of-type{}
+.indent_bullet{}
+.indent_text_cont{}
+
+
+/* 완료 */
+.end_guide_page{}
+.end_guide_item{}
+.end_guide_item:last-of-type{}
+.end_guide_product_wrap{}
+.end_guide_product{}
+.end_guide_thum_img{}
+.end_guide_thum_img > img{}
+.end_guide_spec{}
+.end_guide_copy_wrap{}
+.end_guide_copy_wrap:before{}
+.end_guide_copy{}
+.end_guide_tail_wrap{}
+.end_guide_tail_box{}
+.end_guide_tail_emp{}
+.end_guide_tail_sub{}
+.end_finish_wrap{}
+.btn_end_fbox{}
+.end_fbox{}
+.end_price_wrap{}
+.end_price_wrap .price_value{}
+.end_price_wrap .price_unit{}
+
+
+
+/* 예약 상세 */
+.preview_guide_wrap{}
+.preview_main_row{}
+.preview_kv_box{}
+.preview_box_key{}
+.preview_box_value{}
+.preview_kv_copy{}
+.preview_process_row{}
+.process_dom_list_wrap{}
+.process_dom_list{}
+.process_dom_list > li{}
+.process_dom_list > li.active{}
+.process_dom_list > li.active .process_ico_row{}
+.process_dom_list > li.active .process_ico{}
+.process_ico_row{}
+.process_ico{}
+.process_spec_row{}
+.process_spec{}
+.imp_para{}
+.imp_para:before{}
+.imp_para_text{}
+.verify_detail_list_wrap{}
+.verify_detail_list{}
+.verify_detail_list > li{}
+.verify_detail_list > li:last-of-type{}
+.verify_detail_item{}
+.verify_detail_key_cols{}
+.verify_detail_key{}
+.verify_detail_value_cols{}
+.verify_value_copy{}
+.verify_value_copy.emp{}
+.btn_quad_obj{}
+.verify_detail_acc_item{}
+.verify_detail_acc_item:after{}
+.verify_detail_acc_item.active{}
+.verify_detail_acc_item.active .verify_detail_acc_bar{}
+.verify_detail_acc_item.active .verify_detail_acc_bar:after{}
+.verify_detail_acc_item.active .verify_detail_acc_cont{}
+.verify_detail_acc_bar{}
+.verify_detail_key_cols{}
+.verify_detail_value_cols .company_text_item{}
+.verify_dvalue_summary{}
+.verify_detail_key{}
+
+.verify_detail_acc_cont{}
+.verify_detail_acc_cont .track_visual_flex_wrap{}
+.acc_cont_inner{}
+
+.dc_vform_wrap{}
+.dc_vform_wrap .dc_vform{}
+
+.dc_vbtn_wrap{}
+.btn_boxobj{}
+.btn_boxobj.submit{}
+.btn_boxobj_text{}
+.btn_boxobj.medium{}
+.btn_boxobj.medium .btn_boxobj_text{}
+.btn_boxobj_text{}
+.verify_dvalue_current{}
+.verify_dvalue_current.emp{}
+.verify_dvalue_price{}
+
+.render_tab_list_wrap{}
+.render_tab_list_wrap:before{}
+.render_tab_list{}
+.render_tab_list > li{}
+.render_tab_list > li:last-of-type{}
+.render_tab_list > li.active .render_tab{}
+.render_tab_list > li.active .render_tab:before{}
+.render_tab_list > li.active .render_tab_text{}
+.render_tab{}
+.render_tab_text{}
+.render_data_tabcont_wrap{}
+.render_data_tabcont{}
+.render_data_tabcont.active{}
+
+.render_cont_wrap{}
+.render_data_list{}
+.render_data_list > li{}
+.render_data_list > li:last-of-type{}
+
+.render_data_item{}
+.render_data_key{}
+.render_data_spec{}
+.rdata_price_w{}
+.rdata_price_value{}
+.rdata_price_unit{}
+
+.rdata_btn_w{}
+.btn_boxobj{}
+.btn_boxobj.type2{}
+.btn_boxobj.type2 .btn_boxobj_text{}
+.rdata_btn_w{}
+
+.render_submit_wrap{}
+.render_calculate_wrap{}
+.calculate_label{}
+.calculate_form_wrap{}
+.calculate_form_input{}
+.calculate_form_input input.form_input{}
+.calculate_form_unit{}
+.calculate_form_unit .unit_text{}
+.render_submit_wrap{}
+.btn_submit_box{}
+.btn_submit_box_text{}
+
+.render_submit_wrap{}
+.render_calculate_wrap{}
+.calculate_label{}
+
+
+.package_cbox_list{}
+.package_cbox_list > li{}
+.package_cbox_list > li:last-of-type{}
+.package_cbox{}
+.package_props_cols{}
+.package_tail_cols{}
+input.props_dom{}
+.package_tail_main{}
+.package_tail_main_para{}
+.package_tail_sub{}
+.package_else_wrap{}
+.package_else_key{}
+.package_else_key.emp{}
+.package_else_value{}
+.package_price_cols{}
+.package_price_wrap{}
+.package_price_wrap:before{}
+.package_price{}
+/* // 20230827 추가 */
