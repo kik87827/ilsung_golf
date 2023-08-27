@@ -1443,7 +1443,6 @@ function detailVisualC(){
 	this.domBody = document.querySelector("body");
 	this.pagewrap = document.querySelector(".page_wrap");
 	this.layer_wrap_parent = null;
-	this.btn_closeTrigger = null;
 	this.btn_close = null;
 	this.bg_design_popup = null;
 	this.scrollValue = 0;
@@ -1540,9 +1539,9 @@ function detailVisualC(){
 	this.btn_close = this.selector.querySelectorAll(".btn_popup_close");
 	this.bg_design_popup = this.selector.querySelector(".bg_dim");
 	var closeItemArray = [...this.btn_close];
+	this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
   
 	if(!!this.btn_closeTrigger){
-	  this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
 	  closeItemArray.push(...this.btn_closeTrigger)
 	}
 	if (!!this.bg_design_popup) {
@@ -1550,6 +1549,7 @@ function detailVisualC(){
 	}
 	if (closeItemArray.length) {
 	  closeItemArray.forEach((element) => {
+		console.log(element);
 		element.addEventListener("click", (e) => {
 		  e.preventDefault();
 		  this.popupHide(this.selector);
@@ -1758,4 +1758,46 @@ function siblings(t) {
 	return tempArr.filter(function(e) {
 	  return e != t;
 	});
+  }
+
+
+  function verifyDetailAcc(){
+	const verify_detail_acc_bar = document.querySelectorAll(".verify_detail_acc_bar");
+	if(!!verify_detail_acc_bar){
+		verify_detail_acc_bar.forEach((item)=>{
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				const thisTarget = e.currentTarget;
+				const thisParent = thisTarget.closest(".verify_detail_acc_item");
+				thisParent.classList.toggle("active");
+			});
+		});
+	}
+  }
+
+  function payTab(){
+	const payTabZoneTab = document.querySelectorAll("#pay_tab_cont .render_tab");
+	if(!!payTabZoneTab){
+		payTabZoneTab.forEach((item)=>{
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				const thisTarget = e.currentTarget;
+				const thisTargetSiblings = siblings(thisTarget.closest("li"));
+				const thisTargetCont = document.querySelector(thisTarget.getAttribute("href"));
+				const thisTargetContSiblings = siblings(thisTargetCont);
+
+				
+				if(!!thisTargetCont){
+					thisTargetSiblings.forEach((item)=>{
+						item.classList.remove("active");
+					})
+					thisTarget.closest("li").classList.add("active");
+					thisTargetContSiblings.forEach((item)=>{
+						item.classList.remove("active");
+					})
+					thisTargetCont.classList.add("active");
+				}
+			});
+		});
+	}
   }
