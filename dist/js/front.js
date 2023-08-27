@@ -1769,6 +1769,7 @@ function siblings(t) {
 				const thisTarget = e.currentTarget;
 				const thisParent = thisTarget.closest(".verify_detail_acc_item");
 				thisParent.classList.toggle("active");
+				window.dispatchEvent(new Event('resize'));
 			});
 		});
 	}

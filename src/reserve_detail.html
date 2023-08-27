@@ -417,7 +417,7 @@
 							</div>
 						</li>
 						<li>
-							<div class="verify_detail_acc_item active">
+							<div class="verify_detail_acc_item">
 								<div class="verify_detail_acc_bar type2">
 									<div class="verify_detail_key_cols"><p class="verify_detail_key">결제 정보</p></div>
 									<div class="verify_detail_value_cols type2">
@@ -746,6 +746,9 @@
 			});
 
 			verifyDetailAcc(); // accodian
+
+			// width
+            responMaxWidth(".dc_vform_tail_tb",".mb_vform_label");
 
 			payTab(); // 결제 탭
 
