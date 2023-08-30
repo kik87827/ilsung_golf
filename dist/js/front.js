@@ -124,12 +124,24 @@ function headerMenu() {
 			item.addEventListener("mouseenter",(e)=>{
 				const etarget = e.currentTarget;
 				const etwo = document.querySelector(etarget.getAttribute("href"));
+				const etwo_li = etwo.querySelectorAll(".gmenu_list > li");
 				if(!!gnb_two_cont){
 					gnb_two_cont.forEach((item)=>{
-						item.classList.remove("active");
+						item.classList.remove("active","pos_left","pos_center","pos_right");
 					});
 					etwo.classList.add("active");
 					gnb_twodepth_layer.classList.add("active");
+					if(etwo_li.length >= 7){
+						etwo.classList.add("pos_center");
+					}else{
+						if(etwo.getBoundingClientRect().left<0){
+							etwo.classList.add("pos_left");
+						}else if(etwo.getBoundingClientRect().left+etwo.getBoundingClientRect().width>window.innerWidth){
+							etwo.classList.add("pos_right");
+						}
+						etwo.style.left = etarget.getBoundingClientRect().left + (etarget.getBoundingClientRect().width/2) - etwo.getBoundingClientRect().width/2  +"px";
+						
+					}
 					textHeightResize(etarget.getAttribute("href") + " .gmenu_one");
 				}
 			});
