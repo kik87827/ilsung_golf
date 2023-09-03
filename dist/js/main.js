@@ -1114,7 +1114,6 @@ function mainCardCircleSwiper(){
 		slideObj = new Swiper(swiperParentText, {
 			speed : 1000, 
 			slidesPerView: 7,
-			slidesPerGroup : 7,
 			freeMode: false,
 			slidesPerGroupAuto : false,
 			loop : true,
@@ -1150,66 +1149,103 @@ function mainCardCircleSwiper(){
 
 function mainCardCircleSwiper02(){
 	let slideObj = null;
+	const card_circle_swiper02 = document.querySelector("#card_circle_swiper02");
 	let swiperParentText = '#card_circle_swiper02 .swiper-container';
 	let swiperParent = document.querySelector(swiperParentText);
 	let swiperSlide = document.querySelectorAll(swiperParentText+" .swiper-slide");
 	let windowWidth = window.innerWidth;
-	if(swiperSlide.length>1){
-		if(slideObj !== null){
-			slideObj.update();
-		}else{
-			if(window.innerWidth >= 1024){
-				pcFunc();
-			}else{
-				mbFunc();
-			}
-			//slideObj.update();
 
-			window.addEventListener("resize",()=>{
-				if(windowWidth !== window.innerWidth){
-					slideObj.destroy();
-					if(window.innerWidth >= 1024){
-						pcFunc();
-					}else{
-						mbFunc();
-					}
-					slideObj.update();
-				}
-				windowWidth = window.innerWidth;
-			});
-
-		}
+	if(slideObj !== null){
+		slideObj.update();
 	}else{
-		if(!!swiperParent){
-			swiperParent.classList.add("nodata_type");
+		if(window.innerWidth >= 1024){
+			pcFunc();
+		}else{
+			mbFunc();
 		}
+
+		window.addEventListener("resize",()=>{
+			if(windowWidth !== window.innerWidth){
+				if(!slideObj){return;}
+				slideObj.destroy();
+				if(window.innerWidth >= 1024){
+					pcFunc();
+				}else{
+					mbFunc();
+				}
+				slideObj.update();
+			}
+			windowWidth = window.innerWidth;
+		});
 	}
 
+	// if(swiperSlide.length>5){
+	// 	if(slideObj !== null){
+	// 		slideObj.update();
+	// 	}else{
+	// 		if(window.innerWidth >= 1024){
+	// 			pcFunc();
+	// 		}else{
+	// 			mbFunc();
+	// 		}
+	// 		//slideObj.update();
+
+	// 		window.addEventListener("resize",()=>{
+	// 			if(windowWidth !== window.innerWidth){
+	// 				slideObj.destroy();
+	// 				if(window.innerWidth >= 1024){
+	// 					pcFunc();
+	// 				}else{
+	// 					mbFunc();
+	// 				}
+	// 				slideObj.update();
+	// 			}
+	// 			windowWidth = window.innerWidth;
+	// 		});
+
+	// 	}
+	// }else{
+	// 	if(!!swiperParent){
+	// 		card_circle_swiper02.classList.add("swiper_action_no");
+	// 	}
+	// }
+
 	function pcFunc(){
-		slideObj = new Swiper(swiperParentText, {
-			speed : 1000, 
-			slidesPerView: 5,
-			slidesPerGroup : 5,
-			slidesPerGroupAuto : false,
-			loop : true,
-			navigation : {
-				nextEl : '#card_circle_swiper02 .next_navi', 
-				prevEl : '#card_circle_swiper02 .prev_navi', 
-			},
-		});
+		if(swiperSlide.length>5){
+			slideObj = new Swiper(swiperParentText, {
+				speed : 1000, 
+				slidesPerView: 5,
+				slidesPerGroupAuto : false,
+				loop : true,
+				navigation : {
+					nextEl : '#card_circle_swiper02 .next_navi', 
+					prevEl : '#card_circle_swiper02 .prev_navi', 
+				},
+			});
+		}else{
+			if(!!card_circle_swiper02){
+				card_circle_swiper02.classList.add("swiper_action_no");
+			}
+		}
 	}
 
 	function mbFunc(){
-		slideObj = new Swiper(swiperParentText, {
-			speed : 1000, 
-			slidesPerView: 2,
-			slidesPerGroup : 2,
-			loop : true,
-			pagination: {  
-				el: "#card_circle_swiper02 .swiper-pagination",
-				clickable: true
-			},
-		});
+		if(!!card_circle_swiper02){
+			card_circle_swiper02.classList.remove("swiper_action_no");
+		}
+		if(swiperSlide.length>1){
+			slideObj = new Swiper(swiperParentText, {
+				speed : 1000, 
+				slidesPerView: 2,
+				loop : true,
+				pagination: {  
+					el: "#card_circle_swiper02 .swiper-pagination",
+					clickable: true
+				},
+			});
+		}else{
+			card_circle_swiper02.classList.add("swiper_action_no");
+		}
 	}
 }
 
