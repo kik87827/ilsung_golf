@@ -1086,13 +1086,15 @@ function stickyPanel() {
     const detailCalculationWrap = document.querySelector(".detail_calculation_wrap");
     const detailCalculationInnerWrap = document.querySelector(".detail_calculation_inner_wrap");
     const stickyTabsInner = document.querySelector(".sticky_tabs_inner");
+    const detailContentsGlobalZone = document.querySelector(".detail_contents_global_zone");
     const detailContentsZone = document.querySelector(".detail_contents_zone");
     const footerWrap = document.querySelector(".footer_wrap");
-    const footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + window.scrollY : 0;
-    const footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
+    let footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + window.scrollY : 0;
+    let footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
     let detailContentsZoneHeight = !!detailContentsZone ? detailContentsZone.getBoundingClientRect().height : 0;
     let detailCalculationWrapHeight = !!detailCalculationWrap ? detailCalculationWrap.getBoundingClientRect().height : 0;
     let detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
+	let detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + window.scrollY : 0;
     let getWindowWid = window.innerWidth;
     window.addEventListener("resize", () => {
         if (getWindowWid !== window.innerWidth) {
@@ -1113,10 +1115,16 @@ function stickyPanel() {
     function scrollAction() {
 		detailContentsZoneHeight = !!detailContentsZone ? detailContentsZone.getBoundingClientRect().height : 0;
 		detailCalculationWrapHeight = !!detailCalculationWrap ? detailCalculationWrap.getBoundingClientRect().height : 0;
+		footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + 120 + window.scrollY : 0;
+		footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
+		detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + 120 + window.scrollY : 0;
+		
+
+		
 		if(detailCalculationWrapHeight>=detailContentsZoneHeight){return;}
         if (detailCalculationZonePos < window.scrollY) {
-            detailCalculationWrap.classList.add("fixed");
-			if(footerWrapPos - window.innerHeight - footerWrapHeight < window.scrollY){
+			detailCalculationWrap.classList.add("fixed");
+			if(detailContentsGlobalZonePos - window.innerHeight < window.scrollY){
 				detailCalculationWrap.classList.add("bottom");
 			}else{
 				detailCalculationWrap.classList.remove("bottom");
@@ -1721,6 +1729,8 @@ function mobileBottomLayer(){
 	function action(){
 		if(window.innerWidth < 1024){
 			footer_wrap.style.paddingBottom = mb_bottom_layer.getBoundingClientRect().height+40 + "px";
+		}else{
+			footer_wrap.style.paddingBottom = "0px";
 		}
 	}
 }
@@ -1849,3 +1859,50 @@ function siblings(t) {
 		});
 	}
   }
+
+function moveCheckbar(){
+	// $(".time_gallery_item").each(function(){
+	// 	const thisItem = $(this);
+	// 	const thisItemChk = thisItem.find(".move_chk");
+	// 	const thisItemTarget = thisItem.find(".time_gallery_swiper_cont_row , .daylife_toggle_cont_wrap");
+	// 	if(thisItemChk.prop("checked")){
+	// 		thisItemTarget.css("height",thisItemTarget.children().outerHeight());
+	// 	}else{
+	// 		thisItemTarget.css("height",0);
+	// 	}
+	// });
+	$(document).on("click",".move_chk",function(e){
+		const thisChk = $(this);
+		const thisParent = thisChk.parents(".time_gallery_item,.daylife_primary_item");
+		const thisTarget = thisParent.find(".time_gallery_swiper_cont_row , .daylife_toggle_cont_wrap");
+
+		thisTarget.css("height",thisTarget.children().outerHeight());
+		if(!thisChk.prop("checked")){
+			setTimeout(()=>{
+				thisTarget.css("height",0);
+			},30);
+		}
+	});
+}
+
+function moveCheckInit(){
+	action();
+	$(window).on("resize",function(){
+		action();
+	});
+
+	function action(){
+		$(".time_gallery_item").not(".init").css("height","");
+		$(".time_gallery_item").not(".init").each(function(){
+			const thisItem = $(this);
+			const thisItemChk = thisItem.find(".move_chk");
+			const thisItemTarget = thisItem.find(".time_gallery_swiper_cont_row , .daylife_toggle_cont_wrap");
+			if(thisItemChk.prop("checked")){
+				thisItemTarget.css("height",thisItemTarget.children().outerHeight());
+			}else{
+				thisItemTarget.css("height",0);
+			}
+			thisItem.addClass("init");
+		});
+	}
+}

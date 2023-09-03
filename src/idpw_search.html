@@ -1,10 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('./include/head.html')
-
 <body class="front_body">
     <div class="page_wrap">
-       
+        @@include('./include/header_a.html')
+        <!-- middle -->
+        <section class="middle_wrap fieldset_type">
+            <div class="fieldset_form_wrap">
+                <div class="fieldset_title_row type2">
+                    <h2 class="fieldset_title">
+                        <div class="fieldset_title_ico"><img src="./images/ico_title_search.png" alt="SEARCH"></div>
+                    </h2>
+                </div> 
+                <div class="fieldset_tab_list_row"> 
+                    <ul class="fieldset_tab_list">
+                        <li class="active"><a href="#fieldset_tabcont_01" class="fieldset_tab"><span class="fieldset_tab_text">아이디 찾기</span></a></li>
+                        <li><a href="#fieldset_tabcont_02" class="fieldset_tab"><span class="fieldset_tab_text">비밀번호 찾기</span></a></li>
+                    </ul>
+                </div>
+                <div class="fieldset_content_row">
+                    <div class="fieldset_tabcont_group">
+                        <div class="fieldset_tabcont" id="fieldset_tabcont_01">
+                            <div class="fieldset_input_group">
+                                <div class="fieldset_input_row"><input type="text" class="form_input" placeholder="예약자명"></div>
+                                <div class="fieldset_input_row"><input type="text" class="form_input" placeholder="예약번호"></div>
+                            </div>
+                            <div class="btn_fieldset_submit_group"><a href="#" class="btn_fieldset_submit">확인</a></div>
+                        </div>
+                        <div class="fieldset_tabcont" id="fieldset_tabcont_02">
+                            <div class="fieldset_input_group">
+                                <div class="fieldset_input_row"><input type="text" class="form_input" placeholder="아이디"></div>
+                                <div class="fieldset_input_row"><input type="text" class="form_input" placeholder="이름"></div>
+                                <div class="fieldset_input_row"><input type="text" class="form_input" placeholder="휴대번호"></div>
+                            </div>
+                            <div class="btn_fieldset_submit_group"><a href="javascript:;" id="btn_pwmodify" class="btn_fieldset_submit">확인</a></div>
+                        </div>
+                    </div>
+                    <div class="fieldset_else_group aligntype2">
+                        <div class="fs_else_cols">
+                            <ul class="field_menu_list">
+                                <li><a href="#" class="field_menu emp">회원 로그인</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fieldset_other_wrap">
+                        <div class="fieldset_other_item">
+                            <div class="fds_other_title_row"><p class="fds_other_title">간편 로그인</p></div>
+                            <div class="fds_other_content_row">
+                                <ul class="fds_sns_list">
+                                    <li><a href="#" class="fds_sns ico_blog"><span class="hdtext">naver blog</span></a></li>
+                                    <li><a href="#" class="fds_sns ico_kakao"><span class="hdtext">kakao</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="fieldset_other_item">
+                            <div class="fds_other_title_row"><p class="fds_other_title">아직 회원이 아니세요?</p></div>
+                            <div class="fds_other_content_row">
+                                <div class="btn_fieldset_submit_wrap"><a href="#" class="btn_fieldset_submit type2">회원가입</a></div>
+                                <p class="fds_submit_copy">회원으로 가입하시면 더 많은 서비스를  이용하실 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // middle -->
+
+        <!-- 비밀번호 변경 layer -->
+        <div class="popup_wrap" id="pwmodify_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">비밀번호 변경</h2>
+				</div>
+				<div class="popup_content_low">
+                    <div class="fieldset_input_group type2">
+                        <div class="fieldset_input_row"><input type="password" class="form_input" placeholder="새 비밀번호(영문, 숫자 조합 6~20자리)"></div>
+                        <div class="fieldset_input_row"><input type="password" class="form_input" placeholder="새 비밀번호(영문, 숫자 조합 6~20자리)"></div>
+                    </div>
+                </div>
+				<div class="popup_btn_low type2">
+                    <a href="#" class="btn_boxobj submit close_trigger"><span class="btn_boxobj_text">비밀번호 변경</span></a>
+                </div>
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+        <!-- // 비밀번호 변경 layer -->
+
+        <script>
+            // 선언
+			var pwmodify_popup = new DesignPopup({
+				selector: "#pwmodify_popup",
+				beforeCallback(){
+					console.log('beforeCallback');
+				},
+				callback(){
+					console.log('callback');
+				}
+			});
+
+            // 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if(url_2 === "popup"){
+				pwmodify_popup.popupShow();
+			}
+        </script>
     </div>
 </body>
 

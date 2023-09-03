@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('./include/head.html')
-
 <body class="front_body">
     <div class="page_wrap">
-       
+        @@include('./include/header_a.html')
+        <!-- middle -->
+        <section class="middle_wrap fieldset_type">
+            <div class="fieldset_form_wrap">
+                <div class="fieldset_title_row type2">
+                    <h2 class="fieldset_title">
+                        <div class="fieldset_title_ico"><img src="./images/ico_title_member.png" alt="MEMBER"></div>
+                        <span class="fieldset_title_text">회원가입 완료</span>
+                    </h2>
+                </div> 
+                <div class="fieldset_content_row">
+
+                    <div class="fieldset_message_wrap">
+                        <p class="fieldset_content_message">홍길동님의 회원가입이 완료 되었습니다.</p>
+                        <div class="fieldset_content_data_render">
+                            <table class="fieldset_data_tb">
+                                <tr>
+                                    <th><span class="fcdata_key">아이디</span></th>
+                                    <td><span class="fcdata_value">apple92</span></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fcdata_key">휴대번호</span></th>
+                                    <td><span class="fcdata_value">010-1234-5678</span></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fcdata_key">이메일</span></th>
+                                    <td><span class="fcdata_value">apple92@gmail.com</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+
+                    <div class="btn_finishbox_wrap multi_type">
+                        <a href="#" class="btn_finishbox"><span class="btn_finishbox_text">회원가입 완료</span></a>
+                        <a href="#" class="btn_finishbox type2"><span class="btn_finishbox_text">홈으로</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // middle -->
     </div>
 </body>
 
