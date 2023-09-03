@@ -1881,6 +1881,10 @@ function moveCheckbar(){
 			setTimeout(()=>{
 				thisTarget.css("height",0);
 			},30);
+		}else{
+			setTimeout(()=>{
+				thisTarget.css("height","auto");
+			},500);
 		}
 	});
 }

@@ -1161,7 +1161,7 @@
 		<!-- // header -->
 		<!-- middle -->
 		<section class="middle_wrap fieldset_type">
-			<div class="fieldset_form_wrap">
+			<div class="fieldset_form_wrap" id="form_search_wrap">
 				<div class="fieldset_title_row type2">
 					<h2 class="fieldset_title">
 						<div class="fieldset_title_ico"><img src="./images/ico_title_search.png" alt="SEARCH"></div>
@@ -1175,7 +1175,7 @@
 				</div>
 				<div class="fieldset_content_row">
 					<div class="fieldset_tabcont_group">
-						<div class="fieldset_tabcont" id="fieldset_tabcont_01">
+						<div class="fieldset_tabcont active" id="fieldset_tabcont_01">
 							<div class="fieldset_input_group">
 								<div class="fieldset_input_row"><input type="text" class="form_input" placeholder="예약자명"></div>
 								<div class="fieldset_input_row"><input type="text" class="form_input" placeholder="예약번호"></div>
@@ -1224,6 +1224,56 @@
 			</div>
 		</section>
 		<!-- // middle -->
+		<!-- footer -->
+		<footer class="footer_wrap">
+			<div class="footer_else_low">
+				<div class="footer_else_pixin">
+					<p class="footer_else_label">일성골프 SNS 공식 채널</p>
+					<ul class="footer_sns_list">
+						<li><a href="#" class="footer_sns sns_kakao"><span class="hdtext">카카오</span></a></li>
+						<li><a href="#" class="footer_sns sns_blog2"><span class="hdtext">블로그</span></a></li>
+						<li><a href="#" class="footer_sns sns_insta"><span class="hdtext">인스타</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_main_low">
+				<div class="footer_main_pixin">
+					<div class="footer_menu_list_wrap">
+						<ul class="footer_menu_list">
+							<li><a href="#" class="footer_menu">회사소개</a></li>
+							<li><a href="#" class="footer_menu">이용약관</a></li>
+							<li><a href="#" class="footer_menu">여행약관</a></li>
+						</ul>
+						<ul class="footer_menu_list">
+							<li><a href="#" class="footer_menu">개인정보처리방침</a></li>
+							<li><a href="#" class="footer_menu">고객센터</a></li>
+							<li><a href="#" class="footer_menu">찾아오시는 길</a></li>
+						</ul>
+					</div>
+					<div class="footer_main_logo_row">
+						<span class="footer_main_logo_text">(주)일성여행사</span>
+					</div>
+					<div class="footer_copyitem_list_wrap">
+						<ul class="footer_copyitem_list">
+							<li><span class="footer_copyitem">(04519) 서울특별시 중구 세종대로21길 49 오양수산빌딩 본관 201호</span></li>
+							<li><span class="footer_copyitem">대표이사 : 임장규</span></li>
+						</ul>
+						<ul class="footer_copyitem_list">
+							<li><span class="footer_copyitem">대표번호 : (02) 735-1144</span></li>
+							<li><span class="footer_copyitem">팩스 : (02) 735-1143</span></li>
+							<li><span class="footer_copyitem">사업자등록번호 : 110-81-40666</span></li>
+							<li><span class="footer_copyitem">통신판매업신고 : 중구 제 03232호</span></li>
+						</ul>
+						<ul class="footer_copyitem_list">
+							<li><span class="footer_copyitem">국내여행업 신고번호 : 제 201 22-200호</span></li>
+							<li><span class="footer_copyitem">[일반여행업 보증보험가입·기획여행보증보험가입]</span></li>
+						</ul>
+					</div>
+					<p class="footer_copyright">Copyright @ (주)일성골프. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- // footer -->
 
 		<!-- 비밀번호 변경 layer -->
 		<div class="popup_wrap" id="pwmodify_popup">
@@ -1232,7 +1282,7 @@
 				<div class="popup_title_low">
 					<h2 class="popup_title">비밀번호 변경</h2>
 				</div>
-				<div class="popup_content_low">
+				<div class="popup_content_low type4">
 					<div class="fieldset_input_group type2">
 						<div class="fieldset_input_row"><input type="password" class="form_input" placeholder="새 비밀번호(영문, 숫자 조합 6~20자리)"></div>
 						<div class="fieldset_input_row"><input type="password" class="form_input" placeholder="새 비밀번호(영문, 숫자 조합 6~20자리)"></div>
@@ -1257,6 +1307,35 @@
 					console.log('callback');
 				}
 			});
+
+			// tab
+			const form_search_tab = document.querySelectorAll("#form_search_wrap .fieldset_tab");
+			const form_search_tabcont = document.querySelectorAll("#form_search_wrap .fieldset_tabcont");
+			let form_search_tab_active = document.querySelector("#form_search_wrap .fieldset_tab_list > li.active");
+			let form_search_tabcont_active = document.querySelector("#form_search_wrap .fieldset_tabcont.active");
+			if (!!form_search_tab) {
+				form_search_tab.forEach((item) => {
+					item.addEventListener("click", (e) => {
+						e.preventDefault();
+						const thisTab = e.currentTarget;
+						const thisTarget = document.querySelector(thisTab.getAttribute("href"));
+						if (!!thisTarget) {
+							if (form_search_tab_active) {
+								form_search_tab_active.closest("li").classList.remove("active");
+							}
+							thisTab.closest("li").classList.add("active");
+
+							if (form_search_tabcont_active) {
+								form_search_tabcont_active.classList.remove("active");
+							}
+							thisTarget.classList.add("active");
+
+							form_search_tabcont_active = thisTarget;
+							form_search_tab_active = thisTab.closest("li");
+						}
+					});
+				});
+			}
 
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];

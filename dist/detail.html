@@ -1635,7 +1635,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab_contents" id="tab_contents_03">
+							<div class="tab_contents has_line" id="tab_contents_03">
 								<div class="tabc_item">
 									<div class="tab_cont_title_row">
 										<h3 class="tab_cont_title">상품소개</h3>
@@ -1647,16 +1647,16 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab_contents type2" id="tab_contents_04">
+							<div class="tab_contents has_line" id="tab_contents_04">
 								<div class="tabc_item">
 									<div class="tab_cont_title_row">
 										<h3 class="tab_cont_title">여행일정</h3>
 										<div class="tab_cont_title_else_group">
-											<a href="javascript:;" id="sch_viewer" class="text_linkitem">일정 간략히 보기</a>
+											<a href="javascript:;" id="sch_viewer" data-target="#sch_accordion_wrap" class="text_linkitem">일정 간략히 보기</a>
 										</div>
 									</div>
 									<div class="tab_cont_content_row">
-										<div class="accordion_container">
+										<div class="accordion_container" id="sch_accordion_wrap">
 											<div class="accordion_vitem active">
 												<a href="#" class="accordion_bar">
 													<div class="accordion_bar_emp_cols">
@@ -2251,10 +2251,11 @@
 								<div class="tabc_item">
 									<div class="tab_cont_title_row">
 										<h3 class="tab_cont_title">선택관광</h3>
+										<a href="javascript:;" id="sch_viewer2" data-target="#sch_accordion2_wrap" class="text_linkitem">펼쳐보기</a>
 									</div>
 									<div class="tab_cont_content_row">
-										<div class="accordion_container type2">
-											<div class="accordion_vitem active">
+										<div class="accordion_container type2" id="sch_accordion2_wrap">
+											<div class="accordion_vitem">
 												<a href="#" class="accordion_bar">
 													<div class="accordion_nbar_main_cols">
 														<div class="trip_nbar_sch_main">2일차</div>
@@ -2325,6 +2326,7 @@
 																						<p class="daylife_main_text">낭만의 도시, 파리(Paris)</p>
 																					</div>
 																					<div class="daylife_sub_cols">
+																						<p class="daylife_caption">성인 40, 아동 30, 유아0 (usd기준)</p>
 																						<div class="move_checkbar_item">
 																							<input type="checkbox" class="move_chk" checked>
 																							<span class="move_chk_label"></span>
@@ -2519,6 +2521,7 @@
 																						<p class="daylife_main_text">낭만의 도시, 파리(Paris)</p>
 																					</div>
 																					<div class="daylife_sub_cols">
+																						<p class="daylife_caption">성인 40, 아동 30, 유아0 (usd기준)</p>
 																						<div class="move_checkbar_item">
 																							<input type="checkbox" class="move_chk" checked>
 																							<span class="move_chk_label"></span>
@@ -2713,6 +2716,7 @@
 																						<p class="daylife_main_text">낭만의 도시, 파리(Paris)</p>
 																					</div>
 																					<div class="daylife_sub_cols">
+																						<p class="daylife_caption">성인 40, 아동 30, 유아0 (usd기준)</p>
 																						<div class="move_checkbar_item">
 																							<input type="checkbox" class="move_chk" checked>
 																							<span class="move_chk_label"></span>
@@ -2907,6 +2911,7 @@
 																						<p class="daylife_main_text">낭만의 도시, 파리(Paris)</p>
 																					</div>
 																					<div class="daylife_sub_cols">
+																						<p class="daylife_caption">성인 40, 아동 30, 유아0 (usd기준)</p>
 																						<div class="move_checkbar_item">
 																							<input type="checkbox" class="move_chk" checked>
 																							<span class="move_chk_label"></span>
@@ -3034,7 +3039,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab_contents" id="tab_contents_05">
+							<div class="tab_contents has_line" id="tab_contents_05">
 								<div class="tabc_item">
 									<div class="tab_cont_title_row">
 										<h3 class="tab_cont_title">예약안내</h3>
@@ -3071,7 +3076,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab_contents" id="tab_contents_06">
+							<div class="tab_contents has_line" id="tab_contents_06">
 								<div class="tabc_item">
 									<div class="tab_cont_title_row">
 										<h3 class="tab_cont_title">이용후기</h3>
@@ -3200,18 +3205,22 @@
 														<div class="review_box_item">
 															<div class="revbox_data_box">
 																<div class="revbox_data_cap_cols">
-																	<p class="revbox_cap_who">박수*</p>
-																	<div class="revbox_star_row">
-																		<div class="eval_star_wrap">
-																			<span class="eval_star active"></span>
-																			<span class="eval_star active"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_who">박수*</p>
+																		<div class="revbox_star_row">
+																			<div class="eval_star_wrap">
+																				<span class="eval_star active"></span>
+																				<span class="eval_star active"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																			</div>
 																		</div>
 																	</div>
-																	<p class="revbox_cap_else">2023-12-25</p>
-																	<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_else">2023-12-25</p>
+																		<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
+																	</div>
 																</div>
 																<div class="revbox_data_tail_cols">
 																	<div class="revbox_data_tbox">
@@ -3233,8 +3242,12 @@
 															</div>
 															<div class="revbox_data_box">
 																<div class="revbox_data_cap_cols">
-																	<p class="revbox_cap_who type2">엠클릭여행사</p>
-																	<p class="revbox_cap_else">2023-12-25</p>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_who type2">엠클릭여행사</p>
+																	</div>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_else">2023-12-25</p>
+																	</div>
 																</div>
 																<div class="revbox_data_tail_cols">
 																	<div class="revbox_data_tbox">
@@ -3254,55 +3267,22 @@
 														<div class="review_box_item">
 															<div class="revbox_data_box">
 																<div class="revbox_data_cap_cols">
-																	<p class="revbox_cap_who">박수*</p>
-																	<div class="revbox_star_row">
-																		<div class="eval_star_wrap">
-																			<span class="eval_star active"></span>
-																			<span class="eval_star active"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																		</div>
-																	</div>
-																	<p class="revbox_cap_else">2023-12-25</p>
-																	<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
-																</div>
-																<div class="revbox_data_tail_cols">
-																	<div class="revbox_data_tbox">
-																		<div class="revbox_data_text_cols">
-																			<div class="revbox_data_text">
-																				최고의 호텔이었습니다. 허니문으로도 최고였고 풀장도 멋있고 뷰가 멋졌습니다.<br>
-																				하와이의 바다, 산, 정글을 마음껏 볼 수 있었습니다.
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_who">박수*</p>
+																		<div class="revbox_star_row">
+																			<div class="eval_star_wrap">
+																				<span class="eval_star active"></span>
+																				<span class="eval_star active"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
 																			</div>
-																			<div class="revbox_data_else_group"><a href="javascript:;" class="text_more_link">더보기</a></div>
-																		</div>
-																		<div class="revbox_data_thum_cols">
-																			<a href="javascript:;" class="revbox_data_thum">
-																				<img src="./images/img_100x100_02.png" alt="">
-																				<span class="revbox_data_more">+ 13</span>
-																			</a>
 																		</div>
 																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-													<li>
-														<div class="review_box_item">
-															<div class="revbox_data_box">
-																<div class="revbox_data_cap_cols">
-																	<p class="revbox_cap_who">박수*</p>
-																	<div class="revbox_star_row">
-																		<div class="eval_star_wrap">
-																			<span class="eval_star active"></span>
-																			<span class="eval_star active"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																		</div>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_else">2023-12-25</p>
+																		<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
 																	</div>
-																	<p class="revbox_cap_else">2023-12-25</p>
-																	<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
 																</div>
 																<div class="revbox_data_tail_cols">
 																	<div class="revbox_data_tbox">
@@ -3328,18 +3308,63 @@
 														<div class="review_box_item">
 															<div class="revbox_data_box">
 																<div class="revbox_data_cap_cols">
-																	<p class="revbox_cap_who">박수*</p>
-																	<div class="revbox_star_row">
-																		<div class="eval_star_wrap">
-																			<span class="eval_star active"></span>
-																			<span class="eval_star active"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
-																			<span class="eval_star"></span>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_who">박수*</p>
+																		<div class="revbox_star_row">
+																			<div class="eval_star_wrap">
+																				<span class="eval_star active"></span>
+																				<span class="eval_star active"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																			</div>
 																		</div>
 																	</div>
-																	<p class="revbox_cap_else">2023-12-25</p>
-																	<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_else">2023-12-25</p>
+																		<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
+																	</div>
+																</div>
+																<div class="revbox_data_tail_cols">
+																	<div class="revbox_data_tbox">
+																		<div class="revbox_data_text_cols">
+																			<div class="revbox_data_text">
+																				최고의 호텔이었습니다. 허니문으로도 최고였고 풀장도 멋있고 뷰가 멋졌습니다.<br>
+																				하와이의 바다, 산, 정글을 마음껏 볼 수 있었습니다.
+																			</div>
+																			<div class="revbox_data_else_group"><a href="javascript:;" class="text_more_link">더보기</a></div>
+																		</div>
+																		<div class="revbox_data_thum_cols">
+																			<a href="javascript:;" class="revbox_data_thum">
+																				<img src="./images/img_100x100_02.png" alt="">
+																				<span class="revbox_data_more">+ 13</span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="review_box_item">
+															<div class="revbox_data_box">
+																<div class="revbox_data_cap_cols">
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_who">박수*</p>
+																		<div class="revbox_star_row">
+																			<div class="eval_star_wrap">
+																				<span class="eval_star active"></span>
+																				<span class="eval_star active"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																				<span class="eval_star"></span>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="revbox_cap_inrow">
+																		<p class="revbox_cap_else">2023-12-25</p>
+																		<div class="revbox_cap_control"><a href="javascript:;" class="text_cap_link">수정하기</a></div>
+																	</div>
 																</div>
 																<div class="revbox_data_tail_cols">
 																	<div class="revbox_data_tbox">
@@ -3692,27 +3717,53 @@
 			// })
 			moveCheckbar(); /* 230902 추가 */
 
-			// 일정 간략히 보기 
-			const accitem = document.querySelectorAll(".tab_contents .accordion_vitem");
+			// 일정 간략히 보기 /* 20230903 */
 			const sch_viewer = document.querySelector("#sch_viewer");
 			let sch_viewer_boolean = false;
 			if (!!sch_viewer) {
 				sch_viewer.addEventListener("click", (e) => {
 					e.preventDefault();
+					const accitemParent = document.querySelector(e.currentTarget.dataset.target);
+					const accitemParentTarget = accitemParent.querySelectorAll(".accordion_vitem");
 
 					if (!sch_viewer_boolean) {
 						sch_viewer.textContent = '일정 자세히 보기';
-						accitem.forEach((item) => {
+						accitemParentTarget.forEach((item) => {
 							item.classList.remove("active");
 						});
 					} else {
 						sch_viewer.textContent = '일정 간략히 보기';
-						accitem.forEach((item) => {
+						accitemParentTarget.forEach((item) => {
 							item.classList.add("active");
 						});
 					}
 
 					sch_viewer_boolean = !sch_viewer_boolean;
+				});
+			}
+
+			// 선택관광 접어보기/펼쳐보기
+			const sch_viewer2 = document.querySelector("#sch_viewer2");
+			let sch_viewer_boolean2 = false;
+			if (!!sch_viewer2) {
+				sch_viewer2.addEventListener("click", (e) => {
+					e.preventDefault();
+					const accitemParent = document.querySelector(e.currentTarget.dataset.target);
+					const accitemParentTarget = accitemParent.querySelectorAll(".accordion_vitem");
+
+					if (!sch_viewer_boolean2) {
+						sch_viewer2.textContent = '접어보기';
+						accitemParentTarget.forEach((item) => {
+							item.classList.add("active");
+						});
+					} else {
+						sch_viewer2.textContent = '펼쳐보기';
+						accitemParentTarget.forEach((item) => {
+							item.classList.remove("active");
+						});
+					}
+
+					sch_viewer_boolean2 = !sch_viewer_boolean2;
 				});
 			}
 

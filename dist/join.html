@@ -1198,19 +1198,19 @@
 								<li>
 									<div class="props_label_item">
 										<input type="checkbox" class="props_dom">
-										<a href="#" class="props_label_item">(필수) 서비스 이용약관에 동의합니다</a>
+										<a href="#" class="props_label dtype2" data-popupcall="agree_01_popup">(필수) 서비스 이용약관에 동의합니다</a>
 									</div>
 								</li>
 								<li>
 									<div class="props_label_item">
 										<input type="checkbox" class="props_dom">
-										<a href="#" class="props_label_item">(필수)개인정보 수집 및 이용에대한 안내</a>
+										<a href="#" class="props_label dtype2" data-popupcall="agree_02_popup">(필수)개인정보 수집 및 이용에대한 안내</a>
 									</div>
 								</li>
 								<li>
 									<div class="props_label_item">
 										<input type="checkbox" class="props_dom">
-										<a href="#" class="props_label_item">(선택) 마케팅 활용동의</a>
+										<a href="#" class="props_label dtype2" data-popupcall="agree_03_popup">(선택) 마케팅 활용동의</a>
 									</div>
 								</li>
 							</ul>
@@ -1246,6 +1246,51 @@
 		</div>
 		<!-- // 비밀번호 변경 layer -->
 
+		<!-- (필수) 서비스 이용약관에 동의합니다 layer -->
+		<div class="popup_wrap" id="agree_01_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">(필수) 서비스 이용약관 동의</h2>
+				</div>
+				<div class="popup_content_low">
+					내용 미수급
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // (필수) 서비스 이용약관에 동의합니다 layer -->
+
+		<!-- (필수)개인정보 수집 및 이용에대한 안내 layer -->
+		<div class="popup_wrap" id="agree_02_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">(필수)개인정보 수집 및 이용에대한 안내</h2>
+				</div>
+				<div class="popup_content_low">
+					내용 미수급
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // (필수)개인정보 수집 및 이용에대한 안내 layer -->
+
+		<!-- (선택) 마케팅 활용동의 layer -->
+		<div class="popup_wrap" id="agree_03_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">(선택) 마케팅 활용동의</h2>
+				</div>
+				<div class="popup_content_low">
+					내용 미수급
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // (선택) 마케팅 활용동의 layer -->
+
 		<script>
 			// 선언
 			var pwmodify_popup = new DesignPopup({
@@ -1257,6 +1302,61 @@
 					console.log('callback');
 				}
 			});
+			var agree_01_popup = new DesignPopup({
+				selector: "#agree_01_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			var agree_02_popup = new DesignPopup({
+				selector: "#agree_02_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			var agree_03_popup = new DesignPopup({
+				selector: "#agree_03_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+
+
+			// 동의내용보기
+			const popupcall = document.querySelectorAll("[data-popupcall]");
+			if (!!popupcall) {
+				popupcall.forEach((item) => {
+					item.addEventListener("click", (e) => {
+						e.preventDefault();
+						(new Function(
+							`
+                            ${e.currentTarget.dataset.popupcall}.popupShow();
+                            `
+						)());
+					});
+				});
+			}
+
+			// 전체동의
+			const total_agree = document.querySelector("#total_agree");
+			const agree_detail = document.querySelectorAll(".agree_list .props_dom");
+			if (!!total_agree && !!agree_detail) {
+				total_agree.addEventListener("click", (e) => {
+					const thisTarget = e.currentTarget;
+					agree_detail.forEach((item) => {
+						item.checked = thisTarget.checked
+					});
+				});
+			}
 
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
