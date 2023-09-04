@@ -324,7 +324,8 @@ input.mv_form_input::input-placeholder{color:#fff;}
 
 }
 @media (min-height:1160px){
-    .main_visual_wrap{height:auto !important;text-align: center;}
+    /* .main_visual_wrap{height:auto !important;text-align: center;}
+    .main_visual_wrap.htype2{height:350px !important;text-align: left;} */
     .mv_img_group .pc_img{display:block;position:static;transform: translate(0,0);}
 }
 
