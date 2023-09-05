@@ -62,6 +62,7 @@
     .popup_vcont_content_row{margin:0 15px;}
     .pvcont_vitem{padding:20px 0;}
     .popup_btn_low{padding:15px;}
+    .popup_btn_low.type2{padding:15px}
 }
 /* // popup */
 
@@ -3037,6 +3038,7 @@ input.props_dom{}
     .dc_vitem{padding:20px 0;}
 
     .agree_list_zone{margin:0;}
+    .agree_list_zone.type2{margin-top:30px;}
 
     .props_label{font-size:14px;}
 
@@ -3192,6 +3194,9 @@ input.props_dom{}
     .btn_submit_box{min-width:0;min-height:40px;border-radius:5px;flex:1;}
     .btn_submit_box_text{font-size:15px;}
     .render_submit_btn_wrap{margin-top:20px;gap:5px;}
+
+    .btn_boxobj.submit{padding:15px;}
+    .btn_boxobj.submit .btn_boxobj_text{font-size:16px;}
 }
 /* // 20230827 추가 */
 
@@ -3299,7 +3304,7 @@ input.props_dom{}
     .fieldset_title_row.type2 .fieldset_title_ico{margin-bottom:20px;}
     .fieldset_title_ico{margin:0 auto 20px;}
     .fieldset_title_text{font-size:20px;}
-    .fieldset_tab{min-height:45px;padding:5px;}
+    .fieldset_tab{padding:5px;}
     .fieldset_tab_text{font-size:16px;}
     .fieldset_tab_list > li.active .fieldset_tab_text{font-size:16px;}
     .fieldset_tab_list > li.active .fieldset_tab:before{height:2px;}
@@ -3326,8 +3331,8 @@ input.props_dom{}
 
     .fieldset_message_wrap{margin-top:20px;}
     .fieldset_content_message{font-size:14px}
-    .fieldset_content_data_render{padding:12px;margin:15px auto 0;}
-    .fieldset_data_tb th{padding-right:10px;}
+    .fieldset_content_data_render{padding:12px;margin:10px auto 0;}
+    .fieldset_data_tb th{padding-right:15px;}
     .fcdata_key{font-size:14px;}
     .fcdata_value{font-size:14px;}
 
