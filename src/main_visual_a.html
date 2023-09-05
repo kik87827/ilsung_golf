@@ -5,7 +5,8 @@
 <body class="front_body">
     <div class="page_wrap">
         <!-- main visual -->
-        <div class="main_visual_wrap">
+        <!-- 20230906 typea addClass -->
+        <div class="main_visual_wrap typea">
             <a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a>
             <div class="swiper-container main_visual_swiper">
                 <div class="swiper-wrapper">
@@ -75,16 +76,28 @@
                     <div class="mv_form_cols">
                         <a href="javascript:;" class="mv_form_item has_allow" data-poslayer="#layer_box_local">
                             <span class="mv_form_text">어디로 가세요?</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
                         </a>
                     </div>
                     <div class="mv_form_cols">
                         <a href="javascript:;" class="mv_form_item has_allow" id="layer_calendar_startdate">
                             <span class="mv_form_text">언제 떠나세요?</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
                         </a>
                     </div>
                     <div class="mv_form_cols">
                         <a href="javascript:;" class="mv_form_item has_search" data-poslayer="#layer_box_search">
                             <span class="mv_form_text">검색어를 입력해주세요</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -121,8 +134,10 @@
                 }
             });
             $("#layer_calendar_startdate").on('apply.daterangepicker', function (ev, picker) {
-                $(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
-                $("#layer_calendar_startdate .mv_form_text").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+                let thisObj = $(this);
+                thisObj.val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+                thisObj.find(".search_form_text_result").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+                thisObj.addClass("result_mode");
             });
         });
     </script>
