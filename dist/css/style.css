@@ -3293,4 +3293,43 @@ input.props_dom{}
 .fcdata_key{display:inline-block;font-size:16px;color:#333333;white-space: nowrap;}
 .fcdata_value{display:inline-block;font-size:16px;color:#4e4e4e;}
 
+
+@media (max-width:1023px){
+    .fieldset_form_wrap{padding:55px 20px 110px;}
+    .fieldset_title_row.type2 .fieldset_title_ico{margin-bottom:20px;}
+    .fieldset_title_ico{margin:0 auto 20px;}
+    .fieldset_title_text{font-size:20px;}
+    .fieldset_tab{min-height:45px;padding:5px;}
+    .fieldset_tab_text{font-size:16px;}
+    .fieldset_tab_list > li.active .fieldset_tab_text{font-size:16px;}
+    .fieldset_tab_list > li.active .fieldset_tab:before{height:2px;}
+
+    .fieldset_input_row input.form_input{height:45px;}
+
+    .fieldset_input_group{margin-top:20px;}
+    .fieldset_else_group{margin-top:20px;}
+
+    .field_menu{font-size:14px;}
+    .fds_other_title{font-size:16px;padding:0 12px;}
+    .fds_other_content_row{margin-top:10px;}
+    .fds_sns_list{gap:7px;}
+    .fds_sns_list > li{}
+    .fds_sns_list > li:last-of-type{}
+    .btn_fieldset_submit{font-size:16px;padding:15px;}
+    .fds_submit_copy{margin-top:10px;}
+
+    .btn_finishbox_wrap{margin:25px auto 0;gap:5px;}
+    .btn_finishbox_wrap.multi_type{}
+    .btn_finishbox{padding:10px;}
+    .btn_finishbox_text{font-size:16px;}
+
+
+    .fieldset_message_wrap{margin-top:20px;}
+    .fieldset_content_message{font-size:14px}
+    .fieldset_content_data_render{padding:12px;margin:15px auto 0;}
+    .fieldset_data_tb th{padding-right:10px;}
+    .fcdata_key{font-size:14px;}
+    .fcdata_value{font-size:14px;}
+
+}
 /* // 회원 */
