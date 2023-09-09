@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+
+<body class="front_body">
+    <div class="page_wrap">
+        @@include('./include/header_a.html')
+        <!-- middle -->
+        <section class="middle_wrap">
+            
+        </section>
+        <!-- // middle -->
+
+        <script>
+            
+            
+            // 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if(url_2 === "popup"){
+				// agree_03_popup.popupShow();
+			}
+        </script>
+
+
+        @@include('./include/footer.html')
+    </div>
+</body>
