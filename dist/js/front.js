@@ -1911,3 +1911,15 @@ function moveCheckInit(){
 		});
 	}
 }
+
+function toggleHistory(){
+	const dr_toggle_bar = document.querySelectorAll(".dr_toggle_bar");
+	if(!!dr_toggle_bar){
+		dr_toggle_bar.forEach((item)=>{
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				item.closest("li").classList.toggle("active");
+			});
+		})
+	}
+}
