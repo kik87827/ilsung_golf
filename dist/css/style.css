@@ -2234,6 +2234,7 @@ input.move_chk:checked + .move_chk_label:after{content:'ON';color:#176bdd;}
 .revbox_data_cap_cols{flex:0 0 160px;width:160px;box-sizing: border-box;padding:15px 20px 0;text-align: center;}
 .revbox_cap_who{font-size:17px;font-weight:500;color:#333333;}
 .revbox_cap_who.type2{}
+.revbox_cap_current{}
 .revbox_star_row{margin-top:12px;}
 .revbox_star_row .eval_star_wrap{justify-content: center;}
 .revbox_star_row .eval_star{background-image:url("../images/ico_eval_star_16.png");width:16px;height:16px;}
@@ -2988,6 +2989,10 @@ input.props_dom{}
 .package_price_wrap:before{display:block;content:'';width:25px;height:19px;background:url("../images/ico_coupon_25.png") no-repeat 0 0/100% auto;}
 .package_price{font-size:18px;display:inline-block;line-height:1;}
 
+.package_cbox_respon_list{}
+.package_cbox_respon_list > li{}
+.package_cbox_respon_list > li:last-of-type{}
+
 @media (max-width:1279px){
     .dc_vform_row{gap:25px;}
     .dc_vform_tail_tb td{padding-right:20px;}
@@ -3093,6 +3098,11 @@ input.props_dom{}
     .end_price_wrap .price_unit{font-size:14px;margin:1px 0 0 2px;}
 
     .btn_boxobj{font-size:14px;border-radius:5px;padding:12px;min-width:100px;}
+    
+    .package_cbox_respon_list{}
+    .package_cbox_respon_list > li{}
+    .package_cbox_respon_list > li:last-of-type{}
+    
     .package_cbox_list{padding:0;}
     .package_cbox{padding:15px 45px;display:block;}
     .package_cbox .props_dom{position:absolute;top:50%;left:15px;transform: translateY(-50%);}
@@ -3451,6 +3461,81 @@ input.props_dom{}
 .btn_getdata_submit_text{}
 .btn_getdata_submit_text.type2{}
 
+.getdata_product_list_wrap{}
+.getdata_product_list{}
+.getdata_product_list > li{}
+.getdata_product_list > li:last-of-type{}
+.getdata_product{}
+.gdpro_thum{}
+.gdpro_thum > img{}
+.ico_gdpro_like{}
+.ico_gdpro_like.active{}
+.gdpro_spec{}
+
+.btn_render_head_row{}
+.btn_quadbox_item{}
+.quadbox_item_text{}
+.dr_toggle_content_inner .review_box_list_wrap{}
+
+.btn_textonly{}
+
+
+.data_render_tab_ui_wrap{}
+.data_render_tab_row{}
+.data_render_tab_row:before{}
+.data_render_tab_list{}
+.data_render_tab_list > li{}
+.data_render_tab_list > li:after{}
+.data_render_tab_list > li:last-of-type{}
+.data_render_tab{}
+.data_render_tab_key{}
+.data_render_tab_value{}
+.data_render_tab_list > li.active:after{}
+.data_render_tab_list > li.active .data_render_tab_key{}
+.data_render_tab_list > li.active .data_render_tab_value{}
+.data_render_tabcont_row{}
+.data_render_tabcont{}
+.data_render_tabcont.active{}
+.data_tail_history_list{}
+.data_tail_history_list > li{}
+.data_tail_history_list > li:last-of-type{}
+.data_tail_history_main{}
+.data_tail_history_sub{}
+.dtail_history_flag{}
+.dtail_history_list{}
+.dtail_history_list dt{}
+.dtail_history_list dd{}
+.dtail_price_item{}
+.dtail_price_value{}
+.dtail_price_guide{}
+
+.review_write_wrap{}
+.review_write_copy{}
+.review_write_star_zone{}
+.review_write_star_zone .eval_star_wrap{}
+.review_write_props_wrap{}
+.review_write_props_list{}
+.review_write_props_list > li{}
+.props_drd_item{}
+.props_drd_item .form_drd{}
+.props_drd_item .form_drd_label{}
+.review_write_field_wrap{}
+.review_write_field{}
+.review_write_field_row{}
+.review_write_field_row:last-of-type{}
+.review_write_field_row input.form_input{}
+.review_write_field_row textarea.form_textarea{}
+textarea.form_textarea{}
+.btn_file_design_box{}
+.ico_file_img{}
+.filt_design_box_text{}
+.file_design_origin{}
+.registered_item_list{}
+.registered_item_list > li{}
+.registered_item_list > li:last-of-type{}
+.registered_item{}
+.registered_item > img{}
+.btn_data_delete{}
 
 @media (max-width:1023px){
     /* mypage */
