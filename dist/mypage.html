@@ -2618,6 +2618,103 @@
 		</div>
 		<!-- // 후기 작성 layer -->
 
+		<!-- 1:1 layer -->
+		<div class="popup_wrap" id="one_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">1:1 문의</h2>
+				</div>
+				<div class="popup_content_low d_type">
+					<div class="review_box_list_wrap">
+						<ul class="review_box_list">
+							<li>
+								<div class="review_box_item">
+									<div class="revbox_data_box">
+										<div class="revbox_data_cap_cols">
+											<div class="revbox_cap_inrow">
+												<p class="revbox_cap_current">성민영</p>
+											</div>
+											<div class="revbox_cap_inrow">
+												<p class="revbox_cap_else">2023-12-25</p>
+											</div>
+										</div>
+										<div class="revbox_data_tail_cols">
+											<div class="revbox_data_tbox">
+												<div class="revbox_data_text_cols">
+													<p class="revbox_data_label">문의내용</p>
+													<div class="revbox_data_text">
+														최고의 호텔이었습니다. 허니문으로도 최고였고 풀장도 멋있고 뷰가 멋졌습니다.<br>
+														하와이의 바다, 산, 정글을 마음껏 볼 수 있었습니다.
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="review_box_item">
+									<div class="revbox_data_box">
+										<div class="revbox_data_cap_cols">
+											<div class="revbox_cap_inrow">
+												<p class="revbox_cap_current">엠클릭여행사</p>
+											</div>
+											<div class="revbox_cap_inrow">
+												<p class="revbox_cap_else">2023-12-25</p>
+											</div>
+										</div>
+										<div class="revbox_data_tail_cols">
+											<div class="revbox_data_tbox">
+												<div class="revbox_data_text_cols">
+													<p class="revbox_data_label type2">답변내용</p>
+													<div class="revbox_data_text">
+														최고의 호텔이었습니다. 허니문으로도 최고였고 풀장도 멋있고 뷰가 멋졌습니다.<br>
+														하와이의 바다, 산, 정글을 마음껏 볼 수 있었습니다.
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="popup_btn_low">
+					<a href="#" class="btn_boxobj medium close_trigger"><span class="btn_boxobj_text">수정완료</span></a>
+					<a href="#" class="btn_boxobj medium gray close_trigger"><span class="btn_boxobj_text">삭제하기</span></a>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // 1:1 layer -->
+
+		<!-- 1:1 layer -->
+		<div class="popup_wrap" id="one_popup2">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">1:1 문의</h2>
+				</div>
+				<div class="popup_content_low d_type">
+					<div class="simple_write_field">
+						<div class="simple_write_field_row">
+							<input type="text" class="form_input" placeholder="제목을 입력해주세요(최대 20자이내)">
+						</div>
+						<div class="simple_write_field_row">
+							<textarea rows="10" cols="10" class="form_textarea" placeholder="내용을 입력해주세요(최대 200자)"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="popup_btn_low">
+					<a href="#" class="btn_boxobj medium close_trigger"><span class="btn_boxobj_text">작성완료</span></a>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // 1:1 layer -->
+
 
 		<script>
 			toggleHistory();
@@ -2646,6 +2743,26 @@
 				}
 			});
 
+			var one_popup = new DesignPopup({
+				selector: "#one_popup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+
+			var one_popup2 = new DesignPopup({
+				selector: "#one_popup2",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
@@ -2657,6 +2774,10 @@
 				document.querySelectorAll(".data_render_toggle_list > li").forEach((item) => {
 					item.classList.add("active");
 				})
+			} else if (url_2 === "one") {
+				one_popup.popupShow();
+			} else if (url_2 === "one2") {
+				one_popup2.popupShow();
 			}
 		</script>
 
