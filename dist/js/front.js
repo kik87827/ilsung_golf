@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 function commonResize(){
 	var $window_width = 0;
 	$(window).on("resize",function(){
@@ -1490,18 +1491,20 @@ function detailVisualC(){
   }
   
   
+
   
   DesignPopup.prototype.popupShow = function () {
 	this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
-  
 	if (this.selector == null) {
 	  return;
 	}
 	// this.domHtml.classList.add("touchDis");
+
 	
 	this.selector.classList.add("active");
 	setTimeout(()=>{
-	  this.selector.classList.add("motion_end");
+		this.selector.classList.add("motion_end");
+		this.scrollCheck();
 	},30);
 	if ("beforeCallback" in this.option) {
 	  this.option.beforeCallback();
@@ -1561,6 +1564,8 @@ function detailVisualC(){
 	this.bg_design_popup = this.selector.querySelector(".bg_dim");
 	var closeItemArray = [...this.btn_close];
 	this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
+
+	
   
 	if(!!this.btn_closeTrigger){
 	  closeItemArray.push(...this.btn_closeTrigger)
@@ -1589,7 +1594,26 @@ function detailVisualC(){
 	  this.layer_wrap_parent.classList.remove("has_active_multi");
 	}
   }
-
+  DesignPopup.prototype.scrollCheck = function(){
+	  const popupActive = document.querySelector(".popup_wrap.active");
+	  const popup_item = popupActive.querySelector(".popup_item");
+	  const popup_content_low = popupActive.querySelector(".popup_content_low");
+	 
+	  action();
+	  window.addEventListener("resize",()=>{
+		  action();
+		});
+		
+		function action(){
+		if(!popup_content_low){return;}
+		const getScrollbarWidth = () => popup_item.clientWidth - popup_content_low.scrollWidth;
+		console.dir(popup_content_low);
+		if(popup_content_low.classList.contains("d_type") && getScrollbarWidth()>0){
+			popup_content_low.style.paddingLeft = getScrollbarWidth() + 'px';
+			popup_content_low.classList.add("has_bar");
+		}
+	}
+  }
 
 
 function timeSwiper(){
@@ -1921,5 +1945,85 @@ function toggleHistory(){
 				item.closest("li").classList.toggle("active");
 			});
 		})
+	}
+}
+
+
+function reviewEval(){
+	const reviewEvalWrap = document.querySelectorAll(".review_write_wrap");
+	reviewEvalWrap.forEach((item)=>{
+		const thisWrap = item;
+		const thisWrapStarGroup = thisWrap.querySelector(".eval_star_wrap");
+		const thisWrapStar = thisWrapStarGroup.querySelectorAll(".eval_star");
+		const thisWrapProps = thisWrap.querySelectorAll(".review_write_props_list .form_drd");
+
+		thisWrapProps.forEach((item,index)=>{
+			item.addEventListener("click",()=>{
+				const eqItem = thisWrapStar[thisWrapProps.length - 1 - index];
+				const eqItemPrev = prevAll(eqItem);
+				const eqItemNext = nextAll(eqItem);
+
+				//reset
+				if(!!eqItemPrev){
+					eqItemPrev.forEach((item)=>{
+						item.classList.add("active");
+					});
+				}
+				if(!!eqItemNext){
+					eqItemNext.forEach((item)=>{
+						item.classList.remove("active");
+					});
+				}
+				eqItem.classList.add("active");
+			});
+		})
+	})
+}
+
+function prevAll(element) {
+    var result = [];
+
+    while (element = element.previousElementSibling)
+        result.push(element);
+    return result;
+}
+
+function nextAll(element) {
+    var result = [];
+
+    while (element = element.nextElementSibling)
+        result.push(element);
+    return result;
+}
+
+
+function dataRenderTabUI(){
+	const data_render_tab_ui_wrap = document.querySelectorAll(".data_render_tab_ui_wrap");
+	if(!!data_render_tab_ui_wrap){
+		data_render_tab_ui_wrap.forEach((item)=>{
+			const this_ui_wrap = item;
+			const this_ui_tab = this_ui_wrap.querySelectorAll(".data_render_tab");
+			const this_ui_tabcont = this_ui_wrap.querySelectorAll(".data_render_tabcont");
+
+			this_ui_tab.forEach((tab)=>{
+				tab.addEventListener("click",(e)=>{
+					e.preventDefault();
+					const thisTab = e.currentTarget;
+					const thisTarget = document.querySelector(thisTab.getAttribute("href"));
+
+					this_ui_tab.forEach((item)=>{
+						item.closest("li").classList.remove("active");
+					});
+					thisTab.closest("li").classList.add("active");
+
+					if(!!thisTarget){
+						this_ui_tabcont.forEach((item)=>{
+							item.classList.remove("active");
+						});
+						thisTarget.classList.add("active");
+					}
+				});
+			})
+		});
 	}
 }
