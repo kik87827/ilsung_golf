@@ -517,7 +517,7 @@ function posLayerEvent(){
 			targetCols.addClass("result_mode");
 		}else{
 			if(activeText.length>0 || input_search_field_value.length>0){
-				targetCols.find(".search_form_text_result,.mv_vboth_wbox_text").html(activeText || input_search_field_value);
+				targetCols.find(".search_form_text_result,.mv_vboth_wbox_result").html(activeText || input_search_field_value);
 				targetCols.addClass("result_mode");
 			}
 		}
@@ -528,8 +528,8 @@ function posLayerEvent(){
 		e.preventDefault();
 		e.stopPropagation();
 		
-		$(this).parents(".search_field_target,.mv_form_item").removeClass("result_mode");
-		$(this).parents(".search_field_target,.mv_form_item").find(".search_form_text_result").text("");
+		$(this).parents(".search_field_target,.mv_form_item,.mv_vboth_wbox").removeClass("result_mode");
+		$(this).parents(".search_field_target,.mv_form_item,.mv_vboth_wbox").find(".search_form_text_result,.mv_vboth_wbox_result").text("");
 	});
 
 	$(document).on("click",".choice_item",function(e){
