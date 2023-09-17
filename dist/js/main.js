@@ -28,6 +28,9 @@ function mainProductType141(){
 	let swiperParent = document.querySelector(swiperParentText);
 	let swiperSlide = document.querySelectorAll(swiperParentText+" .swiper-slide");
 	let windowWidth = window.innerWidth;
+	let swiperCols = swiperParent.dataset.cols;
+	let pccolsOption = !!swiperCols ? swiperCols : 4;
+	
 	if(swiperSlide.length>1){
 		if(slideObj !== null){
 			slideObj.update();
@@ -61,8 +64,8 @@ function mainProductType141(){
 	function pcFunc(){
 		slideObj = new Swiper(swiperParentText, {
 			speed : 1000, 
-			slidesPerView: 4,
-			slidesPerGroup : 4,
+			slidesPerView: pccolsOption,
+			slidesPerGroup : pccolsOption,
 			spaceBetween : 23,
 			freeMode: false,
 			slidesPerGroupAuto : false,

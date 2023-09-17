@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+
+<body class="front_body">
+    <div class="page_wrap">
+        @@include('./include/header_a.html')
+        <!-- middle -->
+        <section class="middle_wrap single_wrap">
+            
+        </section>
+        <!-- // middle -->
+
+        <!-- 1:1 layer -->
+        <div class="popup_wrap" id="reply_popup">
+			<div class="bg_dim"></div>
+			<div class="popup_item xxxmedium">
+				<div class="popup_title_low">
+					<h2 class="popup_title">1:1 문의</h2>
+				</div>
+				<div class="popup_content_low type5">
+                    <div class="review_write_field_wrap type2">
+                        <div class="review_write_field">
+                            <div class="review_write_field_row">
+                                <input type="text" class="form_input" placeholder="제목을 입력해주세요(최대 20자이내)">
+                            </div>
+                            <div class="review_write_field_row">
+                                <textarea rows="10" cols="10" class="form_textarea" placeholder="내용을 입력해주세요(최대 200자)"></textarea>
+                            </div>
+                            <div class="review_write_field_row">
+                                <div class="btn_file_design_box">
+                                    <i class="ico_file_img"></i>
+                                    <div class="filt_design_box_text">사진 첨부하기</div>
+                                    <input type="file" class="file_design_origin">
+                                </div>
+                            </div>
+                            <div class="review_write_field_row">
+                                <ul class="registered_item_list">
+                                    <li>
+                                        <div class="registered_item">
+                                            <img src="./images/img_90x90.png" alt="">
+                                        </div>
+                                        <button type="button" class="btn_data_delete"></button>
+                                    </li>
+                                    <li>
+                                        <div class="registered_item">
+                                            <img src="./images/img_90x90.png" alt="">
+                                        </div>
+                                        <button type="button" class="btn_data_delete"></button>
+                                    </li>
+                                    <li>
+                                        <div class="registered_item">
+                                            <img src="./images/img_90x90.png" alt="">
+                                        </div>
+                                        <button type="button" class="btn_data_delete"></button>
+                                    </li>
+                                    <li>
+                                        <div class="registered_item">
+                                            <img src="./images/img_90x90.png" alt="">
+                                        </div>
+                                        <button type="button" class="btn_data_delete"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup_contentbtn_low">
+                        <a href="#" class="btn_boxobj medium close_trigger"><span class="btn_boxobj_text">수정완료</span></a>
+                        <a href="#" class="btn_boxobj medium gray close_trigger"><span class="btn_boxobj_text">삭제하기</span></a>
+                    </div>
+                </div>
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+        <!-- // 1:1 layer -->
+
+        <script>
+            var reply_popup = new DesignPopup({
+				selector: "#reply_popup",
+				beforeCallback(){
+					console.log('beforeCallback');
+				},
+				callback(){
+					console.log('callback');
+				}
+			});
+
+            reply_popup.popupShow();
+        </script>
+
+        @@include('./include/footer.html')
+    </div>
+</body>

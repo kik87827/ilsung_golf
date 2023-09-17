@@ -279,7 +279,7 @@
                                                 <select class="select_item"><option>추천순</option></select>
                                             </li>
                                             <li>
-                                                <a href="javascript" class="sortopt_item" data-poslayer="#layer_box_filter">
+                                                <a href="javascript:;" class="sortopt_item" name="filter_call">
                                                     <i class="sortopt_ico"></i>
                                                     <span class="sortopt_key">필터</span>
                                                     <span class="sortopt_count">4</span>
@@ -437,7 +437,7 @@
                                                 <select class="select_item"><option>추천순</option></select>
                                             </li>
                                             <li>
-                                                <a href="javascript" class="sortopt_item" data-poslayer="#layer_box_filter">
+                                                <a href="javascript:;" class="sortopt_item" name="filter_call">
                                                     <i class="sortopt_ico"></i>
                                                     <span class="sortopt_key">필터</span>
                                                     <span class="sortopt_count">4</span>
@@ -668,7 +668,7 @@
                                                 <select class="select_item"><option>추천순</option></select>
                                             </li>
                                             <li>
-                                                <a href="javascript" class="sortopt_item" data-poslayer="#layer_box_filter">
+                                                <a href="javascript:;" class="sortopt_item" name="filter_call">
                                                     <i class="sortopt_ico"></i>
                                                     <span class="sortopt_key">필터</span>
                                                     <span class="sortopt_count">4</span>
@@ -1022,8 +1022,26 @@
     </div>
 
     <!-- layer -->
-    @@include('./include/layer_filter.html')
+    <!-- @@include('./include/layer_filter.html') -->
+    @@include('./include/layer_filter_global.html')
     <script>
+        // 선언
+        var filter_global_popup = new DesignPopup({
+            selector: "#filter_global_popup",
+            beforeCallback(){
+                console.log('beforeCallback');
+            },
+            callback(){
+                console.log('callback');
+            }
+        });
+        document.querySelectorAll("[name='filter_call']").forEach((item)=>{
+            item.addEventListener("click",()=>{
+                filter_global_popup.popupShow();
+            });
+        });
+
+
         filterToggleCont();
         multiRange("#multi_range_target");
     </script>
