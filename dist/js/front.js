@@ -10,6 +10,7 @@ $(window).on("load",function(){
 
 document.addEventListener("DOMContentLoaded", function () {
 	commonInit();
+	dataToggleEvent();
 });
 
 
@@ -2081,5 +2082,39 @@ function dataToggleFunc(){
 				thisTarget.closest("li").classList.toggle("active");
 			});
 		})
+	}
+}
+
+function dataToggleEvent(){
+	const dataToggleObj = document.querySelectorAll("[data-eventobj]");
+	if(!!dataToggleObj){
+		dataToggleObj.forEach((item)=>{
+			let btnBoolean = false;
+			item.setAttribute("data-origin",item.textContent);
+			item.addEventListener("click",(e)=>{
+				e.preventDefault();
+				const thisObj = e.currentTarget;
+				const thisObjText = thisObj.querySelector("span");
+				const thisData = JSON.parse(thisObj.dataset.eventobj);
+				const thisContent = thisData.content;
+				const thisParent = thisObj.closest(".dc_vitem_wrap");
+				if(btnBoolean){
+					thisObjText.textContent = thisObj.dataset.origin;
+				}else{
+					thisObjText.textContent = thisData.text;
+				}
+				// if(!!){
+				// 	document.querySelector(thisData.content).classList.toggle("none");
+				// }
+				thisContent.forEach((item)=>{
+					document.querySelector(item).classList.toggle("none");
+					console.log();
+				})
+				if(!!thisParent){
+					thisParent.classList.toggle("skin2");
+				}
+				btnBoolean = !btnBoolean;
+			});
+		});
 	}
 }

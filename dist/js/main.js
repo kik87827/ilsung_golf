@@ -1344,6 +1344,7 @@ function galleryResponSwiper(target){
 function productTabQuadSwiper(){
 	
 	const tabquad_item_list_wrap = document.querySelectorAll(".swiper-container.tabquad_item_list_wrap");
+	const swiper_notification = document.querySelectorAll(".swiper-notification");
 	let windowWidth = window.innerWidth;
 
 	if(!!tabquad_item_list_wrap){
@@ -1357,6 +1358,11 @@ function productTabQuadSwiper(){
 
 		window.addEventListener("resize",()=>{
 			if(windowWidth !== window.innerWidth){
+				if(document.querySelectorAll(".swiper-notification").length){
+					document.querySelectorAll(".swiper-notification").forEach((item)=>{
+						item.remove();
+					})
+				}
 				if(window.innerWidth >= 1024){
 					pcFunc();
 				}else{
@@ -1374,13 +1380,13 @@ function productTabQuadSwiper(){
 				if(swiperGroup.classList.contains("tabliner_item_list_wrap")){
 					return;
 				}
-				if (thisSwiperSlide.length) {
-					(new Function(
-						`
-						console.log(${swiperGroup.getAttribute("id")}.id)
-					`
-					)());
-				}
+				// if (thisSwiperSlide.length) {
+				// 	(new Function(
+				// 		`
+				// 		console.log(${swiperGroup.getAttribute("id")}.id)
+				// 	`
+				// 	)());
+				// }
 			});
 		}
 

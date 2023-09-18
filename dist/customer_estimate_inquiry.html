@@ -1162,7 +1162,7 @@
 		<!-- // header -->
 		<!-- middle -->
 		<section class="middle_wrap single_wrap">
-			<div class="single_middle_title_row">
+			<div class="single_middle_title_row type2">
 				<h2 class="single_middle_title">단체견적 문의</h2>
 			</div>
 			<div class="single_middle_content_row">
@@ -1201,20 +1201,29 @@
 						<div class="sform_vitem">
 							<div class="sform_vlabel_row"><span class="sform_vlabel imp">이메일</span></div>
 							<div class="sform_vcont_row">
-								<div class="inline_form_group">
-									<div class="inline_form_cols">
-										<input type="text" class="form_input" placeholder="이메일">
+								<div class="inline_form_zone">
+									<div class="inline_form_group">
+										<div class="inline_form_cols">
+											<input type="text" class="form_input" placeholder="이메일">
+										</div>
+										<div class="inline_form_cols else_type">
+											<span class="inline_form_else">@</span>
+										</div>
+										<div class="inline_form_cols">
+											<input type="text" class="form_input">
+										</div>
+										<!-- <div class="inline_form_cols">
+                                            <select class="form_select">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div> -->
 									</div>
-									<div class="inline_form_cols else_type">
-										<span class="inline_form_else">@</span>
-									</div>
-									<div class="inline_form_cols">
-										<input type="text" class="form_input">
-									</div>
-									<div class="inline_form_cols">
-										<select class="form_select">
-											<option>선택하세요</option>
-										</select>
+									<div class="inline_form_group short_type">
+										<div class="inline_form_cols">
+											<select class="form_select">
+												<option>선택하세요</option>
+											</select>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1267,13 +1276,13 @@
 										<div class="sform_depth_label_row">
 											<p class="sform_depth_label">출발일</p>
 										</div>
-										<div class="sform_depth_content_row"><input type="text" class="form_input define_calendar"></div>
+										<div class="sform_depth_content_row"><input type="text" class="form_input define_calendar" id="start_date"></div>
 									</div>
 									<div class="sform_depth_cols">
 										<div class="sform_depth_label_row">
 											<p class="sform_depth_label">도착일</p>
 										</div>
-										<div class="sform_depth_content_row"><input type="text" class="form_input define_calendar"></div>
+										<div class="sform_depth_content_row"><input type="text" class="form_input define_calendar" id="end_date"></div>
 									</div>
 								</div>
 							</div>
@@ -1319,25 +1328,25 @@
 									<li>
 										<div class="props_item">
 											<input type="checkbox" name="hotel_form" id="hotel_form_01" class="props_dom">
-											<label for="hotel_form_01" class="props_label"></label>
+											<label for="hotel_form_01" class="props_label">5성급</label>
 										</div>
 									</li>
 									<li>
 										<div class="props_item">
 											<input type="checkbox" name="hotel_form" id="hotel_form_02" class="props_dom">
-											<label for="hotel_form_02" class="props_label"></label>
+											<label for="hotel_form_02" class="props_label">4성급</label>
 										</div>
 									</li>
 									<li>
 										<div class="props_item">
 											<input type="checkbox" name="hotel_form" id="hotel_form_03" class="props_dom">
-											<label for="hotel_form_03" class="props_label"></label>
+											<label for="hotel_form_03" class="props_label">3성급</label>
 										</div>
 									</li>
 									<li>
 										<div class="props_item">
 											<input type="checkbox" name="hotel_form" id="hotel_form_04" class="props_dom">
-											<label for="hotel_form_04" class="props_label"></label>
+											<label for="hotel_form_04" class="props_label">상관없음</label>
 										</div>
 									</li>
 								</ul>
@@ -1360,6 +1369,28 @@
 			</div>
 		</section>
 		<!-- // middle -->
+		<script>
+			$(function() {
+				$('#start_date').daterangepicker({
+					singleDatePicker: true,
+					locale: {
+						format: 'YYYY-MM-DD',
+						"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+						"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+						applyLabel: "적용"
+					}
+				});
+				$('#end_date').daterangepicker({
+					singleDatePicker: true,
+					locale: {
+						format: 'YYYY-MM-DD',
+						"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+						"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+						applyLabel: "적용"
+					}
+				});
+			});
+		</script>
 		<!-- footer -->
 		<footer class="footer_wrap">
 			<div class="footer_else_low">
