@@ -22,10 +22,18 @@
 .props_dchk_item_list{display:flex;flex-wrap:wrap;margin-top:10px;gap:20px;}
 .props_dchk_item_list > li{}
 .props_dchk_item{display:flex;gap:5px;}
-.props_dchk_item:before{display:block;content:'';width:20px;height:20px;border-radius:100%;flex:0 0 20px;background:#34b371 url("../images/ico_chk_20.png") no-repeat 50% 50%/100% auto;}
+/* .props_dchk_item:before{display:block;content:'';width:20px;height:20px;border-radius:100%;flex:0 0 20px;background:#34b371 url("../images/ico_chk_20.png") no-repeat 50% 50%/100% auto;}
 .props_dchk_item.ico_type2:before{background-color:#f84242;}
-.props_dchk_item.ico_type3:before{background-color:#aaaaaa;}
+.props_dchk_item.ico_type3:before{background-color:#aaaaaa;} */
 .props_dchk_item_para{font-size:15px;color:#4e4e4e;line-height:1.4;position:relative;top:-1px;}
+
+input.props_dchk_dom{appearance: none;width:20px;height:20px;background:url("../images/ico_chk_20_g.png") no-repeat 0 0/100% auto;border:1px solid #34b371;border-radius:100%;flex:0 0 20px;}
+input.props_dchk_dom.type2{background-image:url("../images/ico_chk_20_r.png");border-color:#f84242;}
+input.props_dchk_dom.type3{background-image:url("../images/ico_chk_20_grey.png");border-color:#aaaaaa;}
+input.props_dchk_dom:checked{background-position:0 100%;background-color:#34b371;}
+input.props_dchk_dom.type2:checked{background-color:#f84242;}
+input.props_dchk_dom.type3:checked{background-color:#aaaaaa;}
+.props_dchk_label{font-size:15px;color:#4e4e4e;line-height:1.4;position:relative;top:-1px;cursor:pointer}
 
 .popup_content_low{flex:1;min-height:0;position:relative;overflow:hidden;overflow-y:overlay;padding:30px 23px 45px;}
 .page_popup_content_low{padding:30px 23px 45px;}
@@ -110,7 +118,9 @@
     .popup_title_low.type2{padding:15px 55px 15px 20px;}
     .popup_data_title{font-size:16px;}
     .props_dchk_item_list{gap:10px;margin-right:-40px;}
-    .props_dchk_item_para{font-size:14px;}
+    .props_dchk_label{font-size:14px;}
+
+    .props_dchk_label{font-size:15px;color:#4e4e4e;line-height:1.4;position:relative;top:-1px;cursor:pointer}
 
     .popup_pixelse_title{font-size:14px;}
     .popup_pixelse_title_row{padding:15px 55px 15px 20px;}
@@ -4037,10 +4047,10 @@ input.props_dom:checked + .props_label{}
 
 
 /* 다른출발일 보기 */
-.swiper-container.calender_history_data_container{padding:0 15px 20px;}
-.swiper-container.calender_history_data_container .swiper-wrapper{}
-.swiper-container.calender_history_data_container .swiper-wrapper,
-.swiper-container.calender_history_data_container .swiper-slide{width:auto;}
+.swiper-container.calendar_history_data_container{padding:0 15px 20px;}
+.swiper-container.calendar_history_data_container .swiper-wrapper{}
+.swiper-container.calendar_history_data_container .swiper-wrapper,
+.swiper-container.calendar_history_data_container .swiper-slide{width:auto;}
 .date_calendar_history_item{border:1px solid #d5d5d5; gap:20px; width:310px; border-radius:10px;background:#fff;display:flex;height:100%;box-sizing: border-box;padding:10px;}
 .dch_date_cols{border:1px solid #d5d5d5;border-radius:10px;flex:0 0 108px;text-align: center;padding:10px 0;}
 .dch_date_vitem{margin-bottom:10px;}
@@ -4055,3 +4065,51 @@ input.props_dom:checked + .props_label{}
 .dch_current_text_sub{font-size:14px;color:#333333;}
 .dch_current_price_row{margin-top:10px;}
 .dch_current_price{font-size:18px;color:#000000;line-height:1;font-weight:700;}
+
+.popup_calendar_render_wrap{padding:20px;}
+.system_calendar_group{margin:0 0 20px 0;}
+.system_calendar_group:last-of-type{margin:0;}
+.system_calendar_month_row{display:flex;align-items: center;justify-content: center;}
+.system_calendar_month{font-size:22px;font-weight:700;line-height:1;display:inline-block;letter-spacing: -0.25px;}
+.system_calendar_content_row{}
+.system_calendar_table_wrap{margin-top:20px;}
+.system_calendar_table{width:100%;}
+.system_calendar_table thead th{}
+.system_calendar_table thead th:last-of-type{}
+.system_calendar_table tbody td{height:60px;}
+.system_calendar_table tbody td:last-of-type{}
+.system_calendar_table .sun,
+.system_calendar_table .sun .system_calendar_day{color:#f84242;}
+.system_calendar_table .sat,
+.system_calendar_table .sat .system_calendar_day{color:#176bdd;}
+.system_calendar_tditem{width:100%;max-width:60px;margin:0 auto;height:60px;padding:5px;display:flex;justify-content:center;flex-direction:column;align-items: center;justify-content: center;}
+.system_calendar_tditem:disabled{opacity:.4;}
+.system_calendar_tditem:disabled *{}
+.system_calendar_tditem.active{background:#333333;border-radius:8px;}
+.system_calendar_tditem.active *{color:#fff;}
+.system_calendar_tditem.active{}
+.system_calendar_day{font-size:18px;color:#333333;line-height:1;font-weight:500;}
+.system_calendar_value{font-size:13px;color:#5f5f5f;margin-top:0;}
+.system_calendar_value.type2{color:#176bdd;}
+
+.system_calendar_thtext{font-size:18px;color:#333;}
+
+
+@media (max-width:1023px){
+    
+    /* 다른출발일 보기 */
+    .swiper-container.calendar_history_data_container{padding:0 15px 15px;}
+
+    .popup_calendar_render_wrap{padding:15px;}
+    .system_calendar_group{margin:0 0 15px 0;}
+    .system_calendar_month{font-size:18px;letter-spacing: 0;}
+    .system_calendar_table_wrap{margin-top:10px;}
+    .system_calendar_table{width:100%;}
+    .system_calendar_table tbody td{height:40px;}
+    .system_calendar_tditem{max-width:40px;height:40px;}
+    .system_calendar_tditem.active{border-radius:5px;}
+    .system_calendar_day{font-size:14px;}
+    .system_calendar_value{font-size:11px;}
+
+    .system_calendar_thtext{font-size:14px;}
+}

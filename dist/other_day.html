@@ -1175,24 +1175,480 @@
 					<ul class="props_dchk_item_list">
 						<li>
 							<div class="props_dchk_item">
-								<p class="props_dchk_item_para">예약가능</p>
+								<input type="checkbox" class="props_dchk_dom" id="dchk_props_01">
+								<label for="dchk_props_01" class="props_dchk_label">예약가능</label>
 							</div>
 						</li>
 						<li>
-							<div class="props_dchk_item ico_type2">
-								<p class="props_dchk_item_para">출발확정</p>
+							<div class="props_dchk_item">
+								<input type="checkbox" class="props_dchk_dom type2" id="dchk_props_02">
+								<label for="dchk_props_02" class="props_dchk_label">출발확정</label>
 							</div>
 						</li>
 						<li>
-							<div class="props_dchk_item ico_type3">
-								<p class="props_dchk_item_para">예약마감</p>
+							<div class="props_dchk_item">
+								<input type="checkbox" class="props_dchk_dom type3" id="dchk_props_03">
+								<label for="dchk_props_03" class="props_dchk_label">예약마감</label>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="popup_content_low type2">
-					<div class="popup_calender_render_wrap">
-						달력이 들어갑니다.<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<div class="popup_content_low type2 d_type">
+					<div class="popup_calendar_render_wrap">
+						<!-- 달력 -->
+						<div class="system_calendar_group">
+							<div class="system_calendar_month_row">
+								<p class="system_calendar_month">2023.09</p>
+							</div>
+							<div class="system_calendar_content_row">
+								<div class="system_calendar_table_wrap">
+									<table class="system_calendar_table">
+										<thead>
+											<tr>
+												<th class="sun"><span class="system_calendar_thtext">일</span></th>
+												<th><span class="system_calendar_thtext">월</span></th>
+												<th><span class="system_calendar_thtext">화</span></th>
+												<th><span class="system_calendar_thtext">수</span></th>
+												<th><span class="system_calendar_thtext">목</span></th>
+												<th><span class="system_calendar_thtext">금</span></th>
+												<th class="sat"><span class="system_calendar_thtext">토</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="sun"></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">01</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">02</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">03</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">04</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">05</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">06</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">07</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">08</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">09</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">10</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">11</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">12</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem active">
+														<div class="system_calendar_day">13</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">14</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">15</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">16</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">17</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">18</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">19</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">20</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">21</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">22</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">23</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">24</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">25</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">26</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">27</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">28</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">29</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">30</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">31</div>
+													</button>
+												</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>
+												</td>
+												<td class="sat">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- // 달력 -->
+						<!-- 달력 -->
+						<div class="system_calendar_group">
+							<div class="system_calendar_month_row">
+								<p class="system_calendar_month">2023.09</p>
+							</div>
+							<div class="system_calendar_content_row">
+								<div class="system_calendar_table_wrap">
+									<table class="system_calendar_table">
+										<thead>
+											<tr>
+												<th><span class="system_calendar_thtext sun">일</span></th>
+												<th><span class="system_calendar_thtext">월</span></th>
+												<th><span class="system_calendar_thtext">화</span></th>
+												<th><span class="system_calendar_thtext">수</span></th>
+												<th><span class="system_calendar_thtext">목</span></th>
+												<th><span class="system_calendar_thtext">금</span></th>
+												<th><span class="system_calendar_thtext sat">토</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="sun"></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">01</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">02</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">03</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">04</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">05</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">06</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">07</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">08</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">09</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">10</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">11</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">12</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">13</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">14</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">15</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">16</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">17</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">18</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">19</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">20</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">21</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">22</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">23</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">24</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">25</div>
+														<div class="system_calendar_value type2">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">26</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">27</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">28</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td>
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">29</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+												<td class="sat">
+													<button type="button" class="system_calendar_tditem">
+														<div class="system_calendar_day">30</div>
+														<div class="system_calendar_value">25만</div>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="sun">
+													<button type="button" disabled class="system_calendar_tditem">
+														<div class="system_calendar_day">31</div>
+													</button>
+												</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>
+												</td>
+												<td class="sat">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- // 달력 -->
 					</div>
 				</div>
 				<div class="popup_pixelse_low">
@@ -1201,7 +1657,7 @@
 						<button type="button" class="btn_pixelse_close"></button>
 					</div>
 					<div class="popup_pixelse_content_row">
-						<div class="swiper-container calender_history_data_container">
+						<div class="swiper-container calendar_history_data_container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<a href="#" class="date_calendar_history_item">
@@ -1315,7 +1771,7 @@
 				if (slideObj !== null) {
 					slideObj.update();
 				} else {
-					slideObj = new Swiper(".calender_history_data_container", {
+					slideObj = new Swiper(".calendar_history_data_container", {
 						speed: 1000,
 						slidesPerView: 'auto',
 						slidesPerGroupAuto: true,
