@@ -1124,6 +1124,7 @@ function stickyTab() {
 function stickyPanel() {
     const detailCalculationZone = document.querySelector(".detail_calculation_zone");
     const detailCalculationWrap = document.querySelector(".detail_calculation_wrap");
+	const dc_inner_get_container = document.querySelector(".dc_inner_get_container");
     const detailContentsGlobalZone = document.querySelector(".detail_contents_global_zone");
     const detailContentsZone = document.querySelector(".detail_contents_zone");
     const footerWrap = document.querySelector(".footer_wrap");
@@ -1134,6 +1135,8 @@ function stickyPanel() {
     let detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
 	let detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + window.scrollY : 0;
     let getWindowWid = window.innerWidth;
+	let dcInnerGetContainerHeight = !!dc_inner_get_container ? dc_inner_get_container.getBoundingClientRect().height : 0;
+	let bodyHeight = document.querySelector("body").getBoundingClientRect().height;
     window.addEventListener("resize", () => {
         if (getWindowWid !== window.innerWidth) {
             detailCalculationZonePos = !!detailCalculationZone ? detailCalculationZone.getBoundingClientRect().top + window.scrollY : 0;
@@ -1155,23 +1158,26 @@ function stickyPanel() {
 		detailCalculationWrapHeight = !!detailCalculationWrap ? detailCalculationWrap.getBoundingClientRect().height : 0;
 		footerWrapPos = !!footerWrap ? footerWrap.getBoundingClientRect().top + 120 + window.scrollY : 0;
 		footerWrapHeight = !!footerWrap ? footerWrap.getBoundingClientRect().height : 0;
-		detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + 120 + window.scrollY : 0;
+		dcInnerGetContainerHeight = !!dc_inner_get_container ? dc_inner_get_container.getBoundingClientRect().height : 0;
+		//detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + window.scrollY : 0;
+		detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().bottom + window.scrollY : 0;
 		
+		console.dir(dc_inner_get_container)
 
 		if(!!detailCalculationWrap){
 			if(detailCalculationWrapHeight>=detailContentsZoneHeight){return;}
 			if (detailCalculationZonePos < window.scrollY) {
 				detailCalculationWrap.classList.add("fixed");
-				if(detailContentsGlobalZonePos - window.innerHeight < window.scrollY){
+				if(detailContentsGlobalZonePos - dcInnerGetContainerHeight < window.scrollY){
 					detailCalculationWrap.classList.add("bottom");
 				}else{
 					detailCalculationWrap.classList.remove("bottom");
 				}
+				console.log(detailContentsGlobalZonePos , bodyHeight, dcInnerGetContainerHeight, window.scrollY);
 			} else {
 				detailCalculationWrap.classList.remove("fixed");
 			}
 		}
-
 		
     }
 }
