@@ -9,7 +9,7 @@
         <!-- middle -->
         <section class="middle_wrap mypage_wrap">
             <div class="data_total_render_wrap">
-                <div class="data_util_item_wrap">
+                <!-- <div class="data_util_item_wrap">
                     <div class="data_util_item_cols">
                         <p class="data_util_item_copy">안녕하세요 <strong class="data_util_emp">홍길동</strong> 고객님</p>
                     </div>
@@ -38,7 +38,79 @@
                             <li><a href="#" class="data_util_menu">고객센터</a></li>
                         </ul>
                     </div>
+                </div> -->
+                <!-- 20230927 -->
+                <div class="myintro_fxwrap">
+                    <div class="myintro_fxcols">
+                        <div class="myintro_box">
+                            <div class="myintro_men_item">
+                                <div class="myintro_men">
+                                    <span class="who_men">성민영</span>
+                                    <span class="who_men_sir">님</span>
+                                </div>
+                            </div>
+                            <div class="myintro_men_else">
+                                <a href="#" class="myintro_text_item">회원정보 수정</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myintro_fxcols">
+                        <div class="swiper-container swiper-myintro">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_01.png" alt=""></i>
+                                        <div class="ico_menu_text">견적문의</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_02.png" alt=""></i>
+                                        <div class="ico_menu_text">기획전/이벤트</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_03.png" alt=""></i>
+                                        <div class="ico_menu_text">공지사항</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_04.png" alt=""></i>
+                                        <div class="ico_menu_text">고객센터</div>
+                                    </a>
+                                </div>
+                                <!-- <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_01.png" alt=""></i>
+                                        <div class="ico_menu_text">테스트 메뉴01</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_02.png" alt=""></i>
+                                        <div class="ico_menu_text">테스트 메뉴02</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_03.png" alt=""></i>
+                                        <div class="ico_menu_text">테스트 메뉴03</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="ico_img_menu_item">
+                                        <i class="ico_img"><img src="./images/ico_myintro_04.png" alt=""></i>
+                                        <div class="ico_menu_text">테스트 메뉴04</div>
+                                    </a>
+                                </div> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
                 </div>
+                <!-- // 20230927 -->
                 <div class="data_render_toggle_list_wrap">
                     <ul class="data_render_toggle_list">
                         <li>
@@ -1639,6 +1711,8 @@
 
 
         <script>
+            myIntroFunc(); // 230927 추가
+
             toggleHistory();
 
             reviewEval(); // 별점 레이어

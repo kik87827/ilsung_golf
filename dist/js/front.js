@@ -2168,3 +2168,51 @@ function dataToggleEvent(){
 		});
 	}
 }
+
+
+function myIntroFunc(){
+	const swiperMyintro = document.querySelector(".swiper-myintro");
+	const swiperSlide = swiperMyintro.querySelectorAll(".swiper-slide");
+	let myintroObj = null;
+	let windowWidth = window.innerWidth;
+	if(swiperSlide.length>4){
+		console.log('test')
+		if(myintroObj !== null){
+			myintroObj.update();
+		}else{
+			if(window.innerWidth < 1024){
+				mbFunc();
+			}
+
+			window.addEventListener("resize",()=>{
+				if(windowWidth !== window.innerWidth){
+					if(!!myintroObj){
+						myintroObj.destroy();
+					}
+					if(window.innerWidth < 1024){
+						mbFunc();
+					}
+				}
+				windowWidth = window.innerWidth;
+			});
+		}
+
+	
+		function mbFunc(){
+			myintroObj = new Swiper(".swiper-myintro", {
+				speed : 1000, 
+				slidesPerView: 4,
+				slidesPerGroup : 4,
+				freeMode: false,
+				slidesPerGroupAuto : false,
+				loop : false,
+				pagination: {  
+					el: ".swiper-myintro .swiper-pagination",
+					clickable: true
+				}
+			});
+		}
+	}else{
+		swiperMyintro.classList.add("nodata_type");
+	}
+}
