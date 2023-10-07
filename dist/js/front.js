@@ -989,7 +989,6 @@ function stickyTab() {
     const stickyTabsInnerWrap = document.querySelector(".sticky_tabs_inner_wrap");
     const stickyTabsInner = document.querySelector(".sticky_tabs_inner");
     const stickyTab = document.querySelectorAll(".sticky_tab");
-    const stickyTabFirst = document.querySelector(".sticky_tab:first-child");
     let detailAnchorContentsWrapPos = !!detailAnchorContentsWrap ? detailAnchorContentsWrap.getBoundingClientRect().top + window.scrollY : 0;
     let getPosValue = getLayerPos();
     let getPosHeight = getHeight();
@@ -1023,22 +1022,23 @@ function stickyTab() {
 		}
 	
 		function mbFunc(){
-			detail_mv_obj = new Swiper(".sticky_tabs_swiper_container", {
+			detail_anctab_obj = new Swiper(".sticky_tabs_swiper_container", {
 				slidesPerView: 'auto',
 				slidesPerGroupAuto : true,
 				freeMode: true,
 			});
 		}
 	}
-
+	updateActiveMenu();
+	let windowwid = window.innerWidth;
     window.addEventListener("resize", () => {
-        if (getWindowWid !== window.innerWidth) {
-            getPosValue = getLayerPos();
-            getPosHeight = getHeight();
-            getPosArrayValue = getPosArray();
-            detailAnchorContentsWrapPos = !!detailAnchorContentsWrap ? detailAnchorContentsWrap.getBoundingClientRect().top + window.scrollY : 0;
+		//btnClickIs = false;
+		//activeSlideTo();
+        if (windowwid !== window.innerWidth) {
+			updateOnlyActiveMenu();
+			triggerActiveScroll();
         }
-        getWindowWid = window.innerWidth;
+        windowwid = window.innerWidth;
     });
 
 
@@ -1048,19 +1048,38 @@ function stickyTab() {
 
     window.addEventListener("mousewheel", () => {
         btnClickIs = false;
+		
     });
 
     window.addEventListener("mousedown", () => {
         btnClickIs = false;
+		updateValue();
     });
 
     window.addEventListener("scroll", () => {
+		updateValue();
         scrollAction();
     });
 
     window.addEventListener("touchmove", () => {
+		updateValue();
         scrollAction();
     });
+
+	
+	detailAnchorContentsWrap.addEventListener("updateScroll",()=>{
+		updateValue();
+        scrollAction();
+	})
+
+	
+	function updateValue(){
+		getPosValue = getLayerPos();
+		getPosHeight = getHeight();
+		getPosArrayValue = getPosArray();
+		detailAnchorContentsWrapPos = !!detailAnchorContentsWrap ? detailAnchorContentsWrap.getBoundingClientRect().top + window.scrollY : 0;
+	}
+
 
     
     stickyTab.forEach((item) => {
@@ -1078,11 +1097,10 @@ function stickyTab() {
 				thisScrollGo = thisScrollPos;
 			}else{
 				thisScrollGo = thisScrollMbPos;
-				console.log(stickyHeight,headerWrapHeight);
 			}
 
 			
-            activeTab(thisTarget);
+            //activeTab(thisTarget);
             if (!!thisScrollPos) {
                 window.scrollTo({
                     top: thisScrollGo,
@@ -1091,16 +1109,26 @@ function stickyTab() {
                 });
             }
             btnClickIs = true;
+			activeTab(thisTarget);
+			activeSlideTo();
         });
     });
 
 	
-	/* 작업용 */
-	// let clickEvent = new Event('click');
-	// stickyTab[0].classList.remove("active");
-	// activeTab(stickyTab[5])
-	// stickyTab[5].dispatchEvent(clickEvent);
-	/* // 작업용 */
+	function triggerActiveScroll(){
+		const stickyTabActive = document.querySelector(".sticky_tab.active");
+		// Create the event
+		let event = new MouseEvent('click', {
+			bubbles: true,
+			cancelable: true
+		});
+		if(document.querySelectorAll(".sticky_tab")[0] == stickyTabActive && !stickyTabsInnerWrap.classList.contains("fixed")){return;}
+		setTimeout(()=>{
+			stickyTabActive.dispatchEvent(event);
+		},100);
+
+	
+	}
 
     function getLayerPos() {
 		if(!!stickyTabsContainerZone){
@@ -1112,7 +1140,7 @@ function stickyTab() {
     function getPosArray() {
         let posArray = [];
 		let headerWrapHeight = !!header_wrap ? header_wrap.getBoundingClientRect().height : 0;
-		let stickyFixedHeight = !!stickyTabsInnerWrap ? stickyTabsInnerWrap.getBoundingClientRect().height : 0;
+		let stickyFixedHeight = !!stickyTabsInner ? stickyTabsInner.getBoundingClientRect().height : 0;
         if(!!tabContents){
             tabContents.forEach((item)=>{
                 let eachTop = item.getBoundingClientRect().top;
@@ -1129,7 +1157,7 @@ function stickyTab() {
 
     function getHeight() {
 		if(!!stickyTabsInner){
-			return stickyTabsInner.getBoundingClientRect().height + 10;
+			return stickyTabsInner.getBoundingClientRect().height;
 		}
     }
 
@@ -1139,18 +1167,41 @@ function stickyTab() {
             stickyTabsInnerWrap.classList.add("fixed");
         } else {
             stickyTabsInnerWrap.classList.remove("fixed");
-            if(window.scrollY <= detailAnchorContentsWrapPos){
-                //firstActive();
-            }
         }
-        if(!btnClickIs){
-            stickyTab.forEach((item,index) => {
-                if(getPosArrayValue[index] <= window.scrollY){
-                    activeTab(item);
-                }
-            });
-        }
+		if(!btnClickIs){
+			updateActiveMenu();
+		}
     }
+
+	function updateActiveMenu(){
+		stickyTab.forEach((item,index) => {
+			if(getPosArrayValue[index] <= window.scrollY){
+				activeTab(item);
+				activeSlideTo();
+			}
+		});
+	}
+
+	function activeSlideTo(){
+		stickyTab.forEach((item,index) => {
+			var activeIndex = 0;
+			if(detail_anctab_obj !== null && window.innerWidth < 1024){
+				detail_anctab_obj.slideTo(index);
+				activeIndex = index;
+			}
+		});
+	}
+
+	function updateOnlyActiveMenu(){
+		if(!btnClickIs){
+			stickyTab.forEach((item,index) => {
+				if(getPosArrayValue[index] <= window.scrollY){
+					activeTab(item);
+				}
+			});
+		}
+	}
+
 
     function activeTab(target){
         if (activeItem) {
@@ -1161,7 +1212,20 @@ function stickyTab() {
     }
 }
 
+function updateTrigger(){
+	const detailAnchorContentsWrap = document.querySelector(".detail_anchor_contents_wrap");
+	if(!!detailAnchorContentsWrap){
 
+		// Create the event
+		let event = new CustomEvent('updateScroll', {
+			bubbles: true,
+			cancelable: true
+		});
+	
+		// Emit the event
+		detailAnchorContentsWrap.dispatchEvent(event);
+	}
+}
 
 
 
@@ -1206,7 +1270,6 @@ function stickyPanel() {
 		//detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().top + detailContentsGlobalZone.getBoundingClientRect().height + window.scrollY : 0;
 		detailContentsGlobalZonePos = !!detailContentsGlobalZone ? detailContentsGlobalZone.getBoundingClientRect().bottom + window.scrollY : 0;
 		
-		console.dir(dc_inner_get_container)
 
 		if(!!detailCalculationWrap){
 			if(detailCalculationWrapHeight>=detailContentsZoneHeight){return;}
@@ -1217,7 +1280,6 @@ function stickyPanel() {
 				}else{
 					detailCalculationWrap.classList.remove("bottom");
 				}
-				console.log(detailContentsGlobalZonePos , bodyHeight, dcInnerGetContainerHeight, window.scrollY);
 			} else {
 				detailCalculationWrap.classList.remove("fixed");
 			}
