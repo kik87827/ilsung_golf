@@ -143,6 +143,7 @@ function headerMenu() {
 		hgroup_nav_menu.forEach((item)=>{
 			item.addEventListener("mouseenter",(e)=>{
 				const etarget = e.currentTarget;
+				if(etarget.getAttribute("href") === "#"){return;}
 				const etwo = document.querySelector(etarget.getAttribute("href"));
 				const etwo_li = etwo.querySelectorAll(".gmenu_list > li");
 				if(!!gnb_two_cont){
@@ -604,6 +605,7 @@ function posLayerPos(target,btn){
 	var $btnPosLeft = $btn.length ? $btn.offset().left : 0;
 	var $btnWid = $btn.length ? $btn.outerWidth() : 0;
 	var elseMargin = 0;
+	var product_choice_item_wrap = $(".product_choice_item_wrap");
 
 	
 	$target.css({"top":"", "left" : "" , "right" : "" , "width" : ""});
@@ -651,6 +653,17 @@ function posLayerPos(target,btn){
 
 	if($target.find(".product_choice_one").length){
 		textHeightResize(".product_choice_one");
+	}
+
+	if(product_choice_item_wrap.length){
+		product_choice_item_wrap.each(function(){
+			var $this = $(this);
+			if($this.find(".product_choice_item").length>=7){
+				$this.addClass("align2");
+			}else{
+				$this.removeClass("align2");
+			}
+		})
 	}
 }
 
@@ -2277,4 +2290,48 @@ function myIntroFunc(){
 	}else{
 		swiperMyintro.classList.add("nodata_type");
 	}
+}
+
+
+function mainNotice(){
+	let main_notice_obj = null;
+	const main_notice_zone = $(".main_notice_zone");
+	const main_notice_container = $(".main_notice_container");
+	const main_notice_slide = main_notice_container.find(".swiper-slide");
+
+	if($.cookie('popup') !== "today"){
+		main_notice_zone.addClass("active");
+	}else{
+		main_notice_zone.removeClass("active");
+		return;
+	}
+	if(main_notice_slide.length<=1){
+		return;
+	}
+	if(main_notice_obj !== null){
+		main_notice_obj.update();
+	}else{
+		main_notice_obj = new Swiper(".main_notice_container", {
+			speed : 1000,
+			loop : true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false
+			},
+			pagination: {  
+				el: ".notice_pagination.swiper-pagination",
+				clickable: true
+			}
+		});
+	}
+
+
+	$("#btn_notice_today").on("click",function(e){
+		$.cookie("popup","today",{expires:1});
+		main_notice_zone.removeClass("active");
+	});
+
+	$("#btn_notice_popup").on("click",function(e){
+		main_notice_zone.removeClass("active");
+	});
 }

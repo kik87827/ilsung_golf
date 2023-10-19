@@ -287,6 +287,54 @@
 
         @@include('./include/start_date_script.html')
     </div>
+
+    <!-- main_notice_zone -->
+    <div class="main_notice_zone">
+        <div class="bg_dim_notice"></div>
+        <div class="main_notice_wrap">
+            <!-- main_notice_box -->
+            <div class="main_notice_box_item">
+                <div class="main_notice_thum_cols">
+                    <!-- main_notice_container -->
+                    <div class="swiper-container main_notice_container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="main_notice_banner"><img src="./images/temp_notice_01.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="main_notice_banner"><img src="./images/temp_notice_02.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="main_notice_banner"><img src="./images/temp_notice_03.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="main_notice_banner"><img src="./images/temp_notice_04.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="main_notice_banner"><img src="./images/temp_notice_05.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination-notice-layer">
+                        <div class="swiper-pagination notice_pagination">
+                        </div>
+                    </div>
+                    <!-- // main_notice_container -->
+                </div>
+                <div class="main_notice_btn_cols">
+                    <div class="btn_main_notice_control_cols">
+                        <a href="javascript:;" class="btn_main_notice_control" id="btn_notice_today">오늘 하루 보지않기</a>
+                    </div>
+                    <div class="btn_main_notice_control_cols">
+                        <a href="javascript:;" class="btn_main_notice_control type2" id="btn_notice_popup">닫기</a>
+                    </div>
+                </div>
+            </div>
+            <!-- // main_notice_box -->
+        </div>
+    </div>
+    <!-- // main_notice_zone -->
+
     <script>
         window.addEventListener("load",()=>{
             mainVisualTypec();
@@ -294,6 +342,8 @@
             // quickmenu
             quickMenu();
 
+            // main notice 20231020
+            mainNotice();
         })
     </script>
 </body>
