@@ -23,11 +23,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .hgroup_util_row .hgroup_inner{}
 .hgroup_util_cols{display:flex;align-items: center;}
 .hgroup_util_cols:last-of-type{flex:1;justify-content: flex-end;}
-.hgroup_util_list{display:flex;align-items: center;}
+.hgroup_util_list{display:flex;align-items: center;font-size:0;line-height:0;}
 .hgroup_util_list > li{margin-right:30px;}
 .hgroup_util_list > li:last-of-type{margin-right:0;}
-.hgroup_util{display:inline-block;font-size:15px;color:#323232;line-height:1;}
+.hgroup_util{display:inline-flex;font-size:15px;color:#323232;line-height:1;gap:5px;align-items: center;}
+.ico_hgutil{flex:0 0 13px;width:13px;height:18px;background:url("../images/ico_util_men.png") no-repeat 0 0/100% auto;}
 .hgroup_util_ico{display:block;width:17px;height:17px;background:url("../images/btn_search_17.png") no-repeat 50% 50%/100% auto;}
+.hgroup_util_text{}
+.hgroup_util.type2{display:inline-block;border:1px solid #d0d0d0; border-radius:100px;padding:6px 15px;}
 .hgroup_main_row{padding:25px 0;position:relative;}
 .hgroup_main_row.type2{padding:0;}
 .hgroup_main_row.type2 .hg_side_main.hgroup_nav_wrap{justify-content: flex-end;padding-right:30px;}
