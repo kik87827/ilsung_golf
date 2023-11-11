@@ -75,6 +75,7 @@ function headerMenu() {
 	const hgroup_gnb_row = document.querySelector(".hgroup_gnb_row");
 	const hgroup_main_row = document.querySelector(".hgroup_main_row");
 	const gnb_two_cont = document.querySelectorAll(".gnb_two_cont");
+	const hgroup_nav_item = document.querySelectorAll(".hgroup_nav_item");
 
 	const mb_total_quick_slide = document.querySelectorAll(".mb_total_quick_list .swiper-slide");
 	const bodyDom = document.querySelector("body");
@@ -165,6 +166,15 @@ function headerMenu() {
 				}
 			});
 		});
+	}
+	if(!!hgroup_nav_item){
+		hgroup_nav_item.forEach((item)=>{
+			item.addEventListener("mouseenter",()=>{
+				if(!!gnb_twodepth_layer){
+					gnb_twodepth_layer.classList.remove("active");
+				}
+			});
+		})
 	}
 
 	if(!!hgroup_gnb_row){

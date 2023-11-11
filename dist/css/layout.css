@@ -63,6 +63,7 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
 .hgroup_gnb_row.type2 .hgroup_inner{}
 .hgroup_gnb_row.type2 .gnb_twodepth_inner{}
 .hgroup_gnb_row.type2 .hgroup_nav_list > li{padding:0 12px;}
+.hgroup_gnb_row.type2 .hgroup_nav_list > li:last-of-type{padding-right:0;}
 
 .has_side{display:flex;justify-content: space-between;}
 /* .hg_side_left,
@@ -175,6 +176,17 @@ input.search_field_input::input-placeholder{color:#999999;font-family: 'Noto San
 /* .gmenu_list > li:first-of-type{padding-left:20px;}
 .gmenu_list > li:last-of-type{padding-right:20px;} */
 /* // 20230825 20:25 */
+
+/* 20231112 */
+.hgroup_nav_item_wrap{display:flex;align-items: center;}
+.hgroup_nav_item{display:inline-flex;gap:7px;padding:8px 15px; border-radius:100px; background:#2f2f2f; align-items: center;}
+.hgroup_nav_item.type2{background:#fff;}
+.hgroup_nav_item.type2 .ico_hgnav{background-image:url("../images/ico_calendar_46.png")}
+.hgroup_nav_item.type2 .hgroup_nav_item_text{color:#1f1f1f;}
+.ico_hgnav{display:inline-block;width:23px;height:23px; background:url("../images/ico_calendar_46_w.png") no-repeat 50% 50%/100% auto;}
+.hgroup_nav_item_text{white-space: nowrap; font-size:16px; color:#fff;display:inline-block;line-height:1;}
+/* // 20231112 */
+
 /* 20230824 */
 .gmenu_one_row{padding:20px 30px 17px;border-bottom:1px solid rgba(255,255,255,.2);}
 .gmenu_one{font-size:17px;color:#fff;display:inline-block;}

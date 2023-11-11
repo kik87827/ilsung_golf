@@ -71,6 +71,16 @@
 								<li><a href="#gnb_two05" class="hgroup_nav_menu">유렵</a></li>
 								<li><a href="#gnb_two06" class="hgroup_nav_menu">미주</a></li>
 								<li><a href="#gnb_two07" class="hgroup_nav_menu">아프리카</a></li>
+								<!-- 2023112 추가 -->
+								<li>
+									<div class="hgroup_nav_item_wrap">
+										<a href="javascript:;" class="hgroup_nav_item">
+											<i class="ico_hgnav"></i>
+											<span class="hgroup_nav_item_text">월별출발상품</span>
+										</a>
+									</div>
+								</li>
+								<!-- // 2023112 추가 -->
 							</ul>
 							<!-- // 20230824 변경 -->
 						</nav>
@@ -1093,6 +1103,17 @@
 			</div>
 		</section>
 		<!-- // middle -->
+
+		<script>
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if (url_2 === "type2") {
+				document.querySelectorAll(".hgroup_nav_item").forEach((item) => {
+					item.classList.add("type2");
+				});
+			}
+		</script>
 	</div>
 </body>
 
