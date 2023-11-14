@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <!-- main visual -->
+        <!-- 20230906 typea addClass -->
+        <div class="main_visual_wrap typea">
+            <!-- 20231021 수정 -->
+            <div class="btn_mv_control_container prev_container"><a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a></div>
+            <!-- // 20231021 수정 -->
+            <div class="swiper-container main_visual_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="mv_item_group">
+                            <div class="mv_bg_wrap">
+                                <video autoplay loop muted class="media">
+                                    <source src="001.mp4">
+                                </video>
+                            </div>
+                            <div class="mv_copy_wrap">
+                                <p class="mv_copy_main">한여름밤의 꿈같은곳<br>부드러운 모래사장과 황홀한 일몰</p>
+                                <p class="mv_copy_sub">아름다운 보라카이</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mv_item_group">
+                            <div class="mv_bg_wrap">
+                                <iframe class="media" width="100%" height="100%" src="https://www.youtube.com/embed/29w8Mr5UT30?si=qiWKsvG1xd9TVMmq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <!-- <div class="mv_copy_wrap">
+                                <p class="mv_copy_main">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</p>
+                                <p class="mv_copy_sub">아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mv_item_group">
+                            <div class="mv_bg_wrap">
+                                <img src="./images/bg_mv_typea_01.png" class="pc_img" alt=""> 
+                                <img src="./images/bg_mv_typea_01_mb.png" class="mb_img" alt="">
+                            </div>
+                            <div class="mv_copy_wrap">
+                                <p class="mv_copy_main">테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2</p>
+                                <p class="mv_copy_sub">테스트2</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 20231021 수정 -->
+            <div class="btn_mv_control_container next_container"><a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a></div>
+            <!-- // 20231021 수정 -->
+            
+            <div class="mv_bottom_control_zone">
+                <div class="mv_bottom_control_wrap">
+                    <div class="mv_bottom_in_control">
+                        <div class="mv_bottom_cols has_navi">
+                            <div class="swiper-pagination main_visual_paging">
+                            </div>
+                        </div>
+                        <div class="mv_bottom_cols has_auto">
+                            <ul class="swiper_auto_control_list">
+                                <li><a href="#" class="btn_mv_stop"><span class="hdtext">정지</span></a></li>
+                                <li><a href="#" class="btn_mv_play"><span class="hdtext">재생</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- mv_form_wrap -->
+            <div class="mv_form_zone">
+                <div class="mv_form_wrap">
+                    <div class="mv_form_cols">
+                        <a href="javascript:;" class="mv_form_item has_allow" data-poslayer="#layer_box_local">
+                            <span class="mv_form_text">어디로 가세요?</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="mv_form_cols">
+                        <a href="javascript:;" class="mv_form_item has_allow" id="layer_calendar_startdate">
+                            <span class="mv_form_text">언제 떠나세요?</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="mv_form_cols">
+                        <div class="mv_form_item has_search" data-poslayer="#layer_box_search">
+                            <span class="mv_form_text">검색어를 입력해주세요</span>
+                            <div class="search_form_text_result_row">
+                                <div class="search_form_text_result"></div>
+                                <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="btn_search_form"><span class="hdtext">검색</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- // mv_form_wrap -->
+        </div>
+        <!-- // main visual -->
+        <div style="height:1000px">
+            
+        </div>
+        <!-- layer -->
+        @@include('./include/layer_local.html')
+        @@include('./include/layer_while.html')
+        @@include('./include/layer_start.html')
+        @@include('./include/layer_search.html')
+        <!-- // layer -->
+    </div>
+    <script>
+        window.addEventListener("load",()=>{
+            mainVisual();
+        })
+
+        $(function(){
+            $("#layer_calendar_startdate").daterangepicker({
+                //singleDatePicker: true,
+                addDesign: "pos2",
+                autoUpdateInput: false, 
+                elseMent: "출발일 선택",
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+                    "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+                    applyLabel: "적용"
+                }
+            });
+            $("#layer_calendar_startdate").on('apply.daterangepicker', function (ev, picker) {
+                let thisObj = $(this);
+                thisObj.val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+                thisObj.find(".search_form_text_result").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+                thisObj.addClass("result_mode");
+            });
+        });
+    </script>
+</body>
+
+</html>

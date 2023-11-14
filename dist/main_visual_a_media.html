@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./css/reset.css" rel="stylesheet">
+	<link href="./css/layout.css" rel="stylesheet">
+	<link href="./css/swiper.min.css" rel="stylesheet">
+	<link href="./css/daterangepicker.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
+	<script src="./js/jquery.cookie.js"></script><!-- 20231020 cookie -->
+	<script src="./js/front.js"></script>
+	<script src="./js/main.js"></script>
+	<title>일성골프</title>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap">
+		<!-- main visual -->
+		<!-- 20230906 typea addClass -->
+		<div class="main_visual_wrap typea">
+			<!-- 20231021 수정 -->
+			<div class="btn_mv_control_container prev_container"><a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a></div>
+			<!-- // 20231021 수정 -->
+			<div class="swiper-container main_visual_swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="mv_item_group">
+							<div class="mv_bg_wrap">
+								<video autoplay loop muted class="media">
+									<source src="001.mp4">
+								</video>
+							</div>
+							<div class="mv_copy_wrap">
+								<p class="mv_copy_main">한여름밤의 꿈같은곳<br>부드러운 모래사장과 황홀한 일몰</p>
+								<p class="mv_copy_sub">아름다운 보라카이</p>
+								<div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="mv_item_group">
+							<div class="mv_bg_wrap">
+								<iframe class="media" width="100%" height="100%" src="https://www.youtube.com/embed/29w8Mr5UT30?si=qiWKsvG1xd9TVMmq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+							<!-- <div class="mv_copy_wrap">
+                                <p class="mv_copy_main">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</p>
+                                <p class="mv_copy_sub">아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div> -->
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="mv_item_group">
+							<div class="mv_bg_wrap">
+								<img src="./images/bg_mv_typea_01.png" class="pc_img" alt="">
+								<img src="./images/bg_mv_typea_01_mb.png" class="mb_img" alt="">
+							</div>
+							<div class="mv_copy_wrap">
+								<p class="mv_copy_main">테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2</p>
+								<p class="mv_copy_sub">테스트2</p>
+								<div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 20231021 수정 -->
+			<div class="btn_mv_control_container next_container"><a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a></div>
+			<!-- // 20231021 수정 -->
+
+			<div class="mv_bottom_control_zone">
+				<div class="mv_bottom_control_wrap">
+					<div class="mv_bottom_in_control">
+						<div class="mv_bottom_cols has_navi">
+							<div class="swiper-pagination main_visual_paging">
+							</div>
+						</div>
+						<div class="mv_bottom_cols has_auto">
+							<ul class="swiper_auto_control_list">
+								<li><a href="#" class="btn_mv_stop"><span class="hdtext">정지</span></a></li>
+								<li><a href="#" class="btn_mv_play"><span class="hdtext">재생</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- mv_form_wrap -->
+			<div class="mv_form_zone">
+				<div class="mv_form_wrap">
+					<div class="mv_form_cols">
+						<a href="javascript:;" class="mv_form_item has_allow" data-poslayer="#layer_box_local">
+							<span class="mv_form_text">어디로 가세요?</span>
+							<div class="search_form_text_result_row">
+								<div class="search_form_text_result"></div>
+								<button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+							</div>
+						</a>
+					</div>
+					<div class="mv_form_cols">
+						<a href="javascript:;" class="mv_form_item has_allow" id="layer_calendar_startdate">
+							<span class="mv_form_text">언제 떠나세요?</span>
+							<div class="search_form_text_result_row">
+								<div class="search_form_text_result"></div>
+								<button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+							</div>
+						</a>
+					</div>
+					<div class="mv_form_cols">
+						<div class="mv_form_item has_search" data-poslayer="#layer_box_search">
+							<span class="mv_form_text">검색어를 입력해주세요</span>
+							<div class="search_form_text_result_row">
+								<div class="search_form_text_result"></div>
+								<button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+							</div>
+						</div>
+						<a href="javascript:;" class="btn_search_form"><span class="hdtext">검색</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- // mv_form_wrap -->
+		</div>
+		<!-- // main visual -->
+		<div style="height:1000px">
+
+		</div>
+		<!-- layer -->
+		<div class="poslayer_z" id="layer_box_local" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">지역선택</p>
+			</div>
+			<div class="poslayer_contlow type4">
+				<div class="pcont_w">
+					<div class="product_tabmenu_list_wrap">
+						<ul class="product_tabmenu_list">
+							<li><a href="#product_tabcont_01" class="product_tabmenu active">해외투어</a></li>
+							<li><a href="#product_tabcont_02" class="product_tabmenu">국내여행</a></li>
+							<li><a href="#product_tabcont_03" class="product_tabmenu">골프여행</a></li>
+							<li><a href="#product_tabcont_04" class="product_tabmenu">테마여행</a></li>
+						</ul>
+					</div>
+					<div class="product_tabcont_group">
+						<div class="product_tabcont active" id="product_tabcont_01">
+							<div class="product_choice_item_wrap">
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">태국</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">베트남</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">하노이</a></li>
+											<li><a href="#" class="product_choice_depth">다낭</a></li>
+											<li><a href="#" class="product_choice_depth">나트랑</a></li>
+											<li><a href="#" class="product_choice_depth">깜라인</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">남태평양</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">말레이시아</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">남태평양</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">일본</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">필리핀</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">방콕</a></li>
+											<li><a href="#" class="product_choice_depth">치앙마이</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product_tabcont" id="product_tabcont_02">
+							<div class="product_choice_item_wrap">
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">국내여행</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">국내여행 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">국내여행 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">국내여행 2</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">국내여행 2 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">국내여행 2 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">국내여행 3</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">국내여행 3 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">국내여행 3 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product_tabcont" id="product_tabcont_03">
+							<div class="product_choice_item_wrap">
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">골프여행</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">골프여행 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">골프여행 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">골프여행 2</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">골프여행 2 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">골프여행 2 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">골프여행 3</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">골프여행 3 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">골프여행 3 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product_tabcont" id="product_tabcont_04">
+							<div class="product_choice_item_wrap">
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">테마여행</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">테마여행 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">테마여행 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">테마여행 2</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">테마여행 2 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">테마여행 2 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product_choice_item">
+									<a href="#" class="product_choice_one"><span class="product_choice_one_text">테마여행 3</span></a>
+									<div class="product_choice_depth_wrap">
+										<ul class="product_choice_depth_list">
+											<li><a href="#" class="product_choice_depth">테마여행 3 서브메뉴 01</a></li>
+											<li><a href="#" class="product_choice_depth">테마여행 3 서브메뉴 02</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<script>
+			productTabCont()
+		</script>
+		<div class="poslayer_z has_leftpos" id="layer_box_while" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">여행기간</p>
+			</div>
+			<div class="poslayer_contlow">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+						<div class="choice_item_list_wrap">
+							<ul class="choice_item_list">
+								<li><a href="#" class="choice_item">1일</a></li>
+								<li><a href="#" class="choice_item">2일</a></li>
+								<li><a href="#" class="choice_item">3일</a></li>
+								<li><a href="#" class="choice_item">4일</a></li>
+								<li><a href="#" class="choice_item">5일</a></li>
+								<li><a href="#" class="choice_item">8일</a></li>
+								<li><a href="#" class="choice_item">9일</a></li>
+								<li><a href="#" class="choice_item">10~15일</a></li>
+								<li><a href="#" class="choice_item">16~20일</a></li>
+								<li><a href="#" class="choice_item">21일이상</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<div class="poslayer_z has_leftpos" id="layer_box_start" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">출발지</p>
+			</div>
+			<div class="poslayer_contlow">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+						<div class="choice_item_list_wrap">
+							<ul class="choice_item_list">
+								<li><a href="#" class="choice_item">인천</a></li>
+								<li><a href="#" class="choice_item">김포</a></li>
+								<li><a href="#" class="choice_item">제주</a></li>
+								<li><a href="#" class="choice_item">청주</a></li>
+								<li><a href="#" class="choice_item">광주</a></li>
+								<li><a href="#" class="choice_item">대구</a></li>
+								<li><a href="#" class="choice_item">원주</a></li>
+								<li><a href="#" class="choice_item">양양</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_psubmit_w">
+					<a href="#" class="btn_psubmit">적용</a>
+				</div>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<div class="poslayer_z has_leftpos" id="layer_box_search" data-topmargin="20" data-topMobileMargin="0">
+			<div class="poslayer_titlow">
+				<p class="poslayer_tit">검색어입력</p>
+			</div>
+			<div class="poslayer_contlow">
+				<div class="pcont_w">
+					<div class="pclayer_scr_w">
+						<div class="search_field_box">
+							<input type="text" class="input_search_field" placeholder="검색어를 입력하세요">
+							<!-- <a href="#" class="btn_input_submit"><span class="hdtext">검색</span></a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn_psubmit_w">
+				<a href="#" class="btn_psubmit">적용</a>
+			</div>
+			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+		<!-- // layer -->
+	</div>
+	<script>
+		window.addEventListener("load", () => {
+			mainVisual();
+		})
+
+		$(function() {
+			$("#layer_calendar_startdate").daterangepicker({
+				//singleDatePicker: true,
+				addDesign: "pos2",
+				autoUpdateInput: false,
+				elseMent: "출발일 선택",
+				locale: {
+					format: 'YYYY-MM-DD',
+					"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+					"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+					applyLabel: "적용"
+				}
+			});
+			$("#layer_calendar_startdate").on('apply.daterangepicker', function(ev, picker) {
+				let thisObj = $(this);
+				thisObj.val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+				thisObj.find(".search_form_text_result").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'))
+				thisObj.addClass("result_mode");
+			});
+		});
+	</script>
+</body>
+
+</html>

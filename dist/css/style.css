@@ -286,6 +286,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
 
 .mv_item_group{z-index:20;position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content: center;align-items: center;}
 .mv_bg_wrap{position:absolute;top:0;left:0;width:100%;height:100%;}
+.mv_bg_wrap .media{position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover; object-position: 50% 50%;}
 .mv_bg_wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit: cover; object-position: 50% 50%;}
 
 .mv_bg_wrap .pc_img{display:block;}

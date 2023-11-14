@@ -1174,13 +1174,30 @@
 				<h2 class="single_middle_title">1:1 문의</h2>
 			</div>
 			<div class="single_middle_content_row">
+				<!--  <div class="single_middle_tab_row">
+                    <ul class="single_middle_tab_list">
+                        <li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">공지사항</span></a></li>
+                        <li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">자주묻는 질문</span></a></li>
+                        <li class="active"><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">1:1 문의</span></a></li>
+                    </ul>
+                </div> -->
+				<!-- 20231113 추가 -->
 				<div class="single_middle_tab_row">
-					<ul class="single_middle_tab_list">
-						<li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">공지사항</span></a></li>
-						<li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">자주묻는 질문</span></a></li>
-						<li class="active"><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">1:1 문의</span></a></li>
-					</ul>
+					<div class="swiper-container smtab_container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="#" class="single_middle_tab"><span class="single_middle_tab_text">공지사항</span></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#" class="single_middle_tab"><span class="single_middle_tab_text">자주묻는 질문</span></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#" class="single_middle_tab active"><span class="single_middle_tab_text">1:1 문의</span></a>
+							</div>
+						</div>
+					</div>
 				</div>
+				<!-- // 20231113 추가 -->
 				<div class="single_middle_cont_row type2">
 					<div class="single_middle_cont">
 						<div class="single_search_field_row">
@@ -1369,6 +1386,11 @@
 		<script>
 			$(window).on("load", function() {
 				textWidthResize(".grid_else_item.define_name");
+			})
+
+			// 20231113 추가
+			window.addEventListener("load", () => {
+				smtabFunc();
 			})
 		</script>
 		<!-- footer -->

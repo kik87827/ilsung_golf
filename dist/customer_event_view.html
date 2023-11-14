@@ -1174,12 +1174,26 @@
 				<h2 class="single_middle_title">이벤트</h2>
 			</div>
 			<div class="single_middle_content_row">
+				<!-- <div class="single_middle_tab_row">
+                    <ul class="single_middle_tab_list">
+                        <li class="active"><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">진행중인 이벤트</span></a></li>
+                        <li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">지난 이벤트</span></a></li>
+                    </ul>
+                </div> -->
+				<!-- 20231113 추가 -->
 				<div class="single_middle_tab_row">
-					<ul class="single_middle_tab_list">
-						<li class="active"><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">진행중인 이벤트</span></a></li>
-						<li><a href="#" class="single_middle_tab"><span class="single_middle_tab_text">지난 이벤트</span></a></li>
-					</ul>
+					<div class="swiper-container smtab_container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="#" class="single_middle_tab active"><span class="single_middle_tab_text">진행중인 이벤트</span></a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#" class="single_middle_tab"><span class="single_middle_tab_text">지난 이벤트</span></a>
+							</div>
+						</div>
+					</div>
 				</div>
+				<!-- // 20231113 추가 -->
 				<div class="single_middle_cont_row">
 					<div class="single_middle_cont">
 						<div class="single_data_title_row">
@@ -1908,6 +1922,8 @@
 		<script>
 			window.addEventListener("load", () => {
 				productTabQuadSwiper();
+
+				smtabFunc(); // 20231113 추가
 			})
 		</script>
 		<!-- footer -->
