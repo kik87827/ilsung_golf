@@ -477,7 +477,7 @@ input.mv_form_input::input-placeholder{color:#fff;}
     .main_visual_wrap.typea .btn_mv_control_container{box-sizing: border-box;padding-bottom:214px;}
     .main_visual_wrap.typef .btn_mv_control_container{box-sizing: border-box;}
     .main_visual_wrap.typef .mv_bottom_control_zone{bottom:20px;}
-    .main_visual_wrap.typef{height:635px;}
+    .main_visual_wrap.typef{height:500px;}
     
     .mv_copy_inner{padding:0 50px;}
 }
@@ -488,7 +488,6 @@ input.mv_form_input::input-placeholder{color:#fff;}
 }
 @media (max-height:600px){
     .main_visual_wrap.typea{height:600px !important;}
-    .main_visual_wrap.typef{height:600px !important;}
 }
 
 /* search */

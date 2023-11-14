@@ -372,18 +372,22 @@ function mainVisual(){
 		let header_wrap_layer_height = 0;
 		let btn_mv_control_container_height = 0;
 		if(!!mv_copy_container){
-			header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+			if(!!header_wrap_layer){
+				header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+			}
 			mv_copy_container.forEach((item)=>{
 				item.style.paddingTop = header_wrap_layer_height+"px";
 			});
 		}
-		if(!!btn_mv_control_container){
-			header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+		/* if(!!btn_mv_control_container){
+			if(!!header_wrap_layer){
+				header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+			}	
 			btn_mv_control_container.forEach((item)=>{
 				item.style.top = header_wrap_layer_height+"px";
 				item.style.height = "calc(100% - "+header_wrap_layer_height+"px)";
 			});
-		}
+		} */
 		
 		if(windowHeight<635){
 			controlHeight = 635;
@@ -392,7 +396,7 @@ function mainVisual(){
 			controlHeight = windowHeight;
 		}
 
-		if(window.innerWidth < 1023){
+		if(window.innerWidth < 1023 && mv_wrap.classList.contains("typef")){
 			mv_wrap.style.removeProperty("height")
 			return;
 		}
