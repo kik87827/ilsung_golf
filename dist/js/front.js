@@ -317,6 +317,9 @@ function mainVisual(){
 	let mv_obj = null;
 	const mv_wrap = document.querySelector(".main_visual_wrap");
 	const mv_slide = mv_wrap.querySelectorAll(".swiper-slide");
+	const header_wrap_layer = document.querySelector(".header_wrap.layer_type");
+	const mv_copy_container = document.querySelectorAll(".mv_copy_container");
+	const btn_mv_control_container = document.querySelectorAll(".btn_mv_control_container");
 	let btn_mv_stop = null;
 	let btn_mv_play = null;
 
@@ -366,11 +369,34 @@ function mainVisual(){
 	function heightControl(){
 		let windowHeight = window.innerHeight;
 		let controlHeight = 0;
+		let header_wrap_layer_height = 0;
+		let btn_mv_control_container_height = 0;
+		if(!!mv_copy_container){
+			header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+			mv_copy_container.forEach((item)=>{
+				item.style.paddingTop = header_wrap_layer_height+"px";
+			});
+		}
+		if(!!btn_mv_control_container){
+			header_wrap_layer_height = header_wrap_layer.getBoundingClientRect().height;
+			btn_mv_control_container.forEach((item)=>{
+				item.style.top = header_wrap_layer_height+"px";
+				item.style.height = "calc(100% - "+header_wrap_layer_height+"px)";
+			});
+		}
+		
 		if(windowHeight<635){
 			controlHeight = 635;
 		}else{
+			
 			controlHeight = windowHeight;
 		}
+
+		if(window.innerWidth < 1023){
+			mv_wrap.style.removeProperty("height")
+			return;
+		}
+
 		mv_wrap.style.height = controlHeight + "px";
 	}
 }

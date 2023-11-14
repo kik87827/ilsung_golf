@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./include/head.html')
+
+<body class="front_body">
+    <div class="page_wrap">
+        <!-- header -->
+        <header class="header_wrap layer_type">
+            <!-- pc -->
+            <div class="header_pc_group">
+                <div class="hgroup_top_row">
+                    <h1 class="hgroup_toplogo"><a href="#" class="hgroup_toplogo_link"><img src="./images/toplogo_wtype.png" alt="일성골프 골프투어 NO.1"></a></h1>
+                    
+                    <div class="hgroup_topfield_wrap">
+                        <div class="hgroup_topfield_layer">
+                            <div class="hgroup_topfield">
+                                <input type="text" placeholder="검색어를 입력하세요" class="topfield_input">
+                                <a href="javascript:;" class="btn_topfield_submit"><span class="hdtext">검색</span></a>
+                            </div>
+                        </div>
+                        <ul class="hgroup_util_list">
+                            <!-- 20231111 변경 -->
+                            <li><a href="#" class="hgroup_util type2">로그인</a></li>
+                            <li>
+                                <a href="#" class="hgroup_util">
+                                    <i class="ico_hgutil"></i>
+                                    <span class="hgroup_util_text">회원가입</span>
+                                </a>
+                            </li>
+                            <!-- // 20231111 변경 -->
+                            <li><a href="#" class="hgroup_util">예약확인/결제</a></li>
+                            <li><a href="#" class="hgroup_util">고객센터</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hgroup_gnb_row">
+                    <div class="hgroup_inner">
+                        <div class="hgroup_side hg_side_left">
+                            <a href="#" class="hgroup_side_totalmenu" name="pcmenu"><i class="totalmenu_line"></i><span class="side_totalmenu_text">전체메뉴</span></a>
+                        </div>
+                        <nav class="hgroup_nav_wrap hg_side_main">                                                         
+                            <ul class="hgroup_nav_list">
+                                <li><a href="#gnb_two01" class="hgroup_nav_menu">동남아</a></li>
+                                <li><a href="#gnb_two02" class="hgroup_nav_menu">일본</a></li>
+                                <li><a href="#gnb_two03" class="hgroup_nav_menu">중국</a></li>
+                                <li><a href="#gnb_two04" class="hgroup_nav_menu">남태평양</a></li>
+                                <li><a href="#gnb_two05" class="hgroup_nav_menu">유렵</a></li>
+                                <li><a href="#gnb_two06" class="hgroup_nav_menu">미주</a></li>
+                                <li><a href="#gnb_two07" class="hgroup_nav_menu">아프리카</a></li>
+                                <li>
+                                    <div class="hgroup_nav_item_wrap">
+                                        <a href="javascript:;" class="hgroup_nav_item">
+                                            <i class="ico_hgnav"></i>
+                                            <span class="hgroup_nav_item_text">월별출발상품</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>                                                             
+                        </nav>
+                    </div>
+                    <!-- global_menu_layer -->
+                    @@include('./include/global_menu.html')
+                    <!-- // global_menu_layer -->
+                    <!-- gnb_twodepth_layer -->
+                    @@include('./include/gnb_two.html')
+                    <!-- // gnb_twodepth_layer -->
+                </div>
+            </div>
+            <!-- // pc -->
+            <!-- mobile -->
+            <div class="header_mobile_group">
+                <div class="header_mobile_row">
+                    <h1 class="mobile_toplogo"><a href="#" class="mobile_toplogo_link"><img src="./images/toplogo_mb_wtype.png" alt="일성골프 골프투어 No.1"></a></h1>
+                    <div class="mobile_topelse_wrap">
+                        <ul class="mobile_util_list">
+                            <li><a href="#" class="mobile_util_menu ico_search wtype2"><span class="hdtext">검색</span></a></li>
+                            <li><a href="#" class="mobile_util_menu ico_total wtype2" name="totalmenu"><span class="hdtext">전체메뉴</span><i class="ico_mb_total_line"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile_total_layer -->
+            @@include('./include/mobile_menu.html')
+            <!-- // mobile_total_layer -->
+            <!-- // mobile -->
+        </header>
+        <!-- // header -->
+        <!-- main visual -->
+        <!-- 20230906 typea addClass -->
+        <div class="main_visual_wrap typef">
+            <!-- 20231021 수정 -->
+            <div class="btn_mv_control_container prev_container"><a href="javascript:;" class="btn_mv_control prev_control"><span class="hdtext">이전</span></a></div>
+            <!-- // 20231021 수정 -->
+            <div class="swiper-container main_visual_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="mv_bg_wrap">
+                            <img src="./images/bg_mv_typea_01.png" class="pc_img" alt=""> 
+                            <img src="./images/bg_mv_typea_01_mb.png" class="mb_img" alt="">
+                        </div>
+                        <div class="mv_copy_container">
+                            <div class="mv_copy_inner">
+                                <p class="mv_copy_main">한여름밤의 꿈같은곳<br>부드러운 모래사장과 황홀한 일몰</p>
+                                <p class="mv_copy_sub">아름다운 보라카이</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mv_bg_wrap">
+                            <img src="./images/bg_mv_typea_01.png" class="pc_img" alt=""> 
+                            <img src="./images/bg_mv_typea_01_mb.png" class="mb_img" alt="">
+                        </div>
+                        <div class="mv_copy_container">
+                            <div class="mv_copy_inner">
+                                <p class="mv_copy_main">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</p>
+                                <p class="mv_copy_sub">아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이 아름다운 보라카이</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mv_bg_wrap">
+                            <img src="./images/bg_mv_typea_01.png" class="pc_img" alt=""> 
+                            <img src="./images/bg_mv_typea_01_mb.png" class="mb_img" alt="">
+                        </div>
+                        <div class="mv_copy_container">
+                            <div class="mv_copy_inner">
+                                <p class="mv_copy_main">테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2</p>
+                                <p class="mv_copy_sub">테스트2</p>
+                                <div class="btn_mv_box_row"><a href="#" class="btn_mv_box">자세히 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 20231021 수정 -->
+            <div class="btn_mv_control_container next_container"><a href="javascript:;" class="btn_mv_control next_control"><span class="hdtext">다음</span></a></div>
+            <!-- // 20231021 수정 -->
+            
+            <div class="mv_bottom_control_zone">
+                <div class="mv_bottom_control_wrap">
+                    <div class="mv_bottom_in_control">
+                        <div class="mv_bottom_cols has_navi">
+                            <div class="swiper-pagination main_visual_paging">
+                            </div>
+                        </div>
+                        <div class="mv_bottom_cols has_auto">
+                            <ul class="swiper_auto_control_list">
+                                <li><a href="#" class="btn_mv_stop"><span class="hdtext">정지</span></a></li>
+                                <li><a href="#" class="btn_mv_play"><span class="hdtext">재생</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // main visual -->
+        <!-- middle -->
+        <section class="middle_wrap type2">
+            <div class="middle_inner_wrap">
+                 <!-- search_field_wrap -->
+                 <div class="search_field_wrap">
+                    <div class="search_field_cols_wrap">
+                        <div class="search_field_cols">
+                            <a href="javascript:;" class="search_field_target define_local" data-poslayer="#layer_box_local">
+                                <div class="search_field_form">
+                                    <div class="search_form_label">지역</div>
+                                    <div class="search_form_text_g">
+                                        <div class="search_form_text_place">어디로 가세요?</div>
+                                        <div class="search_form_text_result_row">
+                                            <div class="search_form_text_result"></div>
+                                            <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="search_field_cols">
+                            <a href="javascript:;" class="search_field_target define_start" id="layer_calendar_startdate">
+                                <div class="search_field_form">
+                                    <div class="search_form_label">출발일</div>
+                                    <div class="search_form_text_g">
+                                        <div class="search_form_text_place">날짜를 입력하세요</div>
+                                        <div class="search_form_text_result_row">
+                                            <div class="search_form_text_result"></div>
+                                            <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="search_field_cols">
+                            <a href="#" class="search_field_target define_while" data-poslayer="#layer_box_while">
+                                <div class="search_field_form">
+                                    <div class="search_form_label">여행기간</div>
+                                    <div class="search_form_text_g">
+                                        <div class="search_form_text_place">몇일 생각하세요?</div>
+                                        <div class="search_form_text_result_row">
+                                            <div class="search_form_text_result"></div>
+                                            <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="search_field_cols">
+                            <a href="#" class="search_field_target define_where" data-poslayer="#layer_box_start">
+                                <div class="search_field_form">
+                                    <div class="search_form_label">출발지</div>
+                                    <div class="search_form_text_g">
+                                        <div class="search_form_text_place">어디서 출발하세요?</div>
+                                        <div class="search_form_text_result_row">
+                                            <div class="search_form_text_result"></div>
+                                            <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- 20230824 추가 -->
+                        <div class="search_field_cols">
+                            <a href="#" class="search_field_target define_searchword" data-poslayer="#layer_box_search">
+                                <div class="search_field_form">
+                                    <div class="search_form_label">검색어</div>
+                                    <div class="search_form_text_g">
+                                        <div class="search_form_text_place">검색어를 입력하세요</div>
+                                        <div class="search_form_text_result_row">
+                                            <div class="search_form_text_result"></div>
+                                            <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                         <!-- // 20230824 추가 -->
+                    </div>
+                    <div class="search_field_cols define_btn">
+                        <a href="#" class="btn_search_form"><span class="btn_search_form_text">검색하기</span></a>
+                    </div>
+                </div>
+                <!-- // search_field_wrap -->
+            </div>
+        </section>
+        <!-- // middle -->
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div style="background:#ddd;color:#000;display:flex;align-items:center;justify-content:center;height:100px;">
+                footer
+            </div>
+        </footer>
+        <!-- // footer -->
+        <!-- layer 20230824 수정 -->
+        @@include('./include/layer_local.html')
+        @@include('./include/layer_while.html')
+        @@include('./include/layer_start.html')
+        @@include('./include/layer_startdate.html')
+        @@include('./include/layer_search.html')
+        <!-- // layer 20230824 수정 -->
+
+        @@include('./include/start_date_script.html')
+    </div>
+    <script>
+        window.addEventListener("load",()=>{
+            mainVisual();
+        })
+    </script>
+</body>
+
+</html>
